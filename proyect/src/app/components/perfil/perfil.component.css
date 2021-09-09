@@ -1,0 +1,138 @@
+.perfil{
+    display: flex;
+}
+.container{
+    margin: 50px;
+    margin-left: 100px;
+    margin-right: 0px;
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+}
+h4{
+    text-align: center;
+}
+.imagen{
+    border-style: solid;
+    border-color: rgba(128, 128, 128, 0.699);
+    border-radius: 5px;
+    float: left;
+    padding-left: 0px;
+}
+.boton1{
+    border-style: solid;
+    border-color: rgba(128, 128, 128, 0.699);
+    border-radius: 5px;
+    float: left;
+    padding-right: 90px;
+    padding-left: 90px;
+    }
+.boton1:hover{
+    text-decoration: underline;
+    background-color: #C8F4F9;
+
+}
+.boton2{
+    border-style: solid;
+    border-color: rgba(128, 128, 128, 0.699);
+    border-radius: 5px;
+    float: left;
+    padding-right: 60px;
+    padding-left: 60px;
+    text-decoration: none;
+}
+.boton2:hover{
+    text-decoration: underline;
+    background-color: #C8F4F9;
+
+}
+.boton3{
+    border-style: solid;
+    border-color: rgba(128, 128, 128, 0.699);
+    border-radius: 5px;
+    float: left;
+    padding-right: 31px;
+    padding-left: 31px;
+    text-decoration: none;
+}
+.boton3:hover{
+    text-decoration: underline;
+    background-color: #C8F4F9;
+
+}
+.boton4{
+    border-style: solid;
+    border-color: rgba(128, 128, 128, 0.699);
+    border-radius: 5px;
+    float: left;
+    padding-right: 60px;
+    padding-left: 60px;
+    text-decoration: none;
+}
+.boton4:hover{
+    text-decoration: underline;
+    background-color: #C8F4F9;
+
+}
+
+
+.Publicaciones{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 50px;
+    margin-right: 100px;
+    margin-left: 0px;
+    width: 70%;
+}
+h3{
+    padding: 10px
+}   
+.fotoPerfil{
+    display: flex;
+    flex-direction: row;
+    margin: 0px 50px;
+
+}
+.boton11{
+    background-color: #C8F4F9;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+.botones{
+    margin: 10px 150px;
+}
+.comentarios{
+    margin:0px 50px;
+    padding: 5px 150px;
+    background-color: white;
+    color: black;
+    text-align: center;
+}
+.public1{
+    margin: 10px 100px 10px 150px;
+}
+
+.compartir{
+    padding: 5px 70px;
+    background-color: rgba(139, 135, 135, 0.26);
+    color: black;
+    text-align: center;   
+}
+label{
+    padding: 10px;
+}
+.opciones{
+    margin-top: 0px;
+    text-align: right;
+}
+input:hover{
+    background-color: #C8F4F9;
+
+}
+p{
+    color: black;
+    padding-top: 5px;
+}

@@ -1,0 +1,101 @@
+.perfil{
+    display: flex;
+    justify-content: space-evenly;
+}
+.container{
+    margin: 50px;
+    margin-left: 100px;
+    margin-right: 0px;
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+}
+h4{
+    text-align: center;
+}
+.imagen{
+    border-style: solid;
+    border-color: rgba(128, 128, 128, 0.699);
+    border-radius: 5px;
+    float: left;
+    padding-left: 0px;
+}
+.boton1{
+    border-style: solid;
+    border-color: rgba(128, 128, 128, 0.699);
+    border-radius: 5px;
+    float: left;
+    padding-right: 90px;
+    padding-left: 90px;
+    }
+.boton1:hover{
+    text-decoration: underline;
+    background-color: #C8F4F9;
+
+}
+.boton2{
+    border-style: solid;
+    border-color: rgba(128, 128, 128, 0.699);
+    border-radius: 5px;
+    float: left;
+    padding-right: 60px;
+    padding-left: 60px;
+    text-decoration: none;
+}
+.boton2:hover{
+    text-decoration: underline;
+    background-color: #C8F4F9;
+
+}
+.boton3{
+    border-style: solid;
+    border-color: rgba(128, 128, 128, 0.699);
+    border-radius: 5px;
+    float: left;
+    padding-right: 31px;
+    padding-left: 31px;
+    text-decoration: none;
+}
+.boton3:hover{
+    text-decoration: underline;
+    background-color: #C8F4F9;
+
+}
+.boton4{
+    border-style: solid;
+    border-color: rgba(128, 128, 128, 0.699);
+    border-radius: 5px;
+    float: left;
+    padding-right: 60px;
+    padding-left: 60px;
+    text-decoration: none;
+}
+.boton4:hover{
+    text-decoration: underline;
+    background-color: #C8F4F9;
+
+}
+
+
+
+
+.info{
+    margin: 50px;
+    margin-right: 100px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    width: 70%;
+}
+h3{
+    padding: 10px
+}
+.info ul{
+    margin-bottom: 50px;
+}
+.info ol{
+    padding: 12px;
+}   
+input:hover{
+    background-color: #C8F4F9;
+
+}

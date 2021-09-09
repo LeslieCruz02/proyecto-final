@@ -1,0 +1,90 @@
+
+  section{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 730px;
+  }
+  form {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 10px 5px 5px  rgba(0, 0, 0, 0.089);
+    margin-left: 50px;
+    margin-right: 110px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    width: 400px;
+  }
+  aside{
+    text-align: center;
+  }
+.fondo{
+    background-color: #c8f4f94d;
+  }
+  .adoptar{
+    margin-left: 100px;
+    width: 50%;
+  }
+
+  .inicio{
+    width: 50%;
+    margin-left: 90px;
+    border: solid 2px rgba(128, 128, 128, 0.288);
+    border-radius: 20px;
+    margin-right: 50px;
+    padding-left: 80px;
+  }
+  .carousel{
+    margin-left: 80px;
+    width: 400px;
+    height: 320px;
+    border-radius: 30px;
+  }
+  .learnmore{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  .logoInicio{
+    display: flex;
+    justify-content: center;
+  }
+
+  .registrate{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .ingreso button{
+    padding: 10px 132px 10px 132px ;
+  }
+  .crearCuenta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .crearCuenta a{
+    padding: 10px 80px 10px 80px ;
+  }
+  .beneficios{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .beneficios p{
+    font-size: 12px;
+  }
+  .beneficio{
+    width: 250px;
+    margin-left: 50px;
+  }
+  .registrateHoy{
+    height: 250px;
+    margin-left: 150px;
+    margin-right: 150px;
+  }

@@ -1,0 +1,63 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" >
+    <div class="container1">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Nombre</label>
+            <input type="text" class="form-control" formControlName="nombre">
+          </div>
+          <div class="mb-3">
+            <div class="edad">
+              
+              <div class="edadnum">
+                <label for="exampleInputEdad1" class="form-label">Edad</label>
+                 <input type="text" class="form-control" formControlName="edad">
+              </div>
+              <select class="form-select" aria-label="Default select example">
+                  <option selected>Elija una opción</option>
+                  <option value="1">Meses</option>
+                  <option value="2">Años</option>
+              </select>
+            </div>
+          </div>
+          <div class="mb-3">
+              <label for="exampleInputRaza1" class="form-label">Raza</label>
+              <input type="text" class="form-control" formControlName="raza">
+            </div>    
+            <div class="mb-3">
+              <label for="exampleInputEncargado1" class="form-label">Fundación</label>
+              <input type="text" class="form-control" formControlName="fundacion">
+            </div>
+    </div>      
+    <div class="container2">
+          <div>
+              <h5>Estado:</h5>
+          </div>
+            <div class="check">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" formControlName="estado" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">Por adoptar</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" formControlName="estado" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">Adoptado </label>
+                </div>
+            </div>      
+            <div>
+                <div>
+                    <label formControlName="descripcion" class="form-label">Descripción</label>
+                </div>
+              <textarea rows= "7" cols="40"></textarea>
+            </div>
+          <div>
+              <div class="mb-3">
+                  <label for="formFile" class="form-label">Adjuntar Archivo</label>
+                  <input class="form-control" type="file" formControlName="fotos">
+                </div>
+          
+          </div>
+          <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" formControlName="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1" aria-required="exampleCheck1">Aceptar los términos y condiciones</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Enviar</button>
+    </div>
+</form>

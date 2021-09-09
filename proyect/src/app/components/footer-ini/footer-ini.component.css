@@ -1,0 +1,21 @@
+
+  footer{
+    display: flex;
+    align-items: center;
+    padding-left: 200px;
+    background-color: #C26DBC;
+    height: 100px;
+}
+
+.redesSociales{
+  float: right;
+  padding-left: 500px;
+}
+
+.redesSociales img{
+   padding-left: 15px;
+}
+
+.colorfooter{
+   color: #041F60;
+}

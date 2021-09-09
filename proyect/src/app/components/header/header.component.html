@@ -1,0 +1,24 @@
+<hr>
+<header>
+    <div class="mb-3">
+      <input type="submit" value="Publicaciones" class="form-control" id="formGroupExampleInput">
+      <input type="text" placeholder="Publicar..." class="texto">
+    </div>
+    <div class="Publicaciones">
+      <div class="fotoPerfil">
+        <img src="../assets/fotoperfil.jpg" href="http://localhost:4200/perfilP" alt="Foto del usuario" width="150">
+        <a href="http://localhost:4200/perfilP">Usuario</a>
+      </div>
+      <div class="opciones">
+        <button class="boton1" type="submit">Quiero Adoptar</button>
+        <input type="checkbox" name="Adoptado" id="Adop">
+        <label for="Adop">Adoptado</label>
+      </div>
+    </div>
+    <img src="../assets/public1.jpeg" alt="publicacion1" width="800" class="public1">
+    <div class="botones">
+      <button class="btn btn-primary comentarios" data-bs-toggle="button" autocomplete="off" (click)="com=!com">Comentarios</button>
+      <p class="text" *ngIf="com"><app-comentarios></app-comentarios></p>
+      <p class="text" *ngIf="com"><app-comentarios1></app-comentarios1></p>
+    </div>
+</header>

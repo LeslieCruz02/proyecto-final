@@ -1,0 +1,12 @@
+section{
+    height: 550px;
+}
+
+
+.carousel-inner img{ 
+    height: 500px;
+    background-position:center;
+	background-size: 120%;
+	background-repeat: no-repeat;
+    
+}

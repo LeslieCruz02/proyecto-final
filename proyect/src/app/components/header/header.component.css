@@ -1,0 +1,69 @@
+header{
+    margin: 20px 100px;
+}
+hr{
+    margin: 20px 50px;
+}
+.imagen{
+    margin-left:300px;
+}
+
+.texto{
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+
+.Publicaciones{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.fotoPerfil{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 40px;
+}
+a{
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+}
+.boton1{
+    background-color: #C8F4F9;
+    border-radius: 5px;
+    margin-top: 50px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+label{
+    padding: 10px;
+}
+.public1{
+    margin: 10px 100px 10px 150px;
+}
+
+.botones{
+    margin: 10px 150px;
+}
+.comentarios{
+    margin:0px 200px;
+    padding: 5px 150px;
+    background-color: white;
+    color: black;
+    text-align: center;
+}
+.compartir{
+    padding: 5px 150px;
+    background-color: rgba(139, 135, 135, 0.26);
+    color: black;
+    text-align: center;   
+}
+p{
+    color: black;
+    padding-top: 5px;
+
+}

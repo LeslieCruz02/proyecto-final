@@ -1,0 +1,38 @@
+<body>
+    <h1><strong>CREA TU CUENTA</strong></h1>
+    <hr>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Usuario</label>
+            <input type="email" class="form-control usuario" id="exampleInputEmail1" formControlName="usuario" aria-describedby="emailHelp" placeholder="ejemplo@gmail.com">
+        </div>
+
+        <div class="row g-3 align-items-center datos1">
+            <div class="col-auto">
+            <input type="text" placeholder="Nombres" class="form-control nombre" formControlName="nombres" aria-describedby="passwordHelpInline">
+            </div>
+            <div class="col-auto">
+            <input type="text" placeholder="Apellidos" class="form-control apellido" formControlName="apellidos" aria-describedby="passwordHelpInline">
+            </div>
+        </div>
+
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+            <input type="text" placeholder="Correo electrónico" class="form-control correo" formControlName="correo" aria-describedby="passwordHelpInline">
+            </div>
+            <div class="col-auto">
+            <input type="number" placeholder="Teléfono" class="form-control telefono" formControlName="telefono" aria-describedby="passwordHelpInline">
+            </div>
+        </div>
+
+        <div class="mb-3 password">
+            <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+            <input type="password" class="form-control contraseña" id="exampleInputPassword1" formControlName="password" placeholder="Mínimo 8 caracteres">
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Aceptar los términos y condiciones</label>
+        </div>
+        <button type="submit" class="btn btn-primary" > Registrarme </button>
+    </form>
+</body>

@@ -1,0 +1,28 @@
+div{
+    padding: 15px 0px;
+}
+form{
+    display:flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+}
+.check{
+    display:flex;
+    justify-content: space-around;
+}
+
+.edad{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.edadnum{
+    width: 15vw;
+}
+
+select{
+    margin-top: 30px;
+    width: 15vw;
+    height: 6vh;
+}

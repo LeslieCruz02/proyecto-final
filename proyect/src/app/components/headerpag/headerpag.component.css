@@ -1,0 +1,19 @@
+nav img{
+    text-align: center;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+}
+.nav{
+    background-color: #C8F4F9;
+    color: blanchedalmond;
+    padding: 10px;
+}
+.menu{
+    text-decoration-color: blanchedalmond;
+}
+.button{
+    color: black;
+    background-color:  #f6f8f8;
+}

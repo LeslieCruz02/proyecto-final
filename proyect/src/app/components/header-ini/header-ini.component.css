@@ -1,0 +1,15 @@
+header{
+    border-bottom: solid 10px#C26DBC;
+    height: 110px;
+    padding-left: 50px;
+}
+nav{
+  display: flex;
+  flex-direction: row;
+  color: black;
+  float: right;
+  padding-top: 40px;
+}
+nav ul li a{
+  margin-top: 10px;
+}

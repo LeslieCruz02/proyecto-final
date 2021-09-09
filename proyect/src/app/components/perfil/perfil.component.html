@@ -1,0 +1,44 @@
+
+<div class="perfil">
+    <div class="container">
+        <ul class="nav flex-column">
+            <ol class="nav-item imagen">
+                <img src="https://d500.epimg.net/cincodias/imagenes/2016/07/04/lifestyle/1467646262_522853_1467646344_noticia_normal.jpg" class="nav-link" href="#" width="250">
+                <h4>Usuario</h4>
+            </ol>
+            <ol class="nav-item boton1">
+              <a class="nav-link active " aria-current="page" href="http://localhost:4200/home">Inicio</a>
+            </ol>
+            <ol class="nav-item boton2">
+                <a class="nav-link" href="http://localhost:4200/perfilP">Publicaciones</a>
+            </ol>
+            <ol class="nav-item boton3">
+              <a class="nav-link" href="http://localhost:4200/perfilInfo">Información Personal</a>
+            </ol>
+            <ol class="nav-item boton4">
+              <a class="nav-link" href="#">Cerrar Sesión</a>
+            </ol>  
+        </ul>
+    </div>
+  
+    <div class="Publicaciones">
+        <div class="mb-3">
+            <input type="submit" value="Publicaciones" class="form-control" id="formGroupExampleInput">
+        </div>
+        <div class="fotoPerfil">
+          <img src="../assets/fotoperfil.jpg" href="http://localhost:4200/home" alt="Foto del usuario" width="150">
+          <h3>Usuario</h3>
+        </div>
+        <div class="opciones">
+            <button class="boton11" type="submit">Quiero Adoptar</button>
+            <input type="checkbox" name="Adoptado" id="Adop">
+            <label for="Adop">Adoptado</label>
+        </div>
+        <img src="../assets/public1.jpeg" alt="publicacion1" width="500" class="public1">
+        <div class="botones">
+            <button class="btn btn-primary comentarios" data-bs-toggle="button" autocomplete="off" (click)="com=!com">Comentarios</button>
+            <p class="text" *ngIf="com"><app-comentarios></app-comentarios></p>
+            <p class="text" *ngIf="com"><app-comentarios1></app-comentarios1></p>
+        </div>
+    </div>
+</div>

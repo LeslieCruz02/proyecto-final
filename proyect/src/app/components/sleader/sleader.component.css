@@ -1,0 +1,26 @@
+section{
+    display: flex;
+    padding: 20px;
+  
+}
+aside{
+    padding: 10px;
+    width: 50%;
+    height: 400px;
+}
+address{
+    padding: 0;
+    width: 50%;
+    height: 600px;
+    padding: 10px;
+}
+
+.accordion{
+    padding: 10px;
+    height: 100%;
+    width: 90%;
+}
+.carouselExampleCaptions{
+    height: 80%;
+    width: 80% ;
+}

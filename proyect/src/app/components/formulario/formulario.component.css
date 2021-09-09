@@ -1,0 +1,79 @@
+section{
+    display: flex;
+    flex-direction: row;
+    height: 400px; 
+}
+
+aside{
+    background-color: #EEB5EB;
+    height: 360px; 
+    width: 60%;
+    margin-left: 30px;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+address{
+    width: 30%;
+    margin: 0px 30px 30px 30px;
+
+ 
+}
+img{
+    border-radius: 8px;
+    box-shadow: 10px solid black;
+}
+
+.introCon{
+    margin-left: 50px;
+}
+.listas ul li{
+    line-height: 2.5;
+}
+
+.tel ul {
+	padding-left: 2rem;
+	list-style-type: none;
+	line-height: 25px;
+  }
+  
+.tel ul li {
+	padding-left: 3rem;
+	background-image: url(../../../assets/telefono.png);
+	background-position: 0 0;
+	background-size: 2rem 1.6rem;
+	background-repeat: no-repeat;
+  }
+.correo ul {
+	padding-left: 2rem;
+	list-style-type: none;
+	line-height: 25px;
+  }
+  
+.correo ul li {
+	padding-left: 3rem;
+	background-image: url(../../../assets/correo.png);
+	background-position: 0 0;
+	background-size: 1.7rem 1.6rem;
+	background-repeat: no-repeat;
+  }
+
+.ubicacion ul {
+	padding-left: 2rem;
+	list-style-type: none;
+	line-height: 25px;
+  }
+  
+.ubicacion ul li {
+	padding-left: 3rem;
+	background-image: url(../../../assets/ubicacion.png);
+	background-position: 0 0;
+	background-size: 2rem 2rem;
+	background-repeat: no-repeat;
+  }
+
+.mapa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
