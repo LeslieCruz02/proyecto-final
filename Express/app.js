@@ -58,7 +58,7 @@ app.post('/login', function (req, res) {
   const connection = mysql.createConnection({
     host     : 'localhost',
     user     : 'root',
-    password : '2003',
+    password : '10918268',
     database : 'ProyectoAdopciones'
   });
   
@@ -89,7 +89,7 @@ app.post('/login', function (req, res) {
     });
   });
 });
-/*
+
 
 app.post('/addMascota', function (req, res) {
 
@@ -160,7 +160,7 @@ app.post('/estado', function (req, res) {
   connection.end();
   return res.status(200).json({"Status": "el estado actual es",  estado});
 });
-*/
+
 app.listen(10101, function () {
   console.log('Example app listening on port 10101!');
 }); 

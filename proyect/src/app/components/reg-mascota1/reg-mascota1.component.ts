@@ -41,7 +41,7 @@ export class RegMascota1Component implements OnInit {
     if (this.form.valid) {
       this.client.postRequestSendForm('http://localhost:10101/login',{
      
-        nombre: this.form.value.usuario,
+        nombre: this.form.value.nombre,
         edad: this.form.value.edad,
         raza: this.form.value.raza,
         fundacion: this.form.value.fundacion,
@@ -52,8 +52,6 @@ export class RegMascota1Component implements OnInit {
       }).subscribe(
         (response:any)=>{
           console.log(response);
-          localStorage.setItem('token', response.token)
-          console.log(localStorage.getItem('token'));
           this.route.navigate(['/galeria']);
         },
         (error: any)=>{

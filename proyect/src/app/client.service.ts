@@ -6,7 +6,6 @@ import { HttpClient, HttpParams, HttpHeaders} from '@angular/common/http';
   providedIn: 'root'
 })
 export class ClientService {
-  //se inyecta el cliente http de Angular
   constructor(private http: HttpClient) { }
 
 

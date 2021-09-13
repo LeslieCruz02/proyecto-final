@@ -1,15 +1,185 @@
 header{
     border-bottom: solid 10px#C26DBC;
-    height: 110px;
-    padding-left: 50px;
+    height: 6.8rem;
+    padding-left: 3.1rem;
 }
 nav{
   display: flex;
   flex-direction: row;
   color: black;
   float: right;
-  padding-top: 40px;
+  padding-top: 2.5rem;
+  padding-right: 3rem;
+}
+nav ul li {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.6rem;
 }
 nav ul li a{
-  margin-top: 10px;
+  background-color:white; 
+  color: rgb(52, 52, 233);
+  font-size: 18px; 
+  margin-top: 0px;
+  border:none;
+}
+
+nav a {
+  background-color: #EEB5EB;
+  padding: 4px 10px 4px 10px;
+  color: blue;
+  font-size: 20px; 
+  font-weight: 500;
+  border-radius: 5px;
+  margin-top: 5px;
+  border: white 2px inset;
+  text-decoration: none;  
+}
+nav a:hover {
+  background-color: #C26DBC;
+}
+a{
+  height: 2.6rem;
+}
+
+.modalDialog {  
+  position: fixed;    
+  font-family: Arial, Helvetica, sans-serif;  
+  top: 0;     
+  right: 0;   
+  bottom: 0;  
+  left: 0;    
+  background: rgba(0,0,0,0.8);    
+  z-index: 99999;     
+  opacity:0;  
+  -webkit-transition: opacity 400ms ease-in;  
+  -moz-transition: opacity 400ms ease-in;     
+  transition: opacity 800ms ease-in;  
+  pointer-events: none; 
+}   
+.modalDialog:target {   
+  opacity:1;  
+  pointer-events: auto; 
+}   
+.modalDialog > div {    
+  width: 40rem;   
+  position:relative;     
+  margin: 5% auto;   
+  padding: 5px 15px 13px 15px;    
+  border-radius: 10px;    
+  background: #f5cff3de;   
+  background: -moz-linear-gradient(#fff, #999);   
+  background: -webkit-linear-gradient(#fff, #999);    
+  background: -o-linear-gradient(#fff, #999); 
+  -webkit-transition: opacity 400ms ease-in; 
+  -moz-transition: opacity 400ms ease-in; 
+  transition: opacity 400ms ease-in; 
+} 
+.close{   
+  background-color: #606061;    
+  color: black;     
+  line-height: 25px;  
+  position: absolute;     
+  right: -12px;   
+  text-align: left;     
+  top: -10px;       
+  text-decoration: none;  
+  font-weight: bold;  
+  -webkit-border-radius: 12px;    
+  -moz-border-radius: 12px;   
+  border-radius: 12px;    
+  -moz-box-shadow: 1px 1px 3px #000;  
+  -webkit-box-shadow: 1px 1px 3px #000;   
+  box-shadow: 1px 1px 3px #000; 
+}   
+  .close:hover { 
+      background: #00d9ff; 
+  }
+
+.Color{
+  color: #3CACAE;
+  text-align: center;
+}
+input {
+  display: none;
+}
+label {
+  display: none;
+}
+
+@media screen and (max-width: 1200px){
+
+}
+
+@media screen and (max-width: 992px){
+  
+}
+
+@media screen and (max-width: 768px){
+  
+}
+
+
+@media screen and (max-width: 576px){
+  header{
+    border-bottom: solid 10px#C26DBC;
+    height: 5rem;
+    padding-left: 2rem;
+}
+header img{
+  width: 150px ;
+  height: 80px;
+
+}
+nav{
+  display: flex;
+  flex-direction: row;
+  color: black;
+  float: right;
+  padding-top: 1rem;
+  padding-right: 3rem;
+}
+nav ul li {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.6rem;
+}
+nav ul li a{
+  font-size: 12px; 
+  margin-top: 0px;
+  border:none;
+}
+
+nav a {
+  padding: 1px 8px 1px 8px;
+  color: blue;
+  font-size: 15px; 
+  font-weight: 400;
+  
+}
+
+.modalDialog {  
+ 
+  font-size: 10px;
+}   
+ 
+.modalDialog > div {    
+  width: 20rem;   
+  padding: 2px 10px 7px 10px;    
+  
+} 
+#menu:checked ~ .lista{
+  display: block;
+}
+label{
+  display: block;
+  margin: 10px;
+}
+
+.lista{
+  position: absolute;
+  background-color: #395a6ed0;
+  margin: 0px;
+  display: none;
+}
 }
