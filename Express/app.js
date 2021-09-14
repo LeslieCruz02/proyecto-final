@@ -81,7 +81,7 @@ app.post('/login', function (req, res) {
       );
     }
     connection.end();
-    let jwt = nJwt.create({ id: result[0].id }, SIGNING_KEY);
+    let jwt = nJwt.create({ usuario: result[0].usuario }, SIGNING_KEY);
     jwt.setExpiration(new Date().getTime() + (2 * 60 * 1000));
     let token = jwt.compact();
     return res.status(200).json({
