@@ -1,5 +1,6 @@
 .perfil{
     display: flex;
+    flex-direction: row;
     justify-content: space-evenly;
 }
 .container{
@@ -7,8 +8,14 @@
     margin-left: 100px;
     margin-right: 0px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 30%;
+}
+#menu1{
+    display: none;
+}
+.iconomenu{
+    display: none;
 }
 h4{
     text-align: center;
@@ -98,4 +105,37 @@ h3{
 input:hover{
     background-color: #C8F4F9;
 
+}
+
+
+
+@media screen and (max-width:768px) {
+    .perfil{
+        display: block;
+    }
+    .container{
+        margin-left: 50px;
+        flex-direction: row;
+    }
+    .lista{
+        display: none;
+   }
+    #menu1{
+        display: none;
+    }
+    .iconomenu{
+        display: block;
+        padding-left: 250px;
+    }
+    #menu1:checked ~ .lista{
+        display: block;
+    }
+
+
+    .info{
+        margin: 50px;
+        margin-left: 100px;
+        margin-bottom: 0px;
+        width: 70%;
+    }
 }

@@ -17,7 +17,7 @@ app.post('/usuarios', function (req, res) {
   const connection = mysql.createConnection({
     host     : 'localhost',
     user     : 'root',
-    password : '2003',
+    password : '10918268',
     database : 'ProyectoAdopciones'
   });
   
