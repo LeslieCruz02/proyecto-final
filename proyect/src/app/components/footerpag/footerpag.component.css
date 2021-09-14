@@ -8,7 +8,7 @@ footer{
 
 .redesSociales{
 	float: right;
-	padding-left: 500px;
+	padding-left: 450px;
   }
 
 .redesSociales img{
@@ -18,3 +18,68 @@ footer{
   .colorfooter{
 	 color: #041F60;
  }
+
+@media screen and (max-width: 1200px){
+  footer{
+    font-size: 12px;
+  }
+
+  .redesSociales{
+    float: right;
+    padding-left: 25rem;
+  }
+}
+
+@media screen and (max-width: 992px){
+  footer{
+    font-size: 12px;
+  }
+
+  .redesSociales{
+    float: right;
+    padding-left: 15rem;
+  }
+
+  .redesSociales img{
+    width: 30px;
+    height: 20px;
+ }
+ 
+}
+
+@media screen and (max-width: 768px){
+  footer{
+    font-size: 12px;
+    padding-left: 4rem;
+  }
+
+  .redesSociales{
+    float: right;
+    padding-left: 14rem;
+  }
+
+  .redesSociales img{
+    width: 30px;
+    height: 20px;
+ }
+}
+
+
+@media screen and (max-width: 576px){
+
+  footer{
+    font-size: 9px;
+    padding-left: 4rem;
+    height: 3rem;
+  }
+
+  .redesSociales{
+    float: right;
+    padding-left: 8rem;
+  }
+
+  .redesSociales img{
+    width: 25px;
+    height: 15px;
+ }
+}

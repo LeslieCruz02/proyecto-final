@@ -1,6 +1,6 @@
 article{
     width:100vw ;
-    height:250px ;
+    height:15rem ;
 }
 .contenedores{
     border-radius: 15px;
@@ -12,8 +12,8 @@ article{
     justify-content: center;
 }
 .grid img{
-   
     margin: 10px;
+    border-radius: 0.6rem;
 }
 .button{
     align-items: center;

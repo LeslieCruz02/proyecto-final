@@ -1,7 +1,10 @@
 header{
+    background-color: #fff;
     border-bottom: solid 10px#C26DBC;
     height: 6.8rem;
+    width: 100%;
     padding-left: 3.1rem;
+    /*position: fixed; */ 
 }
 nav{
   display: flex;
@@ -23,20 +26,23 @@ nav ul li a{
   margin-top: 0px;
   border:none;
 }
-
+nav ul li a:hover{
+  background-color: #C8F4F9 ;
+}
+  
 nav a {
-  background-color: #EEB5EB;
+  background-color:  #C8F4F9;
   padding: 4px 10px 4px 10px;
   color: blue;
   font-size: 20px; 
   font-weight: 500;
   border-radius: 5px;
-  margin-top: 5px;
+  margin-top: 0.5rem;
   border: white 2px inset;
   text-decoration: none;  
 }
 nav a:hover {
-  background-color: #C26DBC;
+  background-color: #3CACAE;
 }
 a{
   height: 2.6rem;
