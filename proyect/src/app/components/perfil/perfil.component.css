@@ -1,13 +1,20 @@
 .perfil{
     display: flex;
+    flex-direction: row;
 }
 .container{
     margin: 50px;
     margin-left: 100px;
     margin-right: 0px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 30%;
+}
+#menu1{
+    display: none;
+}
+.iconomenu{
+    display: none;
 }
 h4{
     text-align: center;
@@ -96,10 +103,13 @@ h3{
 }
 .boton11{
     background-color: #C8F4F9;
+    border-style:ridge;
     border-radius: 5px;
     margin-right: 10px;
     margin-bottom: 20px;
     padding: 10px;
+    text-decoration: none;
+    color: black;
 }
 .botones{
     margin: 10px 150px;
@@ -135,4 +145,46 @@ input:hover{
 p{
     color: black;
     padding-top: 5px;
+}
+
+
+@media screen and (max-width:768px) {
+    .perfil{
+        display: flex;
+        flex-direction: column;
+    }
+    .container{
+        margin-left: 50px;
+        flex-direction: row;
+    }
+    .lista{
+        display: none;
+   }
+    #menu1{
+        display: none;
+    }
+    .iconomenu{
+        display: block;
+        padding-left: 250px;
+        padding-top: 0px;
+    }
+    #menu1:checked ~ .lista{
+        display: block;
+    }
+
+
+
+
+    .Publicaciones{
+        margin: 20px;
+        margin-left: 50px;
+        width: 70%;
+    }
+        .public1{
+        margin: 10px 0px 10px 0px;
+    }    
+    .botones{
+        margin: 10px 0px;
+    }
+   
 }
