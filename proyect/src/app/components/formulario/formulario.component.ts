@@ -31,7 +31,9 @@ export class FormularioComponent implements OnInit {
       nombre: ['', Validators.required],
       apellidos: ['', Validators.required],
       email: ['', Validators.required],
-      telefono: ['', Validators.required]
+      telefono: ['', Validators.required],
+      asunto:['', Validators.required],
+      mensaje:['', Validators.required]
 
     });
   }
@@ -44,6 +46,7 @@ export class FormularioComponent implements OnInit {
         email: this.form.value.correo,
         apellido: this.form.value.nombreO,  
         telefono: this.form.value.telefono,
+        asunto: this.form.value.asunto,
         mensaje: this.form.value.mensaje
       }).subscribe(
      
