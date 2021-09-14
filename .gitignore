@@ -105,3 +105,10 @@ dist
 
 # Visual Studio
 .vscode
+
+#modulos node
+node_modules
+
+#packages
+package.json
+package-lock.json
