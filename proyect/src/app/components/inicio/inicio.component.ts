@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent implements OnInit {
-  formInicio:any;
+  formInicio!:FormGroup;
   constructor(
     public client: ClientService,
     private fb: FormBuilder,
@@ -32,6 +32,8 @@ export class InicioComponent implements OnInit {
       }).subscribe(
         (response:any)=>{
           console.log(response);
+          localStorage.setItem('token', response.token)
+          console.log(localStorage.getItem('token'));
           this.route.navigate(['home']);
         },
         (error: any)=>{

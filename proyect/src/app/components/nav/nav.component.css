@@ -17,3 +17,11 @@ nav img{
     color: black;
     background-color: #f6f8f8;
 }
+.modal-body{
+    color: black;
+}
+.modal-title{
+    color: #3CACAE;
+    text-align: center;
+    font-size: 30px;
+}

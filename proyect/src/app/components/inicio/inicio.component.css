@@ -4,7 +4,8 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 45.6rem;
+    height: 48rem;
+    /*padding-top: 4rem;*/
     
   }
   form {
@@ -39,11 +40,15 @@
     margin-right: 3.1rem;
     padding-left: 5rem;
   }
+  #carouselExampleControlsNoTouching img{
+    border-radius: 0.6rem;
+
+  }
   .carousel{
     margin-left:5rem;
     width: 25rem;
-    height: 21.8rem;
-    border-radius: 1.8rem;
+    height: 21rem;
+
   }
   .learnmore{
     display: flex;

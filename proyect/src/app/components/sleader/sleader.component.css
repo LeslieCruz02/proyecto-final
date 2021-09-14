@@ -4,15 +4,15 @@ section{
   
 }
 aside{
-    padding: 0.625rem;
+    margin: 0.6rem;
     width: 50%;
-    height: 25rem;
 }
 address{
-    padding: 0rem;
+    margin: 0.8rem;
     width: 50%;
-    height:37.5rem ;
-    padding: 0.625rem;
+    padding: 10px;
+    background: -webkit-linear-gradient(bottom, #c8f4f988, white);;
+    border-radius: 0.5rem;
 }
 
 .accordion{

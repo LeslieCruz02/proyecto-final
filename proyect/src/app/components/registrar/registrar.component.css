@@ -1,6 +1,10 @@
 h1{
     text-align: center;
     padding-top: 50px;
+    padding-right: 12.5rem;
+}
+img {
+    float:left;
 }
 form{
     margin: 50px 200px;
