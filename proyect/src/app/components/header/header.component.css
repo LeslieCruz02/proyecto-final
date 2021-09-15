@@ -47,7 +47,7 @@ label{
     margin: 10px 20px;
 }
 .comentarios{
-    margin:0px 200px;
+    margin:0px 150px;
     padding: 5px 150px;
     background-color: white;
     color: black;
@@ -72,5 +72,24 @@ p{
     div{
         padding: 0px 10px;
 
+    }
+    .comentarios{
+        margin:0px 50px;
+        padding: 5px 150px;
+    }
+    .public1{
+        margin: 10px 30px 10px 30px;
+        width: 500px;
+    }
+    a{
+        font-size: 20px;
+    }
+    .fotoPerfil img{
+        width: 100px;
+    }
+    .boton1{
+        margin-right: 10px;
+        margin-bottom: 20px;
+        padding:10px 5px;
     }
 }
