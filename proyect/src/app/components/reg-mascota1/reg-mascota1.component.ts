@@ -29,9 +29,10 @@ export class RegMascota1Component implements OnInit {
 
     this.form = this.fb.group({
       nombre: ['', Validators.required],
-      edad: ['', Validators.required],
+      tipoDeMascota: ['', Validators.required],
       raza: ['', Validators.required],
-      fundacion: ['', Validators.required],
+      edad: ['', Validators.required],
+      responsable: ['', Validators.required],
       estado: ['', Validators.required],
       descripcion: ['', Validators.required],
       fotos: ['', Validators.required]

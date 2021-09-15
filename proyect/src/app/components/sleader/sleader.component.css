@@ -24,8 +24,25 @@ address{
     height: 80%;
     width: 80% ;
 }
+@media (max-width: 1200px) {
+    
+}
 
 @media (max-width: 992px) {
+    section{
+        height: 20rem;
+        
+    }
+    address{
+        height: 20rem;
+    }   
+    .carouselExampleCaptions{
+        height: 40%;
+        width: 40% ;
+    }
+}
+
+@media (max-width: 756px) {
     section{
         height: 30rem;
         
@@ -34,7 +51,7 @@ address{
         height: 30rem;
     }   
     .carouselExampleCaptions{
-        height: 40%;
-        width: 40% ;
+        height: 30%;
+        width: 30% ;
     }
 }
