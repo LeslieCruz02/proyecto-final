@@ -1,7 +1,6 @@
-<hr>
 <header>
     <div class="mb-3">
-      <input type="submit" value="Publicaciones" class="form-control" id="formGroupExampleInput">
+      <input type="button" value="Publicaciones" class="form-control botonpublic" id="formGroupExampleInput">
       <input type="text" placeholder="Publicar..." class="texto">
     </div>
     <div class="Publicaciones">
@@ -15,7 +14,7 @@
         <label for="Adop">Adoptado</label>
       </div>
     </div>
-    <img src="../assets/public1.jpeg" alt="publicacion1" width="800" class="public1">
+    <img src="../assets/public1.jpeg" alt="publicacion1" width="600" class="public1">
     <div class="botones">
       <button class="btn btn-primary comentarios" data-bs-toggle="button" autocomplete="off" (click)="com=!com">Comentarios</button>
       <p class="text" *ngIf="com"><app-comentarios></app-comentarios></p>

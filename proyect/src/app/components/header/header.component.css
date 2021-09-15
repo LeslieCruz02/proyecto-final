@@ -1,11 +1,9 @@
 header{
-    margin: 20px 100px;
+    width: 80%;
 }
-hr{
-    margin: 20px 50px;
-}
+
 .imagen{
-    margin-left:300px;
+    margin-left:100px;
 }
 
 .texto{
@@ -18,7 +16,7 @@ hr{
 .Publicaciones{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .fotoPerfil{
     display: flex;
@@ -40,14 +38,13 @@ a{
     padding: 10px;
 }
 label{
-    padding: 10px;
+    padding: 5px;
 }
 .public1{
-    margin: 10px 100px 10px 150px;
+    margin: 10px 50px 10px 50px;
 }
-
 .botones{
-    margin: 10px 150px;
+    margin: 10px 20px;
 }
 .comentarios{
     margin:0px 200px;
@@ -66,4 +63,14 @@ p{
     color: black;
     padding-top: 5px;
 
+}
+
+@media screen and (max-width:768px) {
+    header{
+        margin:0px 50px;
+    }
+    div{
+        padding: 0px 10px;
+
+    }
 }

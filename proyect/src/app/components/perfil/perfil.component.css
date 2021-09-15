@@ -19,12 +19,16 @@
 h4{
     text-align: center;
 }
-.imagen{
+.imagen {
     border-style: solid;
     border-color: rgba(128, 128, 128, 0.699);
     border-radius: 5px;
     float: left;
     padding-left: 0px;
+}
+.imagen img{
+    margin: 0px;
+    text-align: center;
 }
 .boton1{
     border-style: solid;
@@ -165,7 +169,7 @@ p{
     }
     .iconomenu{
         display: block;
-        padding-left: 250px;
+        padding-left: 200px;
         padding-top: 0px;
     }
     #menu1:checked ~ .lista{
@@ -186,5 +190,27 @@ p{
     .botones{
         margin: 10px 0px;
     }
+   
+}
+
+@media screen and (max-width:586px) {
+    .container{
+        margin-left: 20px;
+        flex-direction: row;
+    }
+ 
+    .iconomenu{
+        padding-left: 150px;
+        padding-top: 0px;
+    }
+    .boton1{
+        padding-right: 80px;
+        padding-left: 80px;
+    }
+    .boton2{
+        padding-right: 50px;
+        padding-left: 50px;
+    }
+
    
 }
