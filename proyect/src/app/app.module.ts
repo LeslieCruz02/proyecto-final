@@ -70,7 +70,7 @@ import { PublicidadComponent } from './components/publicidad/publicidad.componen
     SleaderComponent,
     GaleryPrincipalComponent,
     BlogListasComponent,
-    PublicidadComponent,
+    PublicidadComponent
   ],
   imports: [
     BrowserModule,

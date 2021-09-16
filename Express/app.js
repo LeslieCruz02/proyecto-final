@@ -59,7 +59,7 @@ app.post('/login', function (req, res) {
   const connection = mysql.createConnection({
     host     : 'localhost',
     user     : 'root',
-    password : '10918268',
+    password : '2003',
     database : 'ProyectoAdopciones'
   });
   
@@ -97,7 +97,7 @@ app.post('/addMascota', function (req, res) {
   const connection = mysql.createConnection({
     host     : 'localhost',
     user     : 'root',
-    password : '10918268',
+    password : '2003',
     database : 'ProyectoAdopciones'
   });
   
@@ -124,7 +124,7 @@ app.post('/contactenos', function (req, res) {
   const connection = mysql.createConnection({
     host     : 'localhost',
     user     : 'root',
-    password : '10918268',
+    password : '2003',
     database : 'ProyectoAdopciones'
   });
   
@@ -148,7 +148,7 @@ app.post('/estado', function (req, res) {
   const connection = mysql.createConnection({
     host     : 'localhost',
     user     : 'root',
-    password : '10918268',
+    password : '2003',
     database : 'ProyectoAdopciones'
   });
   

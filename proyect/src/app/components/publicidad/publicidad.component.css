@@ -1,0 +1,30 @@
+.publicidad{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    width: 75%;
+    margin-left: 50px;
+    margin-top: 40px;
+}
+@media screen and (max-width:768px) {
+    .publicidad{
+        flex-direction: column;
+    }
+    .publicidad1{
+        display: grid;
+        grid-template-columns: 10rem 10rem 10rem;
+        grid-template-areas: "img img img";
+        margin-left: 100px;
+    }
+    .publicidad2{
+        display: grid;
+        grid-template-columns: 10rem 10rem 10rem;
+        grid-template-areas: "img img img";
+        margin-left: 100px;
+    }
+    div{
+        padding: 0px 10px;
+
+    }
+}
