@@ -124,23 +124,29 @@ app.post('/contactenos', function (req, res) {
   const connection = mysql.createConnection({
     host     : 'localhost',
     user     : 'root',
-    password : '10918268',
+    password : 'tupassword',
     database : 'ProyectoAdopciones'
   });
   
   connection.connect((err) => {
       if(err) throw err;
-      console.log('Connected to MySQL Server!');
+      //console.log('Connected to MySQL Server!');
   });
 
   let nombreC = req.body.nombreC;
   let correo = req.body.correo;
-  let nombreO = req.body.nombreO;
   let telefono= req.body.telefono;
+  let nombreO = req.body.nombreO;
+  let asunto= req.body.asunto;
   let mensaje = req.body.mensaje;
-  products.products.push({"nombreC": nombreC, "correo": correo, "nombreO": nombreO,"telefono":telefono , "mensaje": mensaje});
+  let insert = 'INSERT INTO contactenos(nombreC, correo, telefono, nombreO,  asunto, mensaje) VALUES(?,?,?,?,?,?)';   
+  let query = mysql.format(insert,[nombreC, correo, telefono, nombreO,  asunto, mensaje]);
+  connection.query(query, (err, result) => {
+    if(err) throw err;
+    console.log('Petición enviada: ok');
   connection.end();
   return res.status(200).json({"Status": "Petición enviada"});
+  });
 });
 
 app.post('/estado', function (req, res) {
