@@ -137,8 +137,9 @@ app.post('/contactenos', function (req, res) {
   let correo = req.body.correo;
   let nombreO = req.body.nombreO;
   let telefono= req.body.telefono;
+  let asunto = req.body.asunto;
   let mensaje = req.body.mensaje;
-  products.products.push({"nombreC": nombreC, "correo": correo, "nombreO": nombreO,"telefono":telefono , "mensaje": mensaje});
+  products.products.push({"nombreC": nombreC, "correo": correo, "nombreO": nombreO,"telefono":telefono , "asunto":asunto, "mensaje": mensaje});
   connection.end();
   return res.status(200).json({"Status": "Petición enviada"});
 });

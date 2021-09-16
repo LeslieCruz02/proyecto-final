@@ -29,8 +29,8 @@ export class FormularioComponent implements OnInit {
     this.form = this.fb.group({
      
       nombre: ['', Validators.required],
-      apellidos: ['', Validators.required],
-      email: ['', Validators.required],
+      apellido: ['', Validators.required],
+      correo: ['', Validators.email],
       telefono: ['', Validators.required],
       asunto:['', Validators.required],
       mensaje:['', Validators.required]
@@ -43,7 +43,7 @@ export class FormularioComponent implements OnInit {
     
       this.client.postRequestSendForm('http://localhost:10101/contactenos', {
         nombre: this.form.value.nombreC,
-        email: this.form.value.correo,
+        correo: this.form.value.correo,
         apellido: this.form.value.nombreO,  
         telefono: this.form.value.telefono,
         asunto: this.form.value.asunto,
@@ -57,7 +57,7 @@ export class FormularioComponent implements OnInit {
           this.route.navigate( ['/galery-ppal']);
       },
       
-      (error) => {
+      (error:any) => {
        
         console.log(error.status);
       })
