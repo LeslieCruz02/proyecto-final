@@ -17,7 +17,7 @@ app.post('/usuarios', function (req, res) {
   const connection = mysql.createConnection({
     host     : 'localhost',
     user     : 'root',
-    password : '2003',
+    password : '10918268',
     database : 'ProyectoAdopciones'
   });
   
@@ -59,7 +59,7 @@ app.post('/login', function (req, res) {
   const connection = mysql.createConnection({
     host     : 'localhost',
     user     : 'root',
-    password : '2003',
+    password : '10918268',
     database : 'ProyectoAdopciones'
   });
   
@@ -97,7 +97,7 @@ app.post('/addMascota', function (req, res) {
   const connection = mysql.createConnection({
     host     : 'localhost',
     user     : 'root',
-    password : '2003',
+    password : '10918268',
     database : 'ProyectoAdopciones'
   });
   
@@ -108,15 +108,23 @@ app.post('/addMascota', function (req, res) {
 
   let nombre = req.body.nombre;
   let tipoDeMascota = req.body.tipoDeMascota;
-  let raza = req.body.Raza;
-  let fundacion = req.body.fundacion;
+  let raza = req.body.raza;
   let edad = req.body.edad;
-  let estado = req.body.estado;
+  let responsable = req.body.responsable;
+  let idestado = req.body.idestado;
   let descripcion = req.body.descripcion;
   let fotos = req.body.fotos;
-  products.products.push({"nombre": nombre, "tipoDeMascota": tipoDeMascota, "raza": raza, "fundacion": fundacion, "edad": edad, "estado": estado, "descripcion":descripcion, "fotos": fotos});
-  connection.end();
-  return res.status(200).json({"Status": "Producto agregado"});
+  let insert = 'INSERT INTO mascotas (nombre, tipoDeMascota, raza, edad, responsable, idestado, descripcion, fotos) VALUES(?,?,?,?,?,?,?,?)';   
+  let query = mysql.format(insert,[nombre, tipoDeMascota, raza, edad, responsable, idestado, descripcion, fotos]);
+  connection.query(query, (err, result) => {
+    if(err) throw err;
+    console.log('Insert Mascota: ok');
+    connection.end();
+    return res.status(200).json({
+      "Status": "ok registrado", 
+      "reg": true,
+    });
+  });
 });
 
 app.post('/contactenos', function (req, res) {

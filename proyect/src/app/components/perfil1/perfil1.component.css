@@ -73,8 +73,8 @@ h4{
     border-color: rgba(128, 128, 128, 0.699);
     border-radius: 5px;
     float: left;
-    padding-right: 60px;
-    padding-left: 60px;
+    padding-right: 42px;
+    padding-left: 42px;
     text-decoration: none;
 }
 .boton4:hover{
@@ -82,7 +82,20 @@ h4{
     background-color: #C8F4F9;
 
 }
+.boton5{
+    border-style: solid;
+    border-color: rgba(128, 128, 128, 0.699);
+    border-radius: 5px;
+    float: left;
+    padding-right: 60px;
+    padding-left: 60px;
+    text-decoration: none;
+}
+.boton5:hover{
+    text-decoration: underline;
+    background-color: #C8F4F9;
 
+}
 
 
 
