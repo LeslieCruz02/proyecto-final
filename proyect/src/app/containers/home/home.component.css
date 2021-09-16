@@ -1,0 +1,16 @@
+hr{
+    margin: 20px 50px;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+@media screen and (max-width:768px) {
+    .header{
+        display: flex;
+        
+        flex-direction: column-reverse;
+    }
+}

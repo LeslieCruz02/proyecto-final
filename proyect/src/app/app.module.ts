@@ -35,6 +35,7 @@ import { ListadoAdopcionesComponent } from './containers/listado-adopciones/list
 import { SleaderComponent } from './components/sleader/sleader.component';
 import { GaleryPrincipalComponent } from './components/galery-principal/galery-principal.component';
 import { BlogListasComponent } from './components/blog-listas/blog-listas.component';
+import { PublicidadComponent } from './components/publicidad/publicidad.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { BlogListasComponent } from './components/blog-listas/blog-listas.compon
     ListadoAdopcionesComponent,
     SleaderComponent,
     GaleryPrincipalComponent,
-    BlogListasComponent
+    BlogListasComponent,
+    PublicidadComponent
   ],
   imports: [
     BrowserModule,
