@@ -29,9 +29,9 @@ export class FormularioComponent implements OnInit {
     this.form = this.fb.group({
      
       nombre: ['', Validators.required],
-      apellido: ['', Validators.required],
       correo: ['', Validators.email],
       telefono: ['', Validators.required],
+      apellido: ['', Validators.required],
       asunto:['', Validators.required],
       mensaje:['', Validators.required]
 
@@ -54,13 +54,13 @@ export class FormularioComponent implements OnInit {
   
           console.log(response);
        
-          this.route.navigate( ['/galery-ppal']);
+          this.route.navigate(['/galery-ppal']);
       },
       
       (error:any) => {
        
         console.log(error.status);
-      })
+      });
    
     } else {
       console.log("Form error");

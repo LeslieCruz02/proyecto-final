@@ -33,20 +33,21 @@ export class RegMascota1Component implements OnInit {
       raza: ['', Validators.required],
       edad: ['', Validators.required],
       responsable: ['', Validators.required],
-      estado: ['', Validators.required],
+      idestado: ['', Validators.required],
       descripcion: ['', Validators.required],
       fotos: ['', Validators.required]
     });
   }
   onSubmit(){
     if (this.form.valid) {
-      this.client.postRequestSendForm('http://localhost:10101/login',{
+      this.client.postRequestSendForm('http://localhost:10101/addMascota',{
      
         nombre: this.form.value.nombre,
-        edad: this.form.value.edad,
+        tipoDeMascota: this.form.value.tipoDeMascota,
         raza: this.form.value.raza,
-        fundacion: this.form.value.fundacion,
-        estado: this.form.value.estado,
+        edad: this.form.value.edad,        
+        responsable: this.form.value.responsable,
+        idestado: this.form.value.idestado,
         descripcion: this.form.value.descripcion,
         fotos: this.form.value.fotos,
 
