@@ -147,9 +147,16 @@ app.post('/contactenos', function (req, res) {
   let telefono= req.body.telefono;
   let asunto = req.body.asunto;
   let mensaje = req.body.mensaje;
-  products.products.push({"nombreC": nombreC, "correo": correo, "nombreO": nombreO,"telefono":telefono , "asunto":asunto, "mensaje": mensaje});
-  connection.end();
-  return res.status(200).json({"Status": "Petición enviada"});
+  let insert = 'INSERT INTO contactenos (nombreC, correo, nombreO, telefono, asunto, mensaje) VALUES(?,?,?,?,?,?)';   
+  let query = mysql.format(insert,[nombreC, correo, nombreO, telefono, asunto, mensaje]);
+  connection.query(query, (err, result) => {
+    if(err) throw err;
+    connection.end();
+    return res.status(200).json({
+      "Status": "Petición enviada", 
+    });
+  });
+  
 });
 
 app.post('/estado', function (req, res) {

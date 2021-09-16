@@ -42,9 +42,9 @@ export class FormularioComponent implements OnInit {
     if (this.form.valid) {
     
       this.client.postRequestSendForm('http://localhost:10101/contactenos', {
-        nombre: this.form.value.nombreC,
+        nombreC: this.form.value.nombreC,
         correo: this.form.value.correo,
-        apellido: this.form.value.nombreO,  
+        nombreO: this.form.value.nombreO,  
         telefono: this.form.value.telefono,
         asunto: this.form.value.asunto,
         mensaje: this.form.value.mensaje
