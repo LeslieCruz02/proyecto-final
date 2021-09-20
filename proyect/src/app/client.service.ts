@@ -8,6 +8,14 @@ import { HttpClient, HttpParams, HttpHeaders} from '@angular/common/http';
 export class ClientService {
   constructor(private http: HttpClient) { }
 
+  getRequestAdop(route:string){
+    let config1:any={
+      responseType:"json"
+    }
+    const header =new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem('token')}`);
+    config1["headers"]=header;
+    return this.http.get(route,config1)
+  }
 
   //metodo que recibe como parametro una url y realiza la peticion con metodo GET
   postRequestAllProducts(route: string, data?: any) {

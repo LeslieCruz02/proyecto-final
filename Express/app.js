@@ -190,6 +190,20 @@ app.post('/adopciones', function (req, res) {
   });
 });
 
+
+app.get('/home', function(req, res){
+  if(!req.header('Authorization')){
+    return res.status(403).send({auth:false, message:'No token provided'});
+  }
+  let sub= req.header('Authorization').split(' ')
+  let token=sub[1];
+  nJwt.verify(token,SIGNING_KEY,function(err, decoded){
+    if(err){
+      return res.status(403).send({auth: false,message:err});
+    }
+  });
+});
+
 app.listen(10101, function () {
   console.log('Example app listening on port 10101!');
 }); 

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ClientService } from '../../client.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-perfil',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilComponent implements OnInit {
   com:boolean=false;
-  constructor() { }
+  constructor(
+    public client: ClientService,
+    private route:  Router
+  ) { }
 
   ngOnInit(): void {
   }
-
+  quieroAdop(){
+    this.client.getRequestAdop('http://localhost:10101/home').subscribe(
+      (response:any)=>{
+        console.log(response);
+        this.route.navigate(['/listaAdopcion']);
+      },
+      (error)=>{
+        console.log(error.status);
+      }
+    )
+  }
 }
+
