@@ -24,6 +24,10 @@ address{
     height: 80%;
     width: 80% ;
 }
+.botones{
+    display:flex;
+}
+
 @media (max-width: 1200px) {
     
 }

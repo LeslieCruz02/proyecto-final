@@ -57,50 +57,56 @@
         </dd>
       </dl>
       <div class="botones">
-        <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" style="margin-right: 0.6rem;"> <strong>Adoptar</strong></button>
-
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-          <div class="offcanvas-header">
-            <h4 id="offcanvasRightLabel">Gracias por elegir a esta mascota!</h4>
-            <hr>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-          <div class="offcanvas-body">
-           <p>
-             Ahora que elegiste a un nuevo integrante de tú familia, solo queda diligenciar el siguiente formulario.
-           </p>
-           <div class="mb-3">
-            <label for="validationServer01" class="form-label">Nombre completo</label>
-            <div class="col">
-              <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+        <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" style="margin-right: 0.6rem;"> 
+          <strong>Adoptar</strong>
+        </button>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" >
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+              <h4 id="offcanvasRightLabel">Gracias por elegir a esta mascota!</h4>
+              <hr>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
-           
+            <div class="offcanvas-body">
+            <p>
+              Ahora que elegiste a un nuevo integrante de tú familia, solo queda diligenciar el siguiente formulario.
+            </p>
+            <div class="mb-3">
+              <label for="validationServer01" class="form-label">Nombre completo</label>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Name" formControlName="nombre" aria-label="First name">
+              </div>
+            
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="email" placeholder="name@example.com">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Tipo de documento</label>
+              <input type="text" class="form-control" formControlName="tipodoc" id="exampleInputPassword1">
+            </div>
+            <!--<select class="form-select" aria-label="Default select example">
+              <option selected>Tipo de documento</option>
+              <option value="1">CC</option>
+              <option value="2">TI</option>
+              <option value="3">CE</option>
+            </select>-->
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Número de documento</label>
+              <input type="number" class="form-control" formControlName="documento" id="exampleInputPassword1">
+            </div>
+            <div class="form-floating">
+              <input formControlName="observaciones" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px">
+              <label for="floatingTextarea2">Cuentanos que te motiva a adoptar...</label>
+            </div>
+            <p>Al enviar el formulario se compromete a aceptar los terminos y condiciones de la adopción.</p>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <!--<p>Pronto el responsable de la mascota se comunicará contigo.</p> --->
+          <!--quiero que salga al sar click-->
+            </div>
           </div>
-          <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-          </div>
-           <select class="form-select" aria-label="Default select example">
-            <option selected>Tipo de documento</option>
-            <option value="1">CC</option>
-            <option value="2">TI</option>
-            <option value="3">CE</option>
-          </select>
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Número de documento</label>
-            <input type="number" class="form-control" id="exampleInputPassword1">
-          </div>
-          <div class="form-floating">
-            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-            <label for="floatingTextarea2">Cuentamos que te motiva a adoptar...</label>
-          </div>
-          <p>Al enviar el formulario se compromete a aceptar los terminos y condiciones de la adopción.</p>
-          <button type="submit" class="btn btn-primary">Submit</button>
-          <p>Pronto el responsable de la mascota se comunicará contigo.</p> 
-        <!--quiero que salga al sar click-->
-          </div>
-        </div>
-       
+        </form>
         <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
           <strong>Donar</strong>
         </button>

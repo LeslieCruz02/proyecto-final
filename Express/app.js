@@ -158,12 +158,12 @@ app.post('/contactenos', function (req, res) {
   });  
 });
 
-app.post('/estado', function (req, res) {
+app.post('/adopciones', function (req, res) {
 
   const connection = mysql.createConnection({
     host     : 'localhost',
     user     : 'root',
-    password : '2003',
+    password : '10918268',
     database : 'ProyectoAdopciones'
   });
   
@@ -172,10 +172,22 @@ app.post('/estado', function (req, res) {
       console.log('Connected to MySQL Server!');
   });
 
-
-  products.products.push({"estado": estado});
-  connection.end();
-  return res.status(200).json({"Status": "el estado actual es",  estado});
+  let nombre = req.body.nombre;
+  let email = req.body.email;
+  let tipodoc = req.body.tipodoc;
+  let documento = req.body.documento;
+  let observaciones = req.body.observaciones;
+ 
+  let insert = 'INSERT INTO adopciones (nombre, email, tipodoc, documento, observaciones) VALUES(?,?,?,?,?)';   
+  let query = mysql.format(insert,[nombre, email, tipodoc, documento, observaciones]);
+  connection.query(query, (err, result) => {
+    if(err) throw err;
+    console.log('adopción enviada: ok');
+    connection.end();
+    return res.status(200).json({
+      "Status": "ok enviada"
+    });
+  });
 });
 
 app.listen(10101, function () {
