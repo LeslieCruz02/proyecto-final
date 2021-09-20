@@ -37,6 +37,16 @@ a{
     margin-bottom: 20px;
     padding: 10px;
 }
+.boton11{
+    background-color: #C8F4F9;
+    border-radius: 5px;
+    margin-top: 50px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    padding: 5px 5px;
+    color: black;
+    font-size: 15px;
+}
 label{
     padding: 5px;
 }

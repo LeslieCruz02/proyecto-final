@@ -37,7 +37,7 @@ h4{
     float: left;
     padding-right: 90px;
     padding-left: 90px;
-    }
+}
 .boton1:hover{
     text-decoration: underline;
     background-color: #C8F4F9;
@@ -62,8 +62,8 @@ h4{
     border-color: rgba(128, 128, 128, 0.699);
     border-radius: 5px;
     float: left;
-    padding-right: 31px;
-    padding-left: 31px;
+    padding-right: 32px;
+    padding-left: 32px;
     text-decoration: none;
 }
 .boton3:hover{
@@ -76,8 +76,8 @@ h4{
     border-color: rgba(128, 128, 128, 0.699);
     border-radius: 5px;
     float: left;
-    padding-right: 42px;
-    padding-left: 42px;
+    padding-right: 43px;
+    padding-left: 43px;
     text-decoration: none;
 }
 .boton4:hover{
@@ -121,13 +121,13 @@ h3{
 }
 .boton11{
     background-color: #C8F4F9;
-    border-style:ridge;
     border-radius: 5px;
+    margin-top: 50px;
     margin-right: 10px;
-    margin-bottom: 20px;
-    padding: 10px;
-    text-decoration: none;
+    margin-bottom: 15px;
+    padding: 5px 5px;
     color: black;
+    font-size: 15px;
 }
 .botones{
     margin: 10px 150px;
