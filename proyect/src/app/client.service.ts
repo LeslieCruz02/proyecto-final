@@ -17,6 +17,24 @@ export class ClientService {
     return this.http.get(route,config1)
   }
 
+  getRequestListaAdop(route:string){
+    let config1:any={
+      responseType:"json"
+    }
+    const header =new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem('token')}`);
+    config1["headers"]=header;
+    return this.http.get(route,config1)
+  }
+
+  getRequestRegMascota(route:string){
+    let config1:any={
+      responseType:"json"
+    }
+    const header =new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem('token')}`);
+    config1["headers"]=header;
+    return this.http.get(route,config1)
+  }
+
   //metodo que recibe como parametro una url y realiza la peticion con metodo GET
   postRequestAllProducts(route: string, data?: any) {
     //configuracion del tipo de respuesta esperado
