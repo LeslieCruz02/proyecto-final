@@ -56,7 +56,20 @@ export class SleaderComponent implements OnInit {
     }else{
       console.log("Form error");
     }
-
   }
+
+  reqAdoptar(){
+    this.client.getReqAdoptar("http://localhost:10101/galeria").subscribe(
+    (response: any) => {
+        console.log(response);
+
+  
+    },
+    (error) => {
+      console.log(error.status);
+      }
+    )
+  }
+
 
 }

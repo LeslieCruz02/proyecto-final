@@ -57,7 +57,7 @@
         </dd>
       </dl>
       <div class="botones">
-        <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" style="margin-right: 0.6rem;"> 
+        <button class="btn btn-dark" type="submit" (click)="reqAdoptar()" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" style="margin-right: 0.6rem;"> 
           <strong>Adoptar</strong>
         </button>
         <form [formGroup]="form" (ngSubmit)="onSubmit()" >

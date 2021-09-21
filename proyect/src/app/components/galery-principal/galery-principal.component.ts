@@ -10,6 +10,6 @@ export class GaleryPrincipalComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-  }
+  } 
 
 }
