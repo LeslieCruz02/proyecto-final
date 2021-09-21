@@ -201,6 +201,9 @@ app.get('/home', function(req, res){
     if(err){
       return res.status(403).send({auth: false,message:err});
     }
+    return res.status(200).json({
+      "Status":"token ok"
+    })
   });
 });
 

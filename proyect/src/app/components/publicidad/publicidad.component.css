@@ -16,12 +16,15 @@
         grid-template-columns: 10rem 10rem 10rem;
         grid-template-areas: "img img img";
         margin-left: 100px;
+        margin-right: 50px;
+
     }
     .publicidad2{
         display: grid;
         grid-template-columns: 10rem 10rem 10rem;
         grid-template-areas: "img img img";
         margin-left: 100px;
+        margin-right: 50px;
     }
     div{
         padding: 0px 10px;

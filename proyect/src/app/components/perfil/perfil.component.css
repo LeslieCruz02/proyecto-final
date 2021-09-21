@@ -199,7 +199,7 @@ p{
         margin-left: 50px;
         width: 70%;
     }
-        .public1{
+    .public1{
         margin: 10px 0px 10px 0px;
     }    
     .botones{
@@ -225,7 +225,5 @@ p{
     .boton2{
         padding-right: 50px;
         padding-left: 50px;
-    }
-
-   
+    }   
 }
