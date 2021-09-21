@@ -17,7 +17,7 @@ app.post('/usuarios', function (req, res) {
   const connection = mysql.createConnection({
     host     : 'localhost',
     user     : 'root',
-    password : '10918268',
+    password : '2003',
     database : 'ProyectoAdopciones'
   });
   
@@ -59,7 +59,7 @@ app.post('/login', function (req, res) {
   const connection = mysql.createConnection({
     host     : 'localhost',
     user     : 'root',
-    password : '10918268',
+    password : '2003',
     database : 'ProyectoAdopciones'
   });
   
@@ -163,7 +163,7 @@ app.post('/adopciones', function (req, res) {
   const connection = mysql.createConnection({
     host     : 'localhost',
     user     : 'root',
-    password : '10918268',
+    password : '2003',
     database : 'ProyectoAdopciones'
   });
   
@@ -226,7 +226,7 @@ app.get('/galery-ppal', function (req, res) {
     const connection = mysql.createConnection({
       host     : 'localhost',
       user     : 'root',
-      password : '10918268',
+      password : '2003',
       database : 'ProyectoAdopciones'
     });
     
@@ -270,7 +270,7 @@ app.get('/perfilP', function (req, res) {
     const connection = mysql.createConnection({
       host     : 'localhost',
       user     : 'root',
-      password : '10918268',
+      password : '2003',
       database : 'ProyectoAdopciones'
     });
     
