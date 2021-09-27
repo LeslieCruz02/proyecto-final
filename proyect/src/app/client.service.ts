@@ -34,7 +34,24 @@ export class ClientService {
     config1["headers"]=header;
     return this.http.get(route,config1)
   }
+  getReqGaleria(route:string){
+    let config:any={
+      responseType:"json"
+    }
+    const header =new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem('token')}`);
+    config["headers"]=header;
+    return this.http.get(route,config)
+  }
 
+  getReqAdoptar(route:string){
+    let config:any={
+      responseType:"json"
+    }
+    const header =new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem('token')}`);
+    config["headers"]=header;
+    return this.http.get(route,config)
+  }
+  
   //metodo que recibe como parametro una url y realiza la peticion con metodo GET
   postRequestAllProducts(route: string, data?: any) {
     //configuracion del tipo de respuesta esperado

@@ -296,6 +296,91 @@ app.get('/perfilP', function (req, res) {
 });
 
 
+app.get('/listaAdopcion', function (req, res) {
+  
+  if (!req.header('Authorization')) {
+    return res.status(403).send({ auth: false, message: 'No token provided' });
+  }
+  let sub = req.header('Authorization').split(' ')
+  let token = sub[1];
+  nJwt.verify(token, SIGNING_KEY, function(err, decoded) {
+    if (err) {
+      return res.status(403).send({ auth: false, message: err });
+    }
+
+    //idUser = decoded.body.id;
+    usuario = decoded.body.usuario;
+
+    const connection = mysql.createConnection({
+      host     : 'localhost',
+      user     : 'root',
+      password : '2003',
+      database : 'ProyectoAdopciones'
+    });
+    
+    connection.connect((err) => {
+      if(err) throw err;
+      //console.log('Connected to MySQL Server!');
+    });
+
+    let select = 'SELECT password FROM usuarios WHERE usuario=?';   
+    let query = mysql.format(select,[usuario]);
+    connection.query(query, (err, result) => {
+      if(err) throw err;
+
+      connection.end();
+
+      return res.status(200).json({
+        "Status": "Token ok",
+        usuario: usuario,
+        password: result[0].password
+      });
+    });
+  });
+});
+app.get('/galeria', function (req, res) {
+  
+  if (!req.header('Authorization')) {
+    return res.status(403).send({ auth: false, message: 'No token provided' });
+  }
+  let sub = req.header('Authorization').split(' ')
+  let token = sub[1];
+  nJwt.verify(token, SIGNING_KEY, function(err, decoded) {
+    if (err) {
+      return res.status(403).send({ auth: false, message: err });
+    }
+
+    //idUser = decoded.body.id;
+    usuario = decoded.body.usuario;
+
+    const connection = mysql.createConnection({
+      host     : 'localhost',
+      user     : 'root',
+      password : '2003',
+      database : 'ProyectoAdopciones'
+    });
+    
+    connection.connect((err) => {
+      if(err) throw err;
+      //console.log('Connected to MySQL Server!');
+    });
+
+    let select = 'SELECT password FROM usuarios WHERE usuario=?';   
+    let query = mysql.format(select,[usuario]);
+    connection.query(query, (err, result) => {
+      if(err) throw err;
+
+      connection.end();
+
+      return res.status(200).json({
+        "Status": "Token ok",
+        usuario: usuario,
+        password: result[0].password
+      });
+    });
+  });
+});
+
 app.listen(10101, function () {
   console.log('Example app listening on port 10101!');
 }); 

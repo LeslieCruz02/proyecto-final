@@ -25,6 +25,7 @@ export class PagadoptionComponent implements OnInit {
       },
       (error) => {
         console.log(error.status);
+        this.route.navigate(['']);
         }
       )
     }

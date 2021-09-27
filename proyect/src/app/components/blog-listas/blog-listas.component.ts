@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ClientService } from '../../client.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-blog-listas',
@@ -6,10 +8,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./blog-listas.component.css']
 })
 export class BlogListasComponent implements OnInit {
+  
+  constructor(
+    public client: ClientService,
+    private route:  Router
+  ) { }
 
-  constructor() { }
 
+ 
   ngOnInit(): void {
+  }
+
+  reqGaleria(){
+    this.client.getReqGaleria("http://localhost:10101/listaAdopcion").subscribe(
+    (response: any) => {
+        console.log(response);
+        this.route.navigate(['/galeria']);
+  
+    },
+    (error) => {
+      console.log(error.status);
+      }
+    )
   }
 
 }

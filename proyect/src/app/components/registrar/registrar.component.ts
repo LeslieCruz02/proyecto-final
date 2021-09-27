@@ -41,7 +41,7 @@ export class RegistrarComponent implements OnInit {
       }).subscribe(
         (response:any)=>{
           console.log(response);
-          this.route.navigate(['/perfilInfo']);
+          this.route.navigate(['']);
         },
         (error: any)=>{
           console.log(error.status);          
