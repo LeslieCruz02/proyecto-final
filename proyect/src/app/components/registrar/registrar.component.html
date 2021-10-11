@@ -3,6 +3,9 @@
     <h1><strong>CREA TU CUENTA</strong></h1>
     <hr>
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div *ngIf="!load" class="spinner-border text-info" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Usuario</label>
             <input type="email" class="form-control usuario" id="exampleInputEmail1" formControlName="usuario" aria-describedby="emailHelp" placeholder="ejemplo321">
@@ -36,4 +39,5 @@
         </div>
         <button type="submit" class="btn btn-primary" > Registrarme </button>
     </form>
+ 
 </body>

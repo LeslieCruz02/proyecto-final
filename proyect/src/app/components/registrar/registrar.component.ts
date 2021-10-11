@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class RegistrarComponent implements OnInit {
   form!: FormGroup;
+  load: boolean = true;
 
   constructor(
     public client: ClientService,
@@ -29,16 +30,19 @@ export class RegistrarComponent implements OnInit {
       password:['', Validators.required]
     });
   }
-  onSubmit(){
+  async onSubmit(){
     if (this.form.valid) {
-       this.client.postRequestSendForm('http://localhost:10101/usuarios',{
+
+      let data = {
         usuario: this.form.value.usuario,
         nombres: this.form.value.nombres,
         apellidos: this.form.value.apellidos,
         correo: this.form.value.correo,
         telefono: this.form.value.telefono,
         password: this.form.value.password
-      }).subscribe(
+      }
+       this.load = false;
+       this.client.postRequestSendForm('http://localhost:10101/usuarios', data).subscribe(
         (response:any)=>{
           console.log(response);
           this.route.navigate(['/perfilInfo']);

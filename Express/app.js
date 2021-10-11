@@ -12,7 +12,14 @@ var app = express()
 .use(bodyParser.urlencoded({extended: true}))
 .use(bodyParser.json());
 
-app.post('/usuarios', function (req, res) {
+function sleepTime(time) {
+  return new Promise((resolve, reject)=>{
+    setTimeout(resolve, time)
+  })
+  
+}
+
+app.post('/usuarios',  async function (req, res) {
 
   const connection = mysql.createConnection({
     host     : 'localhost',
@@ -32,7 +39,9 @@ app.post('/usuarios', function (req, res) {
   let correo = req.body.correo;
   let telefono  = req.body.telefono;
   let password = req.body.password;
+  let sleep = await sleepTime(3000);
   let hashPass = bcrypt.hashSync(password,8);
+  
   let insert = 'INSERT INTO usuarios(usuario, nombres, apellidos, correo, telefono, password) VALUES(?,?,?,?,?,?)';   
   let query = mysql.format(insert,[usuario, nombres, apellidos, correo, telefono, hashPass]);
   connection.query(query, (err, result) => {
@@ -59,7 +68,7 @@ app.post('/login', function (req, res) {
   const connection = mysql.createConnection({
     host     : 'localhost',
     user     : 'root',
-    password : '10918268',
+    password : 'tupassword',
     database : 'ProyectoAdopciones'
   });
   
