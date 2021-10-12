@@ -1,4 +1,10 @@
+let db = require('../db/mysql');
 
+let contactenos = (req, res) => {
+  let connection = db.contactenosconnection()
+  connection.connect((err) => {
+    if(err) throw err;
+  });
   let nombreC = req.body.nombreC;
   let correo = req.body.correo;
   let nombreO = req.body.nombreO;
@@ -14,7 +20,7 @@
       "Status": "Petición enviada", 
     });
   });  
-
+}
 module.exports = {
   contactenos
 }

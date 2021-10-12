@@ -2,7 +2,14 @@ const { check, validationResult } = require('express-validator');
 
 
 validatorParams = [
-        check('saludo').isIn(["hola", "Bienvenidos"])
+          check('nombre').isString(),
+          check('tipoDeMascota').isString(),
+          check('raza').isString(),
+          check('edad').isAlphanumeric(),
+          check('responsable').isString(),
+          check('idestado').isString(),
+          check('descripcion').isString(),
+          check('fotos').isString(),
       ];
 
       

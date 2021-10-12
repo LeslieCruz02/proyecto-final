@@ -2,7 +2,8 @@ const { check, validationResult } = require('express-validator');
 
 
 validatorParams = [
-        check('saludo').isIn(["hola", "Bienvenidos"])
+        check('user').isUsuario(),
+        check('pass').isLength({ min: 8, max: 15})
       ];
 
       
@@ -20,3 +21,6 @@ module.exports = {
   validatorParams,
   validator
 }
+
+
+

@@ -2,7 +2,11 @@ const { check, validationResult } = require('express-validator');
 
 
 validatorParams = [
-        check('saludo').isIn(["hola", "Bienvenidos"])
+        check('nombre').isString(),
+        check('email').isEmail(),
+        check('tipodoc').isString(),
+        check('documento').isString(),
+        check('observaciones').isString()
       ];
 
       

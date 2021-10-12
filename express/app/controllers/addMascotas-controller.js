@@ -1,3 +1,10 @@
+let db = require('../db/mysql');
+
+let addMascotas = (req, res) => {
+  let connection = db.mascotasconnection()
+  connection.connect((err) => {
+    if(err) throw err;
+  });
 
   let nombre = req.body.nombre;
   let tipoDeMascota = req.body.tipoDeMascota;
@@ -18,7 +25,7 @@
       "reg": true,
     });
   });
-
+}
 module.exports = {
   addMascotas
 }

@@ -1,3 +1,10 @@
+let db = require('../db/mysql');
+
+let adopciones = (req, res) => {
+  let connection = db.adopcionesconnection()
+  connection.connect((err) => {
+    if(err) throw err;
+  });
 let nombre = req.body.nombre;
   let email = req.body.email;
   let tipodoc = req.body.tipodoc;
@@ -11,10 +18,10 @@ let nombre = req.body.nombre;
     console.log('adopción enviada: ok');
     connection.end();
     return res.status(200).json({
-      "Status": "ok enviada"
+      "status": 'Successful authentication'
     });
   }); 
-
+}
 module.exports = {
   adopciones
 }

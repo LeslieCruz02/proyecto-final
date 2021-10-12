@@ -21,8 +21,6 @@ const app = express()
   .use(cookieParser())
   .use(bearerToken());
 
-  auth
-app.use('/auth', auth);
 app.use('/addMascotas', addMascotas);
 app.use('/adopciones', adopciones);
 app.use('/contactenos', contactenos);

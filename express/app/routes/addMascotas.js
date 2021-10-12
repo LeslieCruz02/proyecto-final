@@ -1,6 +1,6 @@
 const express = require('express');
 const addMascotasController = require('../controllers/addMascotas-controller');
-const validatorAddMascotas = require('../middleware/addMAscotas-validator');
+const validatorAddMascotas = require('../middleware/addMascotas-validator');
 const router = express.Router();
 
 

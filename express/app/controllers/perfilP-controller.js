@@ -1,4 +1,11 @@
-let select = 'SELECT password FROM usuarios WHERE usuario=?';   
+let db = require('../db/mysql');
+
+let perfilP = (req, res) => {
+  let connection = db.perfilPconnection()
+  connection.connect((err) => {
+    if(err) throw err;
+  });
+ let select = 'SELECT password FROM usuarios WHERE usuario=?';   
     let query = mysql.format(select,[usuario]);
     connection.query(query, (err, result) => {
       if(err) throw err;
@@ -11,7 +18,7 @@ let select = 'SELECT password FROM usuarios WHERE usuario=?';
         password: result[0].password
       });
     });
-
+}
 module.exports = {
   perfilP
 }
