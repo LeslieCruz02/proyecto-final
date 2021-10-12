@@ -4,7 +4,6 @@ const bodyParser = require('body-parser');
 const bearerToken = require('express-bearer-token');
 const cookieParser = require('cookie-parser');
 
-const auth = require('./routes/auth'); 
 const addMascotas = require('./routes/addMascotas'); 
 const adopciones = require('./routes/adopciones'); 
 const contactenos = require('./routes/contactenos'); 

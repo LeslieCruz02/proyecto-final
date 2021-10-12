@@ -1,4 +1,4 @@
-let usuario = req.body.usuario;
+  let usuario = req.body.usuario;
   let nombres = req.body.nombres;
   let apellidos = req.body.apellidos;
   let correo = req.body.correo;

@@ -16,6 +16,14 @@ export class ClientService {
     config1["headers"]=header;
     return this.http.get(route,config1)
   }
+  getRequestPublicidad(route:string){
+    let config1:any={
+      responseType:"json"
+    }
+    const header =new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem('token')}`);
+    config1["headers"]=header;
+    return this.http.get(route,config1)
+  }
 
   getRequestListaAdop(route:string){
     let config1:any={

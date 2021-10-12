@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   com:boolean=false;
+  load:boolean=true;
   constructor(
     public client: ClientService,
     private route:  Router
@@ -16,7 +17,8 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  quieroAdop(){
+  async quieroAdop(){
+    this.load=false;
     this.client.getRequestAdop('http://localhost:10101/home').subscribe(
       (response:any)=>{
         console.log(response);

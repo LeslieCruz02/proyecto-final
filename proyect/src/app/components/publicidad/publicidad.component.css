@@ -7,6 +7,14 @@
     margin-left: 50px;
     margin-top: 40px;
 }
+button{
+    background-color: #C8F4F9;
+    border-radius: 5px;
+    padding: 5px 5px;
+    margin: 10px;
+    color: black;
+    font-size: 15px;
+}
 @media screen and (max-width:768px) {
     .publicidad{
         flex-direction: column;
