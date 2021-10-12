@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class InicioComponent implements OnInit {
   formInicio!:FormGroup;
+  load: boolean = true;
   constructor(
     public client: ClientService,
     private fb: FormBuilder,
@@ -25,11 +26,14 @@ export class InicioComponent implements OnInit {
   }
   onSubmitInicio(){
     if (this.formInicio.valid) {
-      this.client.postRequestSendForm('http://localhost:10101/login',{
-        usuario: this.formInicio.value.usuario,
+      
+        
+        let data = {
+          usuario: this.formInicio.value.usuario,
         password: this.formInicio.value.password
-
-      }).subscribe(
+        }
+        this.load = false;
+        this.client.postRequestSendForm('http://localhost:10101/login',data).subscribe(
         (response:any)=>{
           console.log(response);
           localStorage.setItem('token', response.token)
