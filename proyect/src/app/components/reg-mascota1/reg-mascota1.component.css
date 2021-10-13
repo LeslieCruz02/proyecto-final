@@ -7,6 +7,10 @@ form{
     justify-content: space-evenly;
     margin-bottom: 20px;
 }
+.descripcion {
+    height: 150px;
+    width: 350px;
+}
 .check{
     display:flex;
     justify-content: space-around;

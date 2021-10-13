@@ -87,7 +87,25 @@ function login(data){
      });
     });
   }
-
+  function addPublicidad(data) {
+    return new Promise((resolve, reject)=>{
+      const mysqlConnection = connection();
+      mysqlConnection.connect((err) => {
+        if (err) throw err;
+        console.log("Connected to MySQL Server!");
+      });
+      
+      let insert = 'INSERT INTO publicidades (titulo, descripcion, imagenes) VALUES(?,?,?)';   
+      let query = mysql.format(insert,[data.titulo, data.descripcion, data.imagenes]);
+  
+        mysqlConnection.query(query, (error, result) => {
+        if (error) reject(error);
+        mysqlConnection.end();
+        resolve(result);
+   
+     });
+    });
+  }
 
 
 module.exports = {
@@ -95,7 +113,8 @@ module.exports = {
     usuarios,
     login,
     adopciones,
-    contactenos,
+    addPublicidad,
+    contactenos
   /*  home,
     galeryPpal,
     perfilP,
