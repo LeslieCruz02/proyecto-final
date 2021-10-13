@@ -48,8 +48,37 @@ function login(data){
   }
   
  
+  function adopciones(data) {
+    return new Promise((resolve, reject)=>{
+      const mysqlConnection = connection();
+      mysqlConnection.connect((err) => {
+        if (err) throw err;
+        console.log("Connected to MySQL Server!");
+      });
+      
+      let insert = 'INSERT INTO adopciones (nombre, email, tipodoc, documento, observaciones) VALUES(?,?,?,?,?)';   
+      let query = mysql.format(insert,[data.nombre, data.email, data.tipodoc, data.documento, data.observaciones]);
+ 
+        mysqlConnection.query(query, (error, result) => {
+        if (error) reject(error);
+        mysqlConnection.end();
+        resolve(result);
+   
+     });
+    });
+  }
+
+
+
+
 module.exports = {
     connection,
     usuarios,
-    login
+    login,
+    adopciones,
+  /*  home,
+    galeryPpal,
+    perfilP,
+    listaAdopcion,
+    galeria*/
   }

@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 })
 export class SleaderComponent implements OnInit {
   form!: FormGroup;
-
+  load: boolean = true;
 
 
   constructor(
@@ -25,7 +25,6 @@ export class SleaderComponent implements OnInit {
     }
   ngOnInit(): void {
 
-
     this.form = this.fb.group({
       nombre: ['', Validators.required],
       email: ['', Validators.email],
@@ -35,17 +34,18 @@ export class SleaderComponent implements OnInit {
      
     });
   }
-  onSubmit(){
+ async onSubmit(){
     if (this.form.valid) {
-      this.client.postRequestSendForm('http://localhost:10101/adopciones',{
-     
+      let data = {
         nombre: this.form.value.nombre,
         email: this.form.value.email,
         tipodoc: this.form.value.tipodoc,
         documento: this.form.value.documento,        
         observaciones: this.form.value.observaciones,
-       
-      }).subscribe(
+      }
+      this.load = false;
+      this.client.postRequestSendForm('http://localhost:10101/adopciones',data
+      ).subscribe(
         (response:any)=>{
           console.log(response);
           this.route.navigate(['/galeria']);

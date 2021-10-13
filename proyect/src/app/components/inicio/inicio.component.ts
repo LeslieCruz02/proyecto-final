@@ -24,15 +24,15 @@ export class InicioComponent implements OnInit {
       password:['', Validators.required]
     });
   }
-  onSubmitInicio(){
+  async onSubmitInicio(){
     if (this.formInicio.valid) {
       
         
         let data = {
-          usuario: this.formInicio.value.usuario,
+        usuario: this.formInicio.value.usuario,
         password: this.formInicio.value.password
         }
-        this.load = false;
+        
         this.client.postRequestSendForm('http://localhost:10101/login',data).subscribe(
         (response:any)=>{
           console.log(response);

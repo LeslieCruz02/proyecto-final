@@ -2,8 +2,7 @@ const { check, validationResult } = require('express-validator');
 
 
 validatorParams = [
-        check('saludo').isIn(["hola", "Bienvenidos"])
-      ];
+     ];
 
       
 function validator(req, res, next) {

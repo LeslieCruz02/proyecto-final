@@ -17,7 +17,7 @@ export class PagadoptionComponent implements OnInit {
   ngOnInit(): void {
   }
     verMas(){
-      this.client.getRequestListaAdop("http://localhost:10101/galery-ppal").subscribe(
+      this.client.getRequestListaAdop("http://localhost:10101/galeryPpal").subscribe(
       (response: any) => {
           console.log(response);
           this.route.navigate(['/listaAdopcion']);
