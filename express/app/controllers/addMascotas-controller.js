@@ -13,7 +13,6 @@ let addMascotas = async(req,res)=>{
 
   db.addMascotas(req.body)
   .then((result) => {
-    console.log(res);
     return res.status(200).json({
       status: "register ok",
       auth: true,

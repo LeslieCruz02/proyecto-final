@@ -43,6 +43,13 @@ tipodoc char (20),
 documento int (20),
 observaciones varchar(600)
 );
+create table publicidades(
+idPublicidad INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+usuario char(100),
+titulo varchar(100),
+descripcion varchar (800),
+imagenes varchar(256)
+);
 alter table adopciones add foreign key FK_mascota_adopciones (mascota)
 references mascotas (idmascota),
 add foreign key FK_adoptante_adopciones (adoptante)
