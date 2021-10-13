@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class FormularioComponent implements OnInit {
   
   form!: FormGroup;
- 
+  load: boolean = true;
 
 
   //inyeccion de dependencias
@@ -37,17 +37,20 @@ export class FormularioComponent implements OnInit {
 
     });
   }
-  onSubmit() {
+  async onSubmit() {
 
     if (this.form.valid) {
-    
-      this.client.postRequestSendForm('http://localhost:10101/contactenos', {
+      let data ={
         nombreC: this.form.value.nombreC,
         correo: this.form.value.correo,
         nombreO: this.form.value.nombreO,  
         telefono: this.form.value.telefono,
         asunto: this.form.value.asunto,
         mensaje: this.form.value.mensaje
+      }
+      this.load =false;
+      this.client.postRequestSendForm('http://localhost:10101/contactenos', {
+    
       }).subscribe(
      
         (response: any) => {

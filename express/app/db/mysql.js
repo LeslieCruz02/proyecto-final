@@ -68,6 +68,25 @@ function login(data){
     });
   }
 
+  function contactenos(data) {
+    return new Promise((resolve, reject)=>{
+      const mysqlConnection = connection();
+      mysqlConnection.connect((err) => {
+        if (err) throw err;
+        console.log("Connected to MySQL Server!");
+      });
+      
+      let insert = 'INSERT INTO contactenos (nombreC, correo, nombreO, telefono, asunto, mensaje) VALUES(?,?,?,?,?,?)';   
+      let query = mysql.format(insert,[data.nombreC, data.correo, data.nombreO, data.telefono, data.asunto, data.mensaje]);
+      
+      mysqlConnection.query(query, (error, result) => {
+        if (error) reject(error);
+        mysqlConnection.end();
+        resolve(result);
+   
+     });
+    });
+  }
 
 
 
@@ -76,6 +95,7 @@ module.exports = {
     usuarios,
     login,
     adopciones,
+    contactenos,
   /*  home,
     galeryPpal,
     perfilP,
