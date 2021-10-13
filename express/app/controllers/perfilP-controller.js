@@ -1,24 +1,27 @@
+
+const bcrypt = require('bcryptjs');
+const nJwt = require('njwt');
+const KEY= require('../config/keys');
 let db = require('../db/mysql');
 
 let perfilP = (req, res) => {
-  let connection = db.perfilPconnection()
-  connection.connect((err) => {
-    if(err) throw err;
+  
+  if(!req.header('Authorization')){
+    return res.status(403).send({auth:false, message:'No token provided'});
+  }
+  let sub= req.header('Authorization').split(' ')
+  let token=sub[1];
+  nJwt.verify(token,KEY.SIGNING_KEY,function(err, decoded){
+    if(err){
+      return res.status(403).send({auth: false,message:err});
+    }
+    return res.status(200).json({
+      "Status":"token ok"
+    })
   });
- let select = 'SELECT password FROM usuarios WHERE usuario=?';   
-    let query = mysql.format(select,[usuario]);
-    connection.query(query, (err, result) => {
-      if(err) throw err;
+};
 
-      connection.end();
 
-      return res.status(200).json({
-        "Status": "Token ok",
-        usuario: usuario,
-        password: result[0].password
-      });
-    });
-}
 module.exports = {
   perfilP
 }

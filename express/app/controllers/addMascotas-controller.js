@@ -11,8 +11,9 @@ let addMascotas = async(req,res)=>{
   let descripcion = req.body.descripcion;
   let fotos = req.body.fotos;
 
-  db.usuarios(req.body)
+  db.addMascotas(req.body)
   .then((result) => {
+    console.log(res);
     return res.status(200).json({
       status: "register ok",
       auth: true,

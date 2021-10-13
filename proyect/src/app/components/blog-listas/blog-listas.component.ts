@@ -19,7 +19,7 @@ export class BlogListasComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  reqGaleria(){
+  async reqGaleria(){
     this.client.getReqGaleria("http://localhost:10101/listaAdopcion").subscribe(
     (response: any) => {
         console.log(response);

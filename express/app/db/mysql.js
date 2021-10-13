@@ -47,6 +47,26 @@ function login(data){
     });
   }
   
+ 
+  function adopciones(data) {
+    return new Promise((resolve, reject)=>{
+      const mysqlConnection = connection();
+      mysqlConnection.connect((err) => {
+        if (err) throw err;
+        console.log("Connected to MySQL Server!");
+      });
+      
+      let insert = 'INSERT INTO adopciones (nombre, email, tipodoc, documento, observaciones) VALUES(?,?,?,?,?)';   
+      let query = mysql.format(insert,[data.nombre, data.email, data.tipodoc, data.documento, data.observaciones]);
+ 
+        mysqlConnection.query(query, (error, result) => {
+        if (error) reject(error);
+        mysqlConnection.end();
+        resolve(result);
+   
+     });
+    });
+  }
 
   function addMascotas(data) {
     return new Promise((resolve, reject)=>{
@@ -56,10 +76,10 @@ function login(data){
         console.log("Connected to MySQL Server!");
       });
       
-      let insert = 'INSERT INTO mascotas( nombre, tipoDeMascota, raza, edad, responsable, idestado,descripcion,fotos) VALUES(?,?,?,?,?,?,?,?)';   
-      let query = mysql.format(insert,[data.nombre, data.topoDeMascota, data.raza, data.edad, data.responsable, data.idestado, data.descripcion,data.fotos]);
-      
-      mysqlConnection.query(query, (error, result) => {
+      let insert = 'INSERT INTO mascotas (nombre, tipoDeMascota, raza, edad, responsable, idestado, descripcion, fotos) VALUES(?,?,?,?,?,?,?,?)';   
+      let query = mysql.format(insert,[data.nombre, data.tipoDeMascota, data.raza, data.edad, data.responsable, data.idestado, data.descripcion, data.fotos]);
+ 
+        mysqlConnection.query(query, (error, result) => {
         if (error) reject(error);
         mysqlConnection.end();
         resolve(result);
@@ -67,9 +87,17 @@ function login(data){
      });
     });
   }
+
+
 module.exports = {
     connection,
     usuarios,
     login,
-    addMascotas
+    adopciones,
+    addMascotas,
+  /*  home,
+    galeryPpal,
+    perfilP,
+    listaAdopcion,
+    galeria*/
   }

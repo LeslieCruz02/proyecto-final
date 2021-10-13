@@ -10,12 +10,11 @@
       </div>
       <div class="opciones">
         <button type="submit" class="boton11" (click)="quieroAdop()">Quiero Adoptar</button>      
-        <input type="checkbox" name="Adoptado" id="Adop">
-        <label for="Adop">Adoptado</label>
-        <br>
         <div *ngIf ="!load"class="spinner-border text-info" role="status">
           <span class="sr-only"></span>
         </div>
+        <input type="checkbox" name="Adoptado" id="Adop">
+        <label for="Adop">Adoptado</label>
       </div>
     </div>
     <img src="../assets/public1.jpeg" alt="publicacion1" width="600" class="public1">
