@@ -1,0 +1,25 @@
+div{
+    padding: 15px 0px;
+}
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form{
+    
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+}
+.descripcion {
+    height: 150px;
+    width: 300px;
+}
+
+
+@media screen and (max-width:768px) {
+    form{
+        flex-direction: column;
+        margin: 0px 100px;
+    }
+}

@@ -36,6 +36,8 @@ import { SleaderComponent } from './components/sleader/sleader.component';
 import { GaleryPrincipalComponent } from './components/galery-principal/galery-principal.component';
 import { BlogListasComponent } from './components/blog-listas/blog-listas.component';
 import { PublicidadComponent } from './components/publicidad/publicidad.component';
+import { AddCommercialComponent } from './components/add-commercial/add-commercial.component';
+import { AddPublicidadComponent } from './containers/add-publicidad/add-publicidad.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +72,9 @@ import { PublicidadComponent } from './components/publicidad/publicidad.componen
     SleaderComponent,
     GaleryPrincipalComponent,
     BlogListasComponent,
-    PublicidadComponent
+    PublicidadComponent,
+    AddCommercialComponent,
+    AddPublicidadComponent
   ],
   imports: [
     BrowserModule,
