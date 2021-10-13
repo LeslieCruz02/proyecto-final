@@ -1,7 +1,17 @@
 let db = require('../db/mysql');
 
-let home = (req, res) => {
+
+function sleepTime(time) {
+  return new Promise((resolve, reject)=>{
+    setTimeout(resolve, time)
+  })
+  
+}
+
+let home = async(req, res) => {
   let connection = db.homeconnection()
+  let sleep = await sleepTime(3000);
+
   connection.connect((err) => {
     if(err) throw err;
   });

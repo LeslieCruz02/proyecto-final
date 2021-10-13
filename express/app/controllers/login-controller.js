@@ -36,15 +36,11 @@ let login = async (req, res) => {
       "Status": "authentication ok",
       token: token
     });
-<<<<<<< HEAD
-  });
-=======
   })
   .catch((err) => {
     console.log(err);
   });
 };
->>>>>>> 6223fd85b0ff9c8f3b8453eebe17127fd9cad5b4
 
 module.exports = {
   login

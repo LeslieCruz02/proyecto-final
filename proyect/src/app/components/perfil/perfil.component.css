@@ -9,7 +9,7 @@
     display: flex;
     flex-direction: column;
     width: 30%;
-}
+}   
 #menu1{
     display: none;
 }
@@ -23,7 +23,6 @@ h4{
     border-style: solid;
     border-color: rgba(128, 128, 128, 0.699);
     border-radius: 5px;
-    float: left;
     padding-left: 0px;
     margin-left: 31px;
 }

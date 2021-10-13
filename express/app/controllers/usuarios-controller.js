@@ -1,4 +1,3 @@
-  
 let db = require('../db/mysql');
 
 

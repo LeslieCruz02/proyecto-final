@@ -38,10 +38,9 @@ export class RegMascota1Component implements OnInit {
       fotos: ['', Validators.required]
     });
   }
-  onSubmit(){
+  async onSubmit(){
     if (this.form.valid) {
-      this.client.postRequestSendForm('http://localhost:10101/addMascota',{
-     
+      let data ={
         nombre: this.form.value.nombre,
         tipoDeMascota: this.form.value.tipoDeMascota,
         raza: this.form.value.raza,
@@ -51,7 +50,9 @@ export class RegMascota1Component implements OnInit {
         descripcion: this.form.value.descripcion,
         fotos: this.form.value.fotos,
 
-      }).subscribe(
+      }
+      this.client.postRequestSendForm('http://localhost:10101/addMascotas',data)
+      .subscribe(
         (response:any)=>{
           console.log(response);
           this.route.navigate(['/galeria']);

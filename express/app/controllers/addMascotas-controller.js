@@ -1,11 +1,7 @@
 let db = require('../db/mysql');
 
-let addMascotas = (req, res) => {
-  let connection = db.mascotasconnection()
-  connection.connect((err) => {
-    if(err) throw err;
-  });
 
+let addMascotas = async(req,res)=>{
   let nombre = req.body.nombre;
   let tipoDeMascota = req.body.tipoDeMascota;
   let raza = req.body.raza;
@@ -14,18 +10,21 @@ let addMascotas = (req, res) => {
   let idestado = req.body.idestado;
   let descripcion = req.body.descripcion;
   let fotos = req.body.fotos;
-  let insert = 'INSERT INTO mascotas (nombre, tipoDeMascota, raza, edad, responsable, idestado, descripcion, fotos) VALUES(?,?,?,?,?,?,?,?)';   
-  let query = mysql.format(insert,[nombre, tipoDeMascota, raza, edad, responsable, idestado, descripcion, fotos]);
-  connection.query(query, (err, result) => {
-    if(err) throw err;
-    console.log('Insert Mascota: ok');
-    connection.end();
+
+  db.usuarios(req.body)
+  .then((result) => {
     return res.status(200).json({
-      "Status": "ok registrado", 
-      "reg": true,
+      status: "register ok",
+      auth: true,
+      documents: result,
     });
+  })
+  .catch((err) => {
+    console.log(err);
   });
 }
+
+ 
 module.exports = {
   addMascotas
 }
