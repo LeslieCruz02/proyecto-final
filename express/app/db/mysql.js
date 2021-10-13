@@ -69,6 +69,7 @@ function login(data){
   }
 
   function addMascotas(data) {
+   
     return new Promise((resolve, reject)=>{
       const mysqlConnection = connection();
       mysqlConnection.connect((err) => {
@@ -78,7 +79,7 @@ function login(data){
       
       let insert = 'INSERT INTO mascotas (nombre, tipoDeMascota, raza, edad, responsable, idestado, descripcion, fotos) VALUES(?,?,?,?,?,?,?,?)';   
       let query = mysql.format(insert,[data.nombre, data.tipoDeMascota, data.raza, data.edad, data.responsable, data.idestado, data.descripcion, data.fotos]);
- 
+     
         mysqlConnection.query(query, (error, result) => {
         if (error) reject(error);
         mysqlConnection.end();
@@ -88,13 +89,32 @@ function login(data){
     });
   }
 
-
+   function addPublicidad(data) {
+   return new Promise((resolve, reject)=>{
+     const mysqlConnection = connection();
+       mysqlConnection.connect((err) => {
+         if (err) throw err;
+         console.log("Connected to MySQL Server!");
+       });
+      
+       let insert = 'INSERT INTO publicidades (titulo, descripcion, imagenes) VALUES(?,?,?)';   
+       let query = mysql.format(insert,[data.titulo, data.descripcion, data.imagenes]);
+  
+         mysqlConnection.query(query, (error, result) => {
+         if (error) reject(error);
+         mysqlConnection.end();
+         resolve(result);
+   
+     });
+   });
+  }
 module.exports = {
     connection,
     usuarios,
     login,
     adopciones,
     addMascotas,
+    addPublicidad
   /*  home,
     galeryPpal,
     perfilP,

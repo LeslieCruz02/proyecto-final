@@ -20,7 +20,7 @@ export class PublicidadComponent implements OnInit {
     this.client.getRequestPublicidad('http://localhost:10101/home').subscribe(
       (response:any)=>{
         console.log(response);
-        this.route.navigate(['/###']);
+        this.route.navigate(['/addPublicidad']);
       },
       (error)=>{
         console.log(error.status);

@@ -13,6 +13,9 @@ const home = require('./routes/home');
 const login = require('./routes/login'); 
 const perfilP = require('./routes/perfilP'); 
 const usuarios = require('./routes/usuarios'); 
+const listaAdopcion = require('./routes/listaAdopcion');
+const addPublicidad = require('./routes/addPublicidad');
+const publicidad = require('./routes/publicidad');
 
 const app = express()
   .use(cors({credentials: true, origin: 'http://localhost:4200'}))
@@ -27,9 +30,12 @@ app.use('/contactenos', contactenos);
 app.use('/galeria', galeria);
 app.use('/galeryPpal', galeryPpal);
 app.use('/home', home);
+app.use('/listaAdopcion', listaAdopcion);
 app.use('/login', login);
 app.use('/perfilP', perfilP);
 app.use('/usuarios', usuarios);
+app.use('/addPublicidad', addPublicidad);
+app.use('/publicidad', publicidad);
 
 
 module.exports = app;
