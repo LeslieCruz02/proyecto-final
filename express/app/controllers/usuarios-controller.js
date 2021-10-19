@@ -1,4 +1,5 @@
 let db = require('../db/mysql');
+const correo1 = require('../routes/correo')
 
 
 function sleepTime(time) {
@@ -16,6 +17,7 @@ let usuarios = async(req, res) => {
   let telefono  = req.body.telefono;
   let password = req.body.password;
   let sleep = await sleepTime(3000);
+  correo1.sendMail()
 
   db.usuarios(req.body)
   .then((result) => {
