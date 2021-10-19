@@ -24,7 +24,7 @@ let usuarios = async(req, res) => {
     return res.status(200).json({
       status: "register ok",
       auth: true,
-      documents: result,
+      documents: result, 
     });
   })
   .catch((err) => {

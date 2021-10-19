@@ -39,6 +39,7 @@ import { PublicidadComponent } from './components/publicidad/publicidad.componen
 import { AddCommercialComponent } from './components/add-commercial/add-commercial.component';
 import { AddPublicidadComponent } from './containers/add-publicidad/add-publicidad.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
