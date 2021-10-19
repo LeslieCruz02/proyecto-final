@@ -1,14 +1,14 @@
 const nodemailer = require('nodemailer');
 
 const createTrans = () =>{
-    console.log("xxxxxxx");
     const transport = nodemailer.createTransport({
-        host: "smtp.gmail.com",
-        port: 456,
-        secure: true,
+        service: 'gmail',
+        hostname: 'smtp.gmail.com',
+        port:456,
+        secure:true,
         auth:{
-            user: "info.petsworldaxm@gmail.com",
-            pass: "tupassword.1"
+            user: 'info.petsworldaxm@gmail.com',
+            pass:'lhuigugbmypswpbp'
         }
     });
     return transport;
