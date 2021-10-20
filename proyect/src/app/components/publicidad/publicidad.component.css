@@ -1,15 +1,18 @@
 body {
-    width:90% ;
+    height: 100%;
+    width:100% ;
     margin: 0;
     font-family: 'Muli', sans-serif;
-    background: #0a0a0a;
+    background: #fbfafa;
   }
   
   .carousel {
     overflow: scroll;
-    padding-left: 30px;
+    padding-left: 1,87rem;
+    height:80% ;
     width: 100%;
     position: relative;
+    scrollbar-3dlight-color: black;
   }
   
   .carousel__container {
@@ -19,7 +22,7 @@ body {
     transition: 450ms transform, 450ms -webkit-transform;
     font-size: 0;
     white-space: nowrap;
-    margin: 70px 0px;
+    margin: 6rem 0rem;
     padding-bottom: 10px;
   }
   
@@ -72,7 +75,7 @@ body {
   
   .carousel-item__details {
     align-items: flex-start;
-    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(80, 80, 80, 0) 100%);
     bottom: 0;
     display: flex;
     font-size: 10px;
@@ -109,7 +112,19 @@ body {
     padding: 3px;
     display: block;
   }
-  
+  .carousel::-webkit-scrollbar{
+    background-color: rgba(0, 0, 119, 0.116);
+    border-width: 2px;
+    border-radius:15px;
+  }
+  .boton11{
+    margin: 10px 0px 10px 190px;
+    padding: 5px 5px;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    background-color: #C8F4F9;
+    border-radius:0.3rem ;
+  }
   
   
   
