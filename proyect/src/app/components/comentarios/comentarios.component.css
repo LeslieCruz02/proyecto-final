@@ -11,4 +11,12 @@ a{
     padding: 10px;
     padding-left: 20px;
     text-align: center;
+    margin-left: 100px;
+
+}
+.boton{
+    background-color: #C8F4F9;
+    color: black;
+    font-size: 15px; 
+    border-radius: 5px;
 }
