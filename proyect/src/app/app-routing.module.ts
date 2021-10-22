@@ -12,6 +12,8 @@ import { RegistroMascotaComponent } from './containers/registro-mascota/registro
 import { GaleriaComponent } from './containers/galeria/galeria.component';
 import { ListadoAdopcionesComponent } from './containers/listado-adopciones/listado-adopciones.component';
 import { AddPublicidadComponent } from './containers/add-publicidad/add-publicidad.component';
+import { VerificationMailComponent } from './containers/verification-mail/verification-mail.component';
+
 
 
 
@@ -26,7 +28,8 @@ const routes: Routes = [
   {path: 'rmascota', component: RegistroMascotaComponent},
   {path:'galeria', component:GaleriaComponent},
   {path:'listaAdopcion', component: ListadoAdopcionesComponent},
-  {path:'addPublicidad', component: AddPublicidadComponent}
+  {path:'addPublicidad', component: AddPublicidadComponent},
+  {path:'verificationMail', component: VerificationMailComponent}
 ];
 
 @NgModule({

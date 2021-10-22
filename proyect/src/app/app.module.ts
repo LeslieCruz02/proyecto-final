@@ -38,6 +38,7 @@ import { BlogListasComponent } from './components/blog-listas/blog-listas.compon
 import { PublicidadComponent } from './components/publicidad/publicidad.component';
 import { AddCommercialComponent } from './components/add-commercial/add-commercial.component';
 import { AddPublicidadComponent } from './containers/add-publicidad/add-publicidad.component';
+import { VerificationMailComponent } from './containers/verification-mail/verification-mail.component';
 
 
 @NgModule({
@@ -75,7 +76,8 @@ import { AddPublicidadComponent } from './containers/add-publicidad/add-publicid
     BlogListasComponent,
     PublicidadComponent,
     AddCommercialComponent,
-    AddPublicidadComponent
+    AddPublicidadComponent,
+    VerificationMailComponent
   ],
   imports: [
     BrowserModule,
