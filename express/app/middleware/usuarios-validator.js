@@ -8,6 +8,7 @@ validatorParams = [
         check('correo').isEmail(),
         check('telefono').isInt(),
         check('password').isLength({ min: 8, max: 15}),
+        //check('estadoCuenta').default u
       ];
 
       

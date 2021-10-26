@@ -1,7 +1,7 @@
 const nodeMailer = require('nodemailer');
 
 const sendEmail = (req, res) =>{
-    console.log("hhhhhhhhhhhhhhhh");
+    
     let transport = nodeMailer.createTransport({
         service: 'gmail',
         hostname: 'smtp.gmail.com',
@@ -13,13 +13,28 @@ const sendEmail = (req, res) =>{
         }
     });
 
-    let mensaje = "Profesor muy buenas tardes, ya logramos enviar mensajes muchas gracias!";
-
+    
     const opciones ={
         from: 'info.petsworldaxm@gmail.com',
-        to: "angaritagerman@hotmail.com",
-        subjet: "Registro Exitoso",
-        text: mensaje
+        to: "abglesliecruz@gmail.com",
+        subject: "Petición enviada",
+        html: `
+            <table border="0" cellpadding="0" cellspacing="0" width="600px" background-color="#3CACAE" bgcolor="#3CACAE" text-aling:"center">
+            <tr height="250px">  
+                <td bgcolor="" width="600px">
+                <a href='https://postimg.cc/BLQXq4Rz' target='_blank'><img src='https://i.postimg.cc/BLQXq4Rz/Logo.png' border='0' alt='Logo' style="float:left"/></a>
+                    <h1 style="color: #fff; text-align:center">Hemos recibido tu petición</h1>
+                    <p  style="color: #fff; text-align:center">
+                        <span style="color: #000000">Leslie</span> 
+                        pronto nos contactaremos contigo!
+                    </p>
+                </td>
+            </tr>
+            </table>
+        `,
+        attachments:[
+            {filename:'PETSWORLD.png', path: './PETSWORLD.png'}
+        ]
     };
 
     transport.sendMail(opciones,function(error,result){
@@ -35,35 +50,3 @@ const sendEmail = (req, res) =>{
 module.exports ={
     sendEmail
 }
-
-/*.https.onCall(async (data) => {
-
-    const transporter = nodemailer.createTransport({
-      host: 'mail.sfwinterbach.com',
-      port: 465,
-      secure: true,
-      auth: {
-        user: functions.config().mailer.email,
-        pass: functions.config().mailer.password
-      }
-    });
-
-    const fromName = 'Kontakt';
-    const fromEmail = 'kontaktformular@sfwinterbach.com';
-    const to = data.to;
-    const text = data.text;
-
-    const mailOptions = {
-      from: fromName + ' <' + fromEmail + '>',
-      to: to,
-      subject: 'Anfrage auf ' + transporter.host,
-      text: text,
-      html: text,
-    };
-
-    const info = await transporter.sendMail(mailOptions);
-    console.log('Message sent: %s', info.messageId);
-    console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
-    console.log(info);
-    return info;
-  });*/

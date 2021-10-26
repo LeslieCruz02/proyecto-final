@@ -39,6 +39,7 @@ import { PublicidadComponent } from './components/publicidad/publicidad.componen
 import { AddCommercialComponent } from './components/add-commercial/add-commercial.component';
 import { AddPublicidadComponent } from './containers/add-publicidad/add-publicidad.component';
 import { VerificationMailComponent } from './containers/verification-mail/verification-mail.component';
+import { VerificationEmailComponent } from './components/verification-email/verification-email.component';
 
 
 @NgModule({
@@ -77,7 +78,8 @@ import { VerificationMailComponent } from './containers/verification-mail/verifi
     PublicidadComponent,
     AddCommercialComponent,
     AddPublicidadComponent,
-    VerificationMailComponent
+    VerificationMailComponent,
+    VerificationEmailComponent
   ],
   imports: [
     BrowserModule,
