@@ -1,18 +1,20 @@
 body {
-    height: 100%;
+    height:56.25rem;
     width:100% ;
-    margin: 0;
+    margin: 5px;
     font-family: 'Muli', sans-serif;
-    background: #fbfafa;
+    background: #ffffff;
   }
-  
+
   .carousel {
     overflow: scroll;
     padding-left: 1,87rem;
-    height:80% ;
-    width: 100%;
+    height:90% ;
+    width: 95%;
     position: relative;
     scrollbar-3dlight-color: black;
+    scrollbar-color: rgba(0, 0, 0, 0.068) rgba(0, 0, 0, 0);
+    scrollbar-width: thin;
   }
   
   .carousel__container {
@@ -112,13 +114,34 @@ body {
     padding: 3px;
     display: block;
   }
-  .carousel::-webkit-scrollbar{
-    background-color: rgba(0, 0, 119, 0.116);
-    border-width: 2px;
-    border-radius:15px;
+  .carousel::-webkit-scrollbar {
+    width: 8px;     /* Tamaño del scroll en vertical */
+    height: 8px;    /* Tamaño del scroll en horizontal */
+    display: none;  /* Ocultar scroll */
   }
+  .carousel::-webkit-scrollbar:vertical {
+    width:6px;
+  }
+  .carousel::-webkit-scrollbar-button:increment,.contenedor::-webkit-scrollbar-button {
+    display: none;
+  } 
+  
+  .carousel::-webkit-scrollbar:horizontal {
+    height:5px;
+  }
+  .carousel::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+  }
+  .carousel::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+.carousel::-webkit-scrollbar-thumb:hover {
+  background: #b3b3b3;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
   .boton11{
-    margin: 10px 0px 10px 190px;
+    margin: 15px 0px 10px 190px;
     padding: 5px 5px;
     align-items: center;
     color: rgb(0, 0, 0);
