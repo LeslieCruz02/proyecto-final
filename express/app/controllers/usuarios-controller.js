@@ -1,5 +1,5 @@
 let db = require('../db/mysql');
-const correo1 = require('../routes/correo')
+const correo1 = require('./correRegistro-controller')
 
 
 function sleepTime(time) {
