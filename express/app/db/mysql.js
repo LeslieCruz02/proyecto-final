@@ -125,6 +125,29 @@ function login(data){
      });
     });
   }
+
+  function activacion(correo) {
+    return new Promise((resolve, reject)=>{
+      const mysqlConnection = connection();
+      mysqlConnection.connect((err) => {
+        if (err) throw err;
+        console.log("Connected to MySQL Server!");
+      });
+      
+      let UPDATE = ` UPDATE usuarios WHERE correo = ${correo} SET (estadoCuenta) VALUES(?) WHERE (estadoCuenta)="inactivo"`;   
+      let query = mysql.format(UPDATE,["activo"]);
+      
+      mysqlConnection.query(query, (error, result) => {
+        if (error) reject(error);
+        mysqlConnection.end();
+        resolve(result);
+   
+     });
+    });
+
+
+  }
+
 module.exports = {
     connection,
     usuarios,
@@ -132,7 +155,8 @@ module.exports = {
     adopciones,
     addMascotas,
     addPublicidad,
-    contactenos
+    contactenos,
+    activacion 
   /*  home,
     galeryPpal,
     perfilP,

@@ -6,8 +6,8 @@ const createTrans = () =>{
         port:456,
         secure:true,
         auth:{
-            user: 'info.petsworldaxm@gmail.com',
-            pass:'lhuigugbmypswpbp'
+            user: 'petsworld2508@gmail.com',
+            pass:'esjkkdldizfrkwbu'
         }
     });
     return transport;
