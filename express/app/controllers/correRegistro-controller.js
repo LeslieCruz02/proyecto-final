@@ -7,7 +7,7 @@ const createTrans = () =>{
         secure:true,
         auth:{
             user: 'info.petsworldaxm@gmail.com',
-            pass:'lhuigugbmypswpbp'
+            pass:'esjkkdldizfrkwbu'
         }
     });
     return transport;
@@ -17,7 +17,7 @@ const sendMail= async (body) =>{
     console.log(body.nombres, body.correo);
     const transporter = createTrans()
     const info = await transporter.sendMail({
-        from: "info.petsworldaxm@gmail.com",
+        from: "petsworld2508@gmail.com",
         to: body.correo, //Se pueden pasar la lista de correos por medio de un array
         subject: "Pets World te da la bienvenida",
         html: `
@@ -48,7 +48,7 @@ const sendMail= async (body) =>{
         </table>
         `,
         // attachments:[
-        //     {filename:'PETSWORLD.png', path: '../../../proyect/src/assets/PETSWORLD.png'}
+        //     {filename:''attachment.txt', 'content': data'}
         // ]
 
         
