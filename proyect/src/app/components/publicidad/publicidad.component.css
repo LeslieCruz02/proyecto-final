@@ -1,153 +1,156 @@
 body {
-    height:56.25rem;
-    width:100% ;
-    margin: 5px;
-    font-family: 'Muli', sans-serif;
-    background: #ffffff;
-  }
+  height:56.25rem;
+  width:100% ;
+  margin: 5px;
+  font-family: 'Muli', sans-serif;
+  background: #ffffff;
+}
 
-  .carousel {
-    overflow: scroll;
-    padding-left: 1,87rem;
-    height:90% ;
-    width: 95%;
-    position: relative;
-    scrollbar-3dlight-color: black;
-    scrollbar-color: rgba(0, 0, 0, 0.068) rgba(0, 0, 0, 0);
-    scrollbar-width: thin;
-  }
-  
-  .carousel__container {
-    align-items: center;
-    transition: 450ms -webkit-transform;
-    transition: 450ms transform;
-    transition: 450ms transform, 450ms -webkit-transform;
-    font-size: 0;
-    white-space: nowrap;
-    margin: 6rem 0rem;
-    padding-bottom: 10px;
-  }
-  
-  .carousel__container:hover .carousel-item {
-    opacity: 0.3;
-  }
-  
-  .carousel__container:hover .carousel-item:hover {
-    -webkit-transform: scale(2);
-            transform: scale(1.5);
-    opacity: 1;
-    
-  }
-  
-  .carousel-item {
-    background-color: white;
-    overflow: hidden;
-    position: relative;
-    display: block;
-    align-items: center;
-    width: 300px;
-    height: 300px;
-    margin-top:15px ;
-    padding: 10px;
-    border-radius: 25px;
-    margin-right: 10px;
-    font-size: 20px;
-    cursor: pointer;
-    transition: 450ms all;
-    -webkit-transform-origin: center left;
-            transform-origin: center left;
-            align-items: center;
-  }
-  
-  .carousel-item:hover ~ .carousel-item {
-    -webkit-transform: translate3d(80px, 0, 0);
-            transform: translate3d(50px, 25, 0);
-            align-items: center;
-            margin-top: 100px;
-  }
-  
-  .carousel-item__img {
-    margin:1px ;
-    width:100%;
-    height: 65%;
-    border-radius: 10px;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
-  
-  .carousel-item__details {
-    align-items: flex-start;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(80, 80, 80, 0) 100%);
-    bottom: 0;
-    display: flex;
-    font-size: 10px;
-    flex-direction: column;
-    justify-content: flex-end;
-    left: 0;
-    opacity: 0;
-    transition: 450ms opacity;
-    padding: 10px;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  
-  .carousel-item__details--img {
-    width: 20px;
-  }
-  
-  .carousel-item:hover .carousel-item__details {
-    opacity: 1;
-  }
-  
-  .carousel-item__details--title {
-    font-size: 20px;
-    color: white;
-    margin: 5px 0px 0px 10px;
-  }
-  
-  .carousel-item__details--subtitle {
-    color: white;
-    font-size: 12px;
-    width: 75%;
-    margin: 3px 3px;
-    padding: 3px;
-    display: block;
-  }
-  .carousel::-webkit-scrollbar {
-    width: 8px;     /* Tamaño del scroll en vertical */
-    height: 8px;    /* Tamaño del scroll en horizontal */
-    display: none;  /* Ocultar scroll */
-  }
-  .carousel::-webkit-scrollbar:vertical {
-    width:6px;
-  }
-  .carousel::-webkit-scrollbar-button:increment,.contenedor::-webkit-scrollbar-button {
-    display: none;
-  } 
-  
-  .carousel::-webkit-scrollbar:horizontal {
-    height:5px;
-  }
-  .carousel::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 4px;
-  }
-  .carousel::-webkit-scrollbar-track {
-    border-radius: 10px;  
+.carousel {
+  overflow: scroll;
+  padding-left: 1,87rem;
+  height:90% ;
+  width: 95%;
+  position: relative;
+  scrollbar-3dlight-color: black;
+  scrollbar-color: rgba(0, 0, 0, 0.068) rgba(0, 0, 0, 0);
+  scrollbar-width: thin;
 }
+
+.carousel__container {
+  align-items: center;
+  transition: 450ms -webkit-transform;
+  transition: 450ms transform;
+  transition: 450ms transform, 450ms -webkit-transform;
+  font-size: 0;
+  white-space: nowrap;
+  margin: 6rem 0rem;
+  padding-bottom: 10px;
+}
+
+.carousel__container:hover .carousel-item {
+  opacity: 0.3;
+}
+
+.carousel__container:hover .carousel-item:hover {
+  -webkit-transform: scale(2);
+          transform: scale(1.5);
+  opacity: 1;
+  
+}
+
+.carousel-item {
+  background-color: white;
+  overflow: hidden;
+  position: relative;
+  display: block;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  margin-top:15px ;
+  padding: 10px;
+  border-radius: 25px;
+  margin-right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 450ms all;
+  -webkit-transform-origin: center left;
+          transform-origin: center left;
+          align-items: center;
+}
+
+.carousel-item:hover ~ .carousel-item {
+  -webkit-transform: translate3d(80px, 0, 0);
+          transform: translate3d(50px, 25, 0);
+          align-items: center;
+          margin-top: 100px;
+}
+
+.carousel-item__img {
+  margin:1px ;
+  width:100%;
+  height: 65%;
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.carousel-item__details {
+  align-items: flex-start;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(80, 80, 80, 0) 100%);
+  bottom: 0;
+  display: flex;
+  font-size: 10px;
+  flex-direction: column;
+  justify-content: flex-end;
+  left: 0;
+  opacity: 0;
+  transition: 450ms opacity;
+  padding: 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.carousel-item__details--img {
+  width: 20px;
+}
+
+.carousel-item:hover .carousel-item__details {
+  opacity: 1;
+}
+
+.carousel-item__details--title {
+  font-size: 20px;
+  color: white;
+  margin: 5px 0px 0px 10px;
+}
+
+.carousel-item__details--subtitle {
+  color: white;
+  font-size: 12px;
+  width: 75%;
+  margin: 3px 3px;
+  padding: 3px;
+  display: block;
+}
+
+.carousel::-webkit-scrollbar {
+  width: 8px;     /* Tamaño del scroll en vertical */
+  height: 8px;    /* Tamaño del scroll en horizontal */
+  display: none;  /* Ocultar scroll */
+}
+
+.carousel::-webkit-scrollbar:vertical {
+  width:6px;
+}
+
+.carousel::-webkit-scrollbar-button:increment,.contenedor::-webkit-scrollbar-button {
+  display: none;
+} 
+
+.carousel::-webkit-scrollbar:horizontal {
+  height:5px;
+}
+.carousel::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.carousel::-webkit-scrollbar-track {
+  border-radius: 10px;  
+}
+
 .carousel::-webkit-scrollbar-thumb:hover {
-  background: #b3b3b3;
-  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+background: #b3b3b3;
+box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
 }
-  .boton11{
-    margin: 15px 0px 10px 190px;
-    padding: 5px 5px;
-    align-items: center;
-    color: rgb(0, 0, 0);
-    background-color: #C8F4F9;
-    border-radius:0.3rem ;
-  }
-  
-  
-  
+
+.boton11{
+  margin: 15px 0px 10px 190px;
+  padding: 5px 5px;
+  align-items: center;
+  color: rgb(0, 0, 0);
+  background-color: #C8F4F9;
+  border-radius:0.3rem ;
+}
