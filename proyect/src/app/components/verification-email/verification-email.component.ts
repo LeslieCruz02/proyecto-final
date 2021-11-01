@@ -11,6 +11,10 @@ import { Router } from '@angular/router';
 })
 export class VerificationEmailComponent implements OnInit {
 
+  form!: FormGroup;
+  load: boolean = true;
+  load2: boolean = true;
+
   constructor(
     public client: ClientService,
     private fb: FormBuilder,
@@ -18,18 +22,29 @@ export class VerificationEmailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.form = this.fb.group({
+      correo:['', Validators.email]
+    });
   }
 
-  reqVerificar(){
-    this.client.getReqAutenticar("http://localhost:10101/verificacion").subscribe(
-    (response: any) => {
-        console.log(response);
+  async onSubmit(){
+    if (this.form.valid) {
 
-  
-    },
-    (error) => {
-      console.log(error.status);
+      let data = {
+        correo: this.form.value.correo
       }
-    )
+      
+       this.client.postRequestSendForm('http://localhost:10101/verificacion', data).subscribe(
+        (response:any)=>{
+          console.log(response);
+          this.load = false;
+        },
+        (error: any)=>{
+          console.log(error.status);   
+          this.load2 = false;       
+        })
+    }else{
+      console.log("Form error");
+    }
   }
 }

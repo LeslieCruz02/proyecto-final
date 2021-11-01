@@ -1,8 +1,36 @@
-<div class="container">
+<header>
+    <nav>
+        <ul class="lista">   
+            <a href="http://localhost:4200/galery-ppal"><img src="../../../assets/Logo.png"  alt="logo" width="200" height="100"></a>          
+            <li >
+              <a class="nav-link" href="http://localhost:4200">Iniciar sesión</a>
+              <a class="nav-link" href="http://localhost:4200/contactenos">Contactenos</a>  
+            </li>
+          </ul> 
+    </nav>
+</header>
+<section>
+
+    <form class="row g-3" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="col-auto">
+          <p>Ingresar correo</p> 
+        </div>
+        <div class="col-auto">
+          <label for="inputPassword2" class="visually-hidden">Correo Electrónico</label>
+          <input type="text" class="form-control" id="inputPassword2" formControlName="correo" placeholder="Email">
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-primary mb-3">Confirmar Correo</button>
+        </div>
+      </form>
+</section>
+
+
+<div  *ngIf="!load" class="container">
     <p class="alert_success">&#x2611; Cuenta confirmada correctamente</p>
 </div>
 
 
-<div class="container">
+<div  *ngIf="!load2" class="container">
     <p class="alert_error">&#x2612; Error al confirmar su cuenta</p>
 </div>

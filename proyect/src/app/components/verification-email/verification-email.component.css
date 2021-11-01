@@ -1,19 +1,35 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
 
-*::before, *::after {
-    box-sizing: border-box;
+p{
+    padding-top: 5px;
+    justify-content: center;
 }
+nav ul li {
+    display: flex;
+    flex-direction:row;
+    margin-top: 0.6rem;
+  }
+nav ul li a{
+    background-color:white; 
+    color: rgb(52, 52, 233);
+    font-size: 18px; 
+    margin-top: 0px;
+    border:none;
+  }
+  nav ul li a:hover{
+    background-color: #C8F4F9 ;
+  }
 
+
+form{
+    justify-content: center;
+    padding-top: 40px;
+ }
 
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 50vh;
     width: 100vw;
 }
 
