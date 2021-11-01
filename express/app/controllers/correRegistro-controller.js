@@ -40,7 +40,7 @@ const sendMail= async (body) =>{
             <tr bgcolor="#fff">
                 <td style="text-align:center">
                     <p>Para confirmar tu cuenta, ingresa al siguiente enlace:</p>
-                    <a href="http://localhost:10101/activacion?=${body.correo}"
+                    <a href="http://localhost:4200/verificationMail?email=${body.correo}"
                         target="_blank"
                     >Confirmar Cuenta</a>
                 </td>

@@ -37,10 +37,11 @@ function login(data){
         console.log("Connected to MySQL Server!");
       });
   
-      let select = 'SELECT usuario, password FROM usuarios WHERE usuario=?';
-      let query = mysql.format(select,[data.usuario]);
+      let select = 'SELECT usuario, password FROM usuarios WHERE usuario=? AND estadoCuenta = ?';
+      let query = mysql.format(select,[data.usuario, "activo"]);
       mysqlConnection.query(query, (error, result) => {
       if(error) reject (error);
+      console.log(error);
       mysqlConnection.end();
       resolve(result);
     });
@@ -126,28 +127,48 @@ function login(data){
     });
   }
 
-  function activacion(correo) {
+  function verificar(correo) {
     return new Promise((resolve, reject)=>{
       const mysqlConnection = connection();
       mysqlConnection.connect((err) => {
         if (err) throw err;
         console.log("Connected to MySQL Server!");
       });
-      
-      let UPDATE = ` UPDATE usuarios WHERE correo = ${correo} SET (estadoCuenta) VALUES(?) WHERE (estadoCuenta)="inactivo"`;   
-      let query = mysql.format(UPDATE,["activo"]);
-      
+      let select = `SELECT idusuario FROM usuarios WHERE correo = ?`;
+      let query = mysql.format(select,[correo.correo]);
+      console.log(query);
       mysqlConnection.query(query, (error, result) => {
         if (error) reject(error);
         mysqlConnection.end();
+       
+        resolve(result);
+        let id = result[0].idusuario;
+        activar(id);
+     });
+    });
+  }
+function activar(data){
+  {
+    return new Promise((resolve, reject)=>{
+      const mysqlConnection = connection();
+      mysqlConnection.connect((err) => {
+        if (err) throw err;
+        console.log("Connected to MySQL Server!");
+      });
+      let update = `UPDATE usuarios SET estadoCuenta = "activo" WHERE idusuario = ?`;
+      let query = mysql.format(update,[data]);
+      console.log(query);
+      mysqlConnection.query(query, (error, result) => {
+        if (error) reject(error);
+        mysqlConnection.end();
+        console.log(result);
         resolve(result);
    
      });
     });
-
-
   }
 
+}
 module.exports = {
     connection,
     usuarios,
@@ -156,7 +177,8 @@ module.exports = {
     addMascotas,
     addPublicidad,
     contactenos,
-    activacion 
+    verificar, 
+    activar
   /*  home,
     galeryPpal,
     perfilP,

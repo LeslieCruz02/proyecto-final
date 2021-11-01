@@ -5,7 +5,7 @@ const router = express.Router();
 
 
 
-router.get('/', validatorVerificacion.validatorParams, validatorVerificacion.validator, verificacionController.verificacion);
+router.post('/', verificacionController.verificacion);
 
 
 module.exports = router; 

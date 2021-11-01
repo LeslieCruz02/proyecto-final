@@ -19,7 +19,7 @@ let contactenos = async(req, res) => {
   db.contactenos(req.body)
   .then((result) => {
     return res.status(200).json({
-      status: "register ok",
+      status: "Ok Enviado",
       auth: true,
       documents: result,
     });

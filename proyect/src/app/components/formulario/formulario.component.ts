@@ -56,8 +56,6 @@ export class FormularioComponent implements OnInit {
         (response: any) => {
   
           console.log(response);
-       
-          this.route.navigate(['/galery-ppal']);
       },
       
       (error:any) => {

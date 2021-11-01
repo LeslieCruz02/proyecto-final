@@ -1,8 +1,9 @@
 const { check, validationResult } = require('express-validator');
-const nJwt = require('njwt');
+
 
 
 validatorParams = [
+          check('correo').isEmail()
       ];
 
       

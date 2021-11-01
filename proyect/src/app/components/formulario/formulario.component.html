@@ -1,3 +1,5 @@
+
+
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="introCon">
     <h2>Contáctanos</h2>
@@ -29,8 +31,11 @@
                 <textarea class="form-control" formControlName="mensaje" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
                 <label for="floatingTextarea2">Escribe aquí tu mensaje</label>
             </div><br>
-            <button type="submit" class="btn btn-primary">Enviar</button>
-   
+            <button type="submit" class="btn btn-primary" onclick="createElementInput()">Enviar</button>
+        <div class="message">
+
+        </div>
+            
         </aside>
         <address>
             <h3>Información de contacto</h3>
