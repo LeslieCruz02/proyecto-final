@@ -20,7 +20,8 @@ import { VerificationMailComponent } from './containers/verification-mail/verifi
 const routes: Routes = [
   {path:'', component:PagInicioComponent},
   {path:'galery-ppal', component:GaleriaprincipalComponent},
-  {path:'contactenos', component:ContactenosComponent},  {path: 'registro', component: RegistroComponent},
+  {path:'contactenos', component:ContactenosComponent},  
+  {path: 'registro', component: RegistroComponent},
   {path: 'registro', component: RegistroComponent},
   {path: 'home', component: HomeComponent},
   {path: 'perfilP', component: PerfilPComponent},

@@ -1,5 +1,6 @@
 let db = require('../db/mysql');
-const correo1 = require('./correRegistro-controller')
+const correo1 = require('./correRegistro-controller');
+const verificacion = require('./verificacion-controller');
 
 
 function sleepTime(time) {
@@ -17,6 +18,8 @@ let usuarios = async(req, res) => {
   let telefono  = req.body.telefono;
   let password = req.body.password;
   let sleep = await sleepTime(3000);
+
+  verificacion.activacion(req.body.correo)
   correo1.sendMail(req.body)
 
   db.usuarios(req.body)

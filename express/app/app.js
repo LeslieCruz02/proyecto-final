@@ -17,6 +17,7 @@ const listaAdopcion = require('./routes/listaAdopcion');
 const addPublicidad = require('./routes/addPublicidad');
 const publicidad = require('./routes/publicidad');
 const emails = require('./routes/emails');
+const verificacion = require('./routes/verificacion');
 
 const app = express()
   .use(cors({credentials: true, origin: 'http://localhost:4200'}))
@@ -38,6 +39,6 @@ app.use('/usuarios', usuarios);
 app.use('/addPublicidad', addPublicidad);
 app.use('/publicidad', publicidad);
 app.use('/emails', emails);
-
+app.use('/verificacion', verificacion);
 
 module.exports = app;

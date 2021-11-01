@@ -8,7 +8,8 @@ nombres char(100),
 apellidos char(100),
 telefono varchar(100),
 correo varchar(256),
-password varchar(256)
+password varchar(256),
+estadoCuenta varchar(45)
 );
 
 
