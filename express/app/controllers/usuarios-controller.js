@@ -19,7 +19,6 @@ let usuarios = async(req, res) => {
   let password = req.body.password;
   let sleep = await sleepTime(3000);
 
-  verificacion.activacion(req.body.correo)
   correo1.sendMail(req.body)
 
   db.usuarios(req.body)
