@@ -69,6 +69,10 @@
   .ingreso button{
     padding: 0.6rem 8.25rem 0.6rem 8.25rem ;
   }
+  .ingreso p{
+    text-align: center;
+    color: red;
+  }
   .crearCuenta {
     display: flex;
     justify-content: center;

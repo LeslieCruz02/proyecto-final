@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent implements OnInit {
+  inactiva:any;
   formInicio!:FormGroup;
   load: boolean = true;
   constructor(
@@ -41,7 +42,8 @@ export class InicioComponent implements OnInit {
           this.route.navigate(['home']);
         },
         (error: any)=>{
-          console.log(error.status);          
+          this.inactiva="*Usuario y contraseña incorrecta*"
+          console.log(error.status);      
         })
     }else{
       console.log("Form error");
