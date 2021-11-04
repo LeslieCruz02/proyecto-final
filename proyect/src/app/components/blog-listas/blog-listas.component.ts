@@ -14,7 +14,16 @@ export class BlogListasComponent implements OnInit {
     private route:  Router
   ) { }
 
-
+  datosMascota:any[]=[
+    {
+      nombre:"Pacho", 
+      edad:4, 
+      raza:"criollo", 
+      responsable:"Daniel", 
+      tipoMascota:"Gato"
+    }
+  ];
+  
  
   ngOnInit(): void {
   }
