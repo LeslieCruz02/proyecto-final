@@ -22,6 +22,8 @@ let galeria = (req, res) => {
   });
 };
 
+
+
 module.exports = {
   galeria
 }

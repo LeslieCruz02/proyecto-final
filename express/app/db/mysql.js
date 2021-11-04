@@ -155,7 +155,7 @@ function activar(data){
         if (err) throw err;
         console.log("Connected to MySQL Server!");
       });
-      let update = `UPDATE usuarios SET estadoCuenta = "inactivo" WHERE idusuario = ?`;
+      let update = `UPDATE usuarios SET estadoCuenta = "activo" WHERE idusuario = ?`;
       let query = mysql.format(update,[data]);
       console.log(query);
       mysqlConnection.query(query, (error, result) => {
