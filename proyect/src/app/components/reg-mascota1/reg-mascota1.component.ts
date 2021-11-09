@@ -5,6 +5,8 @@ import {ClientService} from '../../client.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-reg-mascota1',
@@ -13,7 +15,7 @@ import { Router } from '@angular/router';
 })
 export class RegMascota1Component implements OnInit {
   form!: FormGroup;
-
+  load: boolean = true;
 
 
   constructor(
@@ -51,11 +53,31 @@ export class RegMascota1Component implements OnInit {
         fotos: this.form.value.fotos,
 
       }
+      this.load = false;
       this.client.postRequestSendForm('http://localhost:10101/addMascotas',data)
       .subscribe(
         (response:any)=>{
+          this.load = true;
           console.log(response);
-          this.route.navigate(['/galeria']);
+          Swal.fire({
+            icon: 'question',
+            title: 'Desea continuar con esta publicación',
+            showCancelButton: true,
+            cancelButtonText: `Cancelar`,
+            showDenyButton: false,
+            denyButtonText: `No guardar`,
+            showConfirmButton: true,
+            confirmButtonText: `Aceptar`
+          }).then((result) => {
+            //Read more about isConfirmed, isDenied below
+            if (result.isConfirmed) {
+              this.route.navigate(['/galeria']);
+            } else if (result.isDenied) {
+              Swal.fire('Los cambios no han sido guardados', '', 'info')
+            }
+          }) 
+          
+          
         },
         (error: any)=>{
           console.log(error.status);          

@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ClientService } from '../../client.service';
 import {  FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
+import { environment } from '../../../environments/environment';
+
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-registrar',
@@ -45,9 +48,19 @@ export class RegistrarComponent implements OnInit {
        this.client.postRequestSendForm('http://localhost:10101/usuarios', data).subscribe(
         (response:any)=>{
           console.log(response);
+          Swal.fire(
+            'Su registro ha sido exitoso!',
+            '',
+            'success'
+          )
           this.route.navigate(['']);
         },
         (error: any)=>{
+          Swal.fire(
+            'Su registro no ha sido exitoso!',
+            'Intentalo nuevamente!',
+            'error'
+          )
           console.log(error.status);          
         })
     }else{

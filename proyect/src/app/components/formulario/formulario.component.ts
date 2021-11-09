@@ -4,6 +4,8 @@ import {ClientService} from '../../client.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
+import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-formulario',
   templateUrl: './formulario.component.html',
@@ -56,15 +58,31 @@ export class FormularioComponent implements OnInit {
         (response: any) => {
   
           console.log(response);
+          Swal.fire(
+            'Gracias por contactarnos!',
+            'Te respoderemos los más pronto posible',
+            'success'
+
+          )
       },
       
       (error:any) => {
        
         console.log(error.status);
+        Swal.fire(
+          'Ups lo sentimos!',
+          'No hemos recibido tú mensaje',
+          'error'
+        )
       });
    
     } else {
       console.log("Form error");
+      Swal.fire(
+        'Ups lo sentimos!',
+        'No hemos recibido tú mensaje',
+        'error'
+      )
     }
   }
 }

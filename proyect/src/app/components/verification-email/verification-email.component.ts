@@ -31,7 +31,7 @@ export class VerificationEmailComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       const CORREO = params['correo'];
       console.log(CORREO);
-      
+
       let data ={
         correo: CORREO
       }
@@ -47,6 +47,4 @@ export class VerificationEmailComponent implements OnInit {
 
     });
   }
-
- 
 }
