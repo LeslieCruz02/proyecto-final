@@ -31,10 +31,10 @@
                 <textarea class="form-control" formControlName="mensaje" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
                 <label for="floatingTextarea2">Escribe aquí tu mensaje</label>
             </div><br>
-            <button type="submit" class="btn btn-primary" onclick="createElementInput()">Enviar</button>
-        <div class="message">
-
-        </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+            <div *ngIf="!load" class="spinner-border text-info" role="status">
+                <span class="sr-only"></span>
+            </div>
             
         </aside>
         <address>

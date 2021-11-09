@@ -5,6 +5,7 @@ import {ClientService} from '../../client.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-sleader',
@@ -47,14 +48,35 @@ export class SleaderComponent implements OnInit {
       this.client.postRequestSendForm('http://localhost:10101/adopciones',data
       ).subscribe(
         (response:any)=>{
+          this.load = true;
+          Swal.fire({
+            position: 'top',
+            icon: 'success',
+            title: 'Tú solicitud de adopción fue enviada correctamente!',
+            showConfirmButton: false,
+            timer: 4000
+          })
           console.log(response);
           this.route.navigate(['/galeria']);
         },
         (error: any)=>{
-          console.log(error.status);          
+          console.log(error.status); 
+          
+          Swal.fire({
+            icon: 'info',
+            title: 'Error al enviar tú solicitud',
+            text: 'Por favor registrate o inicia sesión',
+            footer: '<a href="http://localhost:4200/registro">Más informacion aquí</a>'
+          })
         })
     }else{
       console.log("Form error");
+      Swal.fire({
+        icon: 'info',
+        title: 'Error al enviar tú solicitud',
+        text: 'Por favor verifica los datos ingresados',
+        footer: '<a href="http://localhost:4200/registro">Más informacion aquí</a>'
+      })
     }
   }
 
