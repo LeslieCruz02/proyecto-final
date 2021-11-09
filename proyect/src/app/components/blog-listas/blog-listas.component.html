@@ -4,16 +4,16 @@
         <p>Aquí podrás encontrar todas las mascotas que esperan ser adoptados en un hogar para toda su vida, recuerda que adoptando salvas una vida y ganas un compañero.</p><br>
     </div>
     <article>
-        <div class="card" style="width: 300px; height: 530px;">
-            <img src="../../../assets/Adopcion1.jpeg" class="card-img-top" alt="...">
+        <div *ngFor="let mascotas of datosMascota" class="card"  style="width: 300px; height: 530px;">
+            <img src="{{mascotas.img}}" class="card-img-top" alt="..." height="250">
             <div class="card-body">
-            <h5 class="card-title" *ngFor="let mascota of datosMascota"><strong>{{mascota.nombre}}</strong></h5>
+            <h5 class="card-title" ><strong>{{mascotas.nombre}}</strong></h5>
             <hr>
-                <p *ngFor="let mascota of datosMascota">
-                  Edad: {{mascota.edad}}<br>
-                  Raza: {{mascota.raza}}<br>
-                  Responsable: {{mascota.responsable}}<br>
-                  Tipo de mascota: {{mascota.tipoMascota}}
+                <p>
+                  Edad: {{mascotas.edad}}<br>
+                  Raza: {{mascotas.raza}}<br>
+                  Responsable: {{mascotas.responsable}}<br>
+                  Tipo de mascota: {{mascotas.tipoMascota}}
                 </p>
                 <div class="adopcion">
                     <a type="button" (click)="reqGaleria()" class="btn btn-primary">Adoptar</a>
@@ -46,10 +46,9 @@
                           </div>
                         </div>
                       </div>
-                </div>
             </div>
         </div>
-        <div class="card" style="width: 300px; height: 530px;">
+        <!-- <div class="card" style="width: 300px; height: 530px;">
             <img src="../../../assets/Adopcion1.jpeg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title" *ngFor="let mascota of datosMascota"><strong>{{mascota.nombre}}</strong></h5>
@@ -520,7 +519,7 @@
                         </div>
                       </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </article>  
 </section>  

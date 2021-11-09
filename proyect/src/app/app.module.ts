@@ -79,7 +79,7 @@ import { VerificationEmailComponent } from './components/verification-email/veri
     AddCommercialComponent,
     AddPublicidadComponent,
     VerificationMailComponent,
-    VerificationEmailComponent
+    VerificationEmailComponent,
   ],
   imports: [
     BrowserModule,

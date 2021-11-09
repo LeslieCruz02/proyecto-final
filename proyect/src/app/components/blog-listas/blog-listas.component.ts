@@ -17,10 +17,19 @@ export class BlogListasComponent implements OnInit {
   datosMascota:any[]=[
     {
       nombre:"Pacho", 
+      img: "../../../assets/public1.jpeg",
       edad:4, 
       raza:"criollo", 
       responsable:"Daniel", 
       tipoMascota:"Gato"
+    },
+    {
+      nombre:"Maya", 
+      img: "../../../assets/maya.jpeg",
+      edad:2, 
+      raza:"criollo", 
+      responsable:"Daniel", 
+      tipoMascota:"Gata"
     }
   ];
   
