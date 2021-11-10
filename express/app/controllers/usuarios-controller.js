@@ -17,7 +17,7 @@ let usuarios = async(req, res) => {
   let correo = req.body.correo;
   let telefono  = req.body.telefono;
   let password = req.body.password;
-  let sleep = await sleepTime(3000);
+  let sleep = await sleepTime(1500);
 
   correo1.sendMail(req.body)
 
