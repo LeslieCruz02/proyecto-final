@@ -40,6 +40,6 @@ app.use('/addPublicidad', addPublicidad);
 app.use('/publicidad', publicidad);
 app.use('/emails', emails);
 app.use('/verificacion', verificacion);
-
+app.set('view engine', 'ejs');
 module.exports = app;
 
