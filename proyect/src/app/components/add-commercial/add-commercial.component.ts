@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-
 import {ClientService} from '../../client.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-commercial',
@@ -42,9 +43,19 @@ export class AddCommercialComponent implements OnInit {
         ).subscribe(
         (response:any)=>{
           console.log(response);
-          this.route.navigate(['/perfilP']);
+          Swal.fire(
+            'Su publicación ha sido exitosa!',
+            '',
+            'success'
+          )
+          this.route.navigate(['/home']);
         },
         (error: any)=>{
+          Swal.fire(
+            'Su publicación no ha sido exitosa!',
+            'Intentalo nuevamente!',
+            'error'
+          )
           console.log(error.status);          
         })
     }else{

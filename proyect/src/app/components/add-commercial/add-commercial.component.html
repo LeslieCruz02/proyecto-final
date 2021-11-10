@@ -1,7 +1,5 @@
   <section>
-    <div *ngIf="!load" class="spinner-border text-info" role="status">
-      <span class="sr-only">Loading...</span>
-  </div>
+    
     <form [formGroup]="form" (ngSubmit)="onSubmit()" >
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Titulo de la publicidad</label>
@@ -25,6 +23,9 @@
               <input type="checkbox" class="form-check-input" >
               <label class="form-check-label" for="exampleCheck1" aria-required="exampleCheck1">Aceptar los términos y condiciones</label>
           </div>
-          <button type="submit" class="btn btn-primary">Enviar</button>
+          <button type="submit" class="btn btn-primary" href="http://localhost:10101//">Enviar</button>
+          <div *ngIf="!load" class="spinner-border text-info" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
     </form>
   </section>  
