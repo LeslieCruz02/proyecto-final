@@ -1,12 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders} from '@angular/common/http';
+import { Mascotas } from './interface/mascotas.interface';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientService {
+  mascotas:Mascotas [] = [];
   constructor(private http: HttpClient) { }
+
+  getRequestdatosMascotas() {
+ 
+    return this.http.get('http://localhost:10101/listaMascotas')
+  }
 
   getRequestAdop(route:string){
     let config1:any={
@@ -56,6 +63,8 @@ export class ClientService {
     }
     const header =new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem('token')}`);
     config["headers"]=header;
+    console.log(`Bearer ${localStorage.getItem('token')}`);
+    
     return this.http.get(route,config)
   }
 
