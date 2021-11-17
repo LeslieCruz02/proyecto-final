@@ -4,6 +4,7 @@ import {ClientService} from '../../client.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ActivatedRoute, Params } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -12,6 +13,7 @@ import { ActivatedRoute, Params } from '@angular/router';
   styleUrls: ['./verification-email.component.css']
 })
 export class VerificationEmailComponent implements OnInit {
+  BASE_API: string=environment.BASE_API
   correo!: string;
   form!: FormGroup;
   load: boolean = true;
@@ -35,7 +37,7 @@ export class VerificationEmailComponent implements OnInit {
       let data ={
         correo: CORREO
       }
-     this.client.postActive('http://localhost:10101/verificacion', data).subscribe(
+     this.client.postActive(`${this.BASE_API}/verificacion`, data).subscribe(
       (response:any)=>{
         console.log(response);
         this.load = false;

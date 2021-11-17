@@ -1,18 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders} from '@angular/common/http';
 import { Mascotas } from './interface/mascotas.interface';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientService {
+
+  BASE_API: string=environment.BASE_API
   mascotas:Mascotas [] = [];
   constructor(private http: HttpClient) { }
 
   getRequestdatosMascotas() {
  
-    return this.http.get('http://localhost:10101/listaMascotas')
+    return this.http.get(`${this.BASE_API}/listaMascotas`)
   }
 
   getRequestAdop(route:string){

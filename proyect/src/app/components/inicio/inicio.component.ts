@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ClientService } from '../../client.service';
 import {  FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-inicio',
@@ -9,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent implements OnInit {
+  BASE_API: string=environment.BASE_API
   inactiva:any;
   formInicio!:FormGroup;
   load: boolean = true;
@@ -37,7 +39,7 @@ export class InicioComponent implements OnInit {
         password: this.formInicio.value.password
         }
         
-        this.client.postRequestSendForm('http://localhost:10101/login',data).subscribe(
+        this.client.postRequestSendForm(`${this.BASE_API}/login`,data).subscribe(
         (response:any)=>{
           console.log(response);
           localStorage.setItem('token', response.token)

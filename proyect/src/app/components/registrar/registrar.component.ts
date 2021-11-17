@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ClientService } from '../../client.service';
 import {  FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
-import { environment } from '../../../environments/environment';
+import { environment } from 'src/environments/environment';
 
 import Swal from 'sweetalert2';
 
@@ -12,6 +12,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./registrar.component.css']
 })
 export class RegistrarComponent implements OnInit {
+  BASE_API: string=environment.BASE_API
   form!: FormGroup;
   load: boolean = true;
 
@@ -45,7 +46,7 @@ export class RegistrarComponent implements OnInit {
         password: this.form.value.password
       }
        this.load = false;
-       this.client.postRequestSendForm('http://localhost:10101/usuarios', data).subscribe(
+       this.client.postRequestSendForm(`${this.BASE_API}/usuarios`, data).subscribe(
         (response:any)=>{
           console.log(response);
           Swal.fire(

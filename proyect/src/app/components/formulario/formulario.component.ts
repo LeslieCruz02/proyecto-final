@@ -3,7 +3,7 @@ import {ClientService} from '../../client.service';
 //importacion de clases necesarias para manejar formularios reactivos y el routing
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-
+import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -12,7 +12,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./formulario.component.css']
 })
 export class FormularioComponent implements OnInit {
-  
+  BASE_API: string=environment.BASE_API
   form!: FormGroup;
   load: boolean = true;
 
@@ -51,7 +51,7 @@ export class FormularioComponent implements OnInit {
         mensaje: this.form.value.mensaje
       }
       this.load =false;
-      this.client.postRequestSendForm('http://localhost:10101/contactenos', data)
+      this.client.postRequestSendForm(`${this.BASE_API}/contactenos`, data)
     
       .subscribe(
      
