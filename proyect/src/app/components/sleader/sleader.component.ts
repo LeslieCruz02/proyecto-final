@@ -4,6 +4,7 @@ import {ClientService} from '../../client.service';
 //importacion de clases necesarias para manejar formularios reactivos y el routing
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 import Swal from 'sweetalert2';
 
@@ -13,6 +14,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./sleader.component.css']
 })
 export class SleaderComponent implements OnInit {
+  BASE_API: string=environment.BASE_API
   form!: FormGroup;
   load: boolean = true;
 
@@ -45,7 +47,7 @@ export class SleaderComponent implements OnInit {
         observaciones: this.form.value.observaciones,
       }
       this.load = false;
-      this.client.postRequestSendForm('http://localhost:10101/adopciones',data
+      this.client.postRequestSendForm(`${this.BASE_API}/adopciones`,data
       ).subscribe(
         (response:any)=>{
           this.load = true;
@@ -81,7 +83,7 @@ export class SleaderComponent implements OnInit {
   }
 
   reqAdoptar(){
-    this.client.getReqAdoptar("http://localhost:10101/galeria").subscribe(
+    this.client.getReqAdoptar(`${this.BASE_API}/galeria`).subscribe(
     (response: any) => {
         console.log(response);
 

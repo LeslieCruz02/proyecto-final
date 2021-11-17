@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ClientService } from '../../client.service';
 import { Router } from '@angular/router';
 import { Mascotas } from '../../interface/mascotas.interface';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -11,6 +12,7 @@ import { Mascotas } from '../../interface/mascotas.interface';
 
 })
 export class BlogListasComponent implements OnInit {
+  BASE_API: string=environment.BASE_API
   
   title = "mascotas"
   mascotas : Mascotas [] = [];
@@ -36,7 +38,7 @@ export class BlogListasComponent implements OnInit {
 
 
   async reqGaleria(){
-    this.client.getReqGaleria("http://localhost:10101/listaAdopcion").subscribe(
+    this.client.getReqGaleria(`${this.BASE_API}/listaAdopcion`).subscribe(
     (response: any) => {
         console.log(response);
         this.route.navigate(['/galeria']);
