@@ -1,41 +1,39 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientService } from '../../client.service';
 import { Router } from '@angular/router';
+import { Mascotas } from '../../interface/mascotas.interface';
+
 
 @Component({
   selector: 'app-blog-listas',
   templateUrl: './blog-listas.component.html',
-  styleUrls: ['./blog-listas.component.css']
+  styleUrls: ['./blog-listas.component.css'],
+
 })
 export class BlogListasComponent implements OnInit {
+  
+  title = "mascotas"
+  mascotas : Mascotas [] = [];
+  
   
   constructor(
     public client: ClientService,
     private route:  Router
   ) { }
-
-  datosMascota:any[]=[
-    {
-      nombre:"Pacho", 
-      img: "../../../assets/public1.jpeg",
-      edad:4, 
-      raza:"criollo", 
-      responsable:"Daniel", 
-      tipoMascota:"Gato"
-    },
-    {
-      nombre:"Maya", 
-      img: "../../../assets/maya.jpeg",
-      edad:2, 
-      raza:"criollo", 
-      responsable:"Daniel", 
-      tipoMascota:"Gata"
-    }
-  ];
-  
  
   ngOnInit(): void {
+
+    this.client.getRequestdatosMascotas().subscribe(
+      (res:any)=>{
+        this.mascotas = res.mascotas;
+        console.log(this.mascotas);
+      },
+      (error:any)=>{
+        console.log(error.status);
+      }
+    )
   }
+
 
   async reqGaleria(){
     this.client.getReqGaleria("http://localhost:10101/listaAdopcion").subscribe(

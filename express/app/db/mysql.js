@@ -167,8 +167,28 @@ function activar(data){
      });
     });
   }
-
 }
+
+function mascotas(){
+  return new Promise((resolve,reject)=>{
+    const mysqlConnection = connection();
+    mysqlConnection.connect((err) => {
+      if (err) throw err;
+      console.log("Connected to MySQL Server!");
+    });
+
+    let select = 'SELECT * FROM mascotas WHERE idestado = ? ';
+    let query = mysql.format(select,['1']);
+    mysqlConnection.query(query, (error, result) => {
+    if(error) reject (error);
+    console.log(error);
+    mysqlConnection.end();
+    resolve(result);
+    console.log(result);
+  });
+  });
+}
+
 module.exports = {
     connection,
     usuarios,
@@ -178,7 +198,8 @@ module.exports = {
     addPublicidad,
     contactenos,
     verificar, 
-    activar
+    activar,
+    mascotas
   /*  home,
     galeryPpal,
     perfilP,
