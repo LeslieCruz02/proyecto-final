@@ -4,7 +4,9 @@ import {ClientService} from '../../client.service';
 //importacion de clases necesarias para manejar formularios reactivos y el routing
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { environment } from 'src/environments/environment';
+import { Mascota } from '../../interface/mascota.interface';
 
 import Swal from 'sweetalert2';
 
@@ -17,16 +19,37 @@ export class SleaderComponent implements OnInit {
   BASE_API: string=environment.BASE_API
   form!: FormGroup;
   load: boolean = true;
-
+  title = "mascota"
+  mascota : Mascota [] = [];
 
   constructor(
     public client: ClientService,
     private fb: FormBuilder,
-    private route: Router
+    private router: Router,
+    private route:ActivatedRoute
     ) 
     {
     }
-  ngOnInit(): void {
+  ngOnInit(){
+
+    this.route.queryParams.subscribe(params => {
+      const IDMASCOTA= parseInt(params['idmascota']);
+
+      let data ={
+        idmascota: IDMASCOTA  
+      }
+      console.log(data);
+
+     this.client.postRequestMascota(`${this.BASE_API}/mascota`, data).subscribe(
+      (res:any)=>{
+        this.mascota = res.mascota;
+        console.log(this.mascota);
+      },
+      (error:any)=>{
+        console.log(error.status);
+      }
+    );
+    });
 
     this.form = this.fb.group({
       nombre: ['', Validators.required],
@@ -36,6 +59,7 @@ export class SleaderComponent implements OnInit {
       observaciones: ['', Validators.required],
      
     });
+
   }
  async onSubmit(){
     if (this.form.valid) {
@@ -59,7 +83,7 @@ export class SleaderComponent implements OnInit {
             timer: 4000
           })
           console.log(response);
-          this.route.navigate(['/galeria']);
+         // this.route.navigate(['/galeria']);
         },
         (error: any)=>{
           console.log(error.status); 

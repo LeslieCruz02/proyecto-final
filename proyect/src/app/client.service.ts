@@ -159,4 +159,9 @@ export class ClientService {
     //Notese que como tercer parametro se pasa la configuracion de la request
     return this.http.post(route, data, config);
   }
+
+
+  postRequestMascota(route: string, data?:any) {
+    return this.http.post(route,data)
+  }
 }

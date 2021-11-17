@@ -1,14 +1,14 @@
-<section>
+<section *ngFor="let element of mascota">
     <aside>
-      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" >
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
-        <div class="carousel-inner">
+        <div class="carousel-inner" >
           <div class="carousel-item active">
-            <img src="../../../assets/Adopcion1.jpeg" class="d-block w-100" alt="...">
+            <img src="{{element.fotos}}" class="d-block w-100" alt="...">
             
           </div>
           <div class="carousel-item">
@@ -31,28 +31,31 @@
       </div>
     </aside>
     <address>
-      <dl class="row">
-        <dt class="col-sm-3"> Nombre</dt>
-        <dd class="col-sm-9">Este es el nombre de la mascota.</dd>
+      <dl class="row" >
+        <dt class="col-sm-3"> Nombre:</dt>
+        <dd class="col-sm-9">{{element.nombre}}</dd>
       
         <dt class="col-sm-3">Tipo de Mascota</dt>
         <dd class="col-sm-9">
-          <p>Que tipo de mascota soy</p>
-          <p>Que raza soy</p>
-          <p>Que edad tengo</p>
+          <p>{{element.tipoDeMascota}}</p>
+        </dd>
+        <dt class="col-sm-3">Raza</dt>
+        <dd class="col-sm-9">
+          <p>{{element.raza}}</p>
+        </dd>
+        <dt class="col-sm-3">Edad</dt>
+        <dd class="col-sm-9">
+          <p>{{element.edad}}</p>
         </dd>
       
         <dt class="col-sm-3">Responsable</dt>
-        <dd class="col-sm-9">Quien es el responsable.</dd>
-      
-        <dt class="col-sm-3 text-truncate">Truncated term is truncated</dt>
-        <dd class="col-sm-9">This can be useful when space is tight. Adds an ellipsis at the end.</dd>
-      
+        <dd class="col-sm-9">{{element.responsable}}</dd>
+     
        
         <dd class="col-sm-9">
           <dl class="row">
             <dt class="col-sm-4">Descripción</dt>
-            <dd class="col-sm-8">Describenos la personalidad de esta mascota</dd>
+            <dd class="col-sm-8">{{element.descripcion}}</dd>
           </dl>
         </dd>
       </dl>

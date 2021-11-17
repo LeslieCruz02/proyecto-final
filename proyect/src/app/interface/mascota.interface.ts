@@ -1,4 +1,4 @@
-export interface Mascotas {
+export interface Mascota {
     idmascota: number,	
 	nombre: string,	
 	tipoDeMascota: string,

@@ -3,9 +3,10 @@ const { check, validationResult } = require('express-validator');
 
 
 validatorParams = [
-          check('idmascota').isInt()
-          
+         
       ];
+
+      
 function validator(req, res, next) {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {

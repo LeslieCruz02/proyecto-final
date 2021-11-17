@@ -38,7 +38,7 @@ function login(data){
       });
   
       let select = 'SELECT usuario, password FROM usuarios WHERE usuario=? AND estadoCuenta = ?';
-      let query = mysql.format(select,[data.usuario, "activo"]);
+      let query = mysql.format(select,[data.usuario, "inactivo"]);
       mysqlConnection.query(query, (error, result) => {
       if(error) reject (error);
       console.log(error);
@@ -188,7 +188,26 @@ function mascotas(){
   });
   });
 }
+function mascota(data){
+  return new Promise((resolve,reject)=>{
+    const mysqlConnection = connection();
+    mysqlConnection.connect((err) => {
+      if (err) throw err;
+      console.log("Connected to MySQL Server!");
+    });
 
+    let select = 'SELECT * FROM mascotas WHERE idmascota = ? ';
+    let query = mysql.format(select,[data.idmascota]);
+    mysqlConnection.query(query, (error, result) => {
+    if(error) reject (error);
+    console.log(error);
+    mysqlConnection.end();
+    resolve(result);
+    console.log(data);
+    console.log(result);
+  });
+  });
+}
 module.exports = {
     connection,
     usuarios,
@@ -199,7 +218,8 @@ module.exports = {
     contactenos,
     verificar, 
     activar,
-    mascotas
+    mascotas,
+    mascota
   /*  home,
     galeryPpal,
     perfilP,

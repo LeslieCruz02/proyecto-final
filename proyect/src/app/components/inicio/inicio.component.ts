@@ -24,7 +24,6 @@ export class InicioComponent implements OnInit {
   ngOnInit(): void {
 
 
-
     this.formInicio = this.fb.group({
       usuario:['', Validators.required],
       password:['', Validators.required]
