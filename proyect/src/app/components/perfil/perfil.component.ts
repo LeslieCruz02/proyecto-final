@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientService } from '../../client.service';
 import { Router } from '@angular/router';
+import { Mascotas } from '../../interface/mascotas.interface'
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -15,8 +16,18 @@ export class PerfilComponent implements OnInit {
     public client: ClientService,
     private route:  Router
   ) { }
+  mascotas : Mascotas [] = [];
 
   ngOnInit(): void {
+    this.client.getRequestdatosMascotas().subscribe(
+      (res:any)=>{
+        this.mascotas = res.mascotas;
+        console.log(this.mascotas);
+      },
+      (error:any)=>{
+        console.log(error.status);
+      }
+    )
   }
   quieroAdop(){
     this.client.getRequestAdop(`${this.BASE_API}/home`).subscribe(

@@ -8,5 +8,4 @@ export interface Mascotas {
 	idestado: number,	
 	descripcion: string,
 	fotos: string	
-
 }
