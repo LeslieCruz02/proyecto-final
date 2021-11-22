@@ -35,8 +35,8 @@
           <img src="../../../assets/Logo.png" href="http://localhost:4200/#" alt="logo" width="400px" height="200px">
         </div>
         <div *ngIf="!load" class="spinner-border text-info" role="status">
-          <span class="sr-only">Loading...</span>
-      </div>
+          <span class="sr-only"></span>
+        </div>
         <form [formGroup]="formInicio" (ngSubmit)="onSubmitInicio()" class="fondo">  
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Usuario</label>
