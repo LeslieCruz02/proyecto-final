@@ -40,6 +40,9 @@ import { AddCommercialComponent } from './components/add-commercial/add-commerci
 import { AddPublicidadComponent } from './containers/add-publicidad/add-publicidad.component';
 import { VerificationMailComponent } from './containers/verification-mail/verification-mail.component';
 import { VerificationEmailComponent } from './components/verification-email/verification-email.component';
+import { AdminsComponent } from './containers/admins/admins.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { PanelAdminComponent } from './components/panel-admin/panel-admin.component';
 
 
 @NgModule({
@@ -80,6 +83,9 @@ import { VerificationEmailComponent } from './components/verification-email/veri
     AddPublicidadComponent,
     VerificationMailComponent,
     VerificationEmailComponent,
+    AdminsComponent,
+    AdminComponent,
+    PanelAdminComponent,
   ],
   imports: [
     BrowserModule,

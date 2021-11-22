@@ -29,6 +29,28 @@ function usuarios(data) {
     });
   }
 
+  function administrator(data) {
+    return new Promise((resolve, reject)=>{
+      const mysqlConnection = connection();
+      mysqlConnection.connect((err) => {
+        if (err) throw err;
+        console.log("Connected to MySQL Server!");
+      });
+      
+      let hashPass = bcrypt.hashSync(data.password, 8);
+      data.password = hashPass;
+      let insert = 'INSERT INTO usuarios(usuario, nombres, apellidos, rol correo, telefono, password, estadoCuenta) VALUES(?,?,?,?,?,?,?)';   
+      let query = mysql.format(insert,[data.usuario, data.nombres, data.apellidos, data.rol, data.correo, data.telefono, data.password, "inactivo"]);
+      
+      mysqlConnection.query(query, (error, result) => {
+        if (error) reject(error);
+        mysqlConnection.end();
+        resolve(result);
+   
+     });
+    });
+  }
+
 function login(data){
     return new Promise((resolve,reject)=>{
       const mysqlConnection = connection();
@@ -39,6 +61,28 @@ function login(data){
   
       let select = 'SELECT usuario, password FROM usuarios WHERE usuario=? AND estadoCuenta = ?';
       let query = mysql.format(select,[data.usuario, "activo"]);
+<<<<<<< HEAD
+=======
+      mysqlConnection.query(query, (error, result) => {
+      if(error) reject (error);
+      console.log(error);
+      mysqlConnection.end();
+      resolve(result);
+    });
+    });
+  }
+
+  function loginAdmin(data){
+    return new Promise((resolve,reject)=>{
+      const mysqlConnection = connection();
+      mysqlConnection.connect((err) => {
+        if (err) throw err;
+        console.log("Connected to MySQL Server!");
+      });
+  
+      let select = 'SELECT usuario, password FROM usuarios WHERE usuario=? AND estadoCuenta = ?';
+      let query = mysql.format(select,[data.usuario, "activo"]);
+>>>>>>> 4a499dc44f1d5fb6f1605626e7717161b053ab0b
       mysqlConnection.query(query, (error, result) => {
       if(error) reject (error);
       console.log(error);
@@ -115,7 +159,7 @@ function login(data){
         console.log("Connected to MySQL Server!");
       });
       
-      let insert = 'INSERT INTO contactenos (nombreC, correo, telefono, nombreO,  asunto, mensaje) VALUES(?,?,?,?,?,?)';   
+      let insert = 'INSERT INTO contactenos (nombreC, correo, telefono, nombreO,  asunto, mensaje, date) VALUES(?,?,?,?,?,?, now())';   
       let query = mysql.format(insert,[data.nombreC, data.correo, data.telefono, data.nombreO,  data.asunto, data.mensaje]);
       
       mysqlConnection.query(query, (error, result) => {
@@ -219,7 +263,9 @@ module.exports = {
     verificar, 
     activar,
     mascotas,
-    mascota
+    mascota,
+    administrator,
+    loginAdmin
   /*  home,
     galeryPpal,
     perfilP,

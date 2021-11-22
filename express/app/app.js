@@ -20,6 +20,9 @@ const emails = require('./routes/emails');
 const verificacion = require('./routes/verificacion');
 const listaMascotas = require('./routes/listaMascotas');
 const mascota = require('./routes/mascota');
+const administrators = require ('./routes/administrators');
+const loginAdmin = require ('./routes/loginAdmin');
+const images = require('./routes/images')
 
 const app = express()
   .use(cors({credentials: true, origin: 'http://localhost:4200'}))
@@ -45,6 +48,9 @@ app.use('/verificacion', verificacion);
 app.set('view engine', 'ejs');
 app.use('/listaMascotas', listaMascotas);
 app.use('/mascota', mascota);
+app.use('/administrators', administrators);
+app.use('/loginAdmin', loginAdmin)
+app.use('/images', images)
 
 module.exports = app;
 
