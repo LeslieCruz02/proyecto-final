@@ -11,5 +11,5 @@ export class SliderComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+    
 }

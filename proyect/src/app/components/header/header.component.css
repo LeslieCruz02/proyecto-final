@@ -1,6 +1,14 @@
 header{
     width: 80%;
+   
 }
+.datePublic{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    border-style: hidden;
+    }
 
 .imagen{
     margin-left:100px;
@@ -13,16 +21,7 @@ header{
 }
 
 
-.Publicaciones{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-.fotoPerfil{
-    display: flex;
-    flex-direction: row;
-    padding-bottom: 40px;
-}
+
 a{
     padding: 10px;
     text-decoration: none;
