@@ -34,7 +34,7 @@ export class ClientService {
     config1["headers"]=header;
     return this.http.get(route,config1)
   }
-  getRequestPublicidad(route:string){
+  postRequestPublicidad(route:string,data?:any){
     let config1:any={
       responseType:"json"
     }
@@ -80,13 +80,13 @@ export class ClientService {
     return this.http.get(route,config)
   }
   
-  getReqPublicidad(route:string){
+  getReqPublicidad(route:string, data?:any){
     let config:any={
       responseType:"json"
     }
     const header =new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem('token')}`);
-    config["headers"]=header;
-    return this.http.get(route,config)
+    config["headers"]=header; 
+    return this.http.post(route, data, config)
   }
 
 
