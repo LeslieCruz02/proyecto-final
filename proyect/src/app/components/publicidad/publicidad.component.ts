@@ -40,8 +40,6 @@ export class PublicidadComponent implements OnInit {
         documento: this.form.value.documento,
         tiempo: this.form.value.tiempo
       }
-      console.log(data.mesAño);
-      
       this.client.postRequestPublicidad(`${this.BASE_API}/home`,data
         ).subscribe(
         (response:any)=>{

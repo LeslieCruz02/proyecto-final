@@ -61,7 +61,6 @@ function login(data){
   
       let select = 'SELECT usuario, password FROM usuarios WHERE usuario=? AND estadoCuenta = ?';
       let query = mysql.format(select,[data.usuario, "activo"]);
-
       mysqlConnection.query(query, (error, result) => {
       if(error) reject (error);
       console.log(error);
