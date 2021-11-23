@@ -26,6 +26,8 @@ export class PublicidadComponent implements OnInit {
       tarjeta: ['', Validators.required],
       mesAño: ['', Validators.required],
       documento: ['', Validators.required],
+      tipodoc: ['', Validators.required],
+      tiempo: ['', Validators.required],
     });
   }
   async publicidad(){
@@ -33,10 +35,12 @@ export class PublicidadComponent implements OnInit {
       let data={
         nombreTitular: this.form.value.nombreTitular,
         tarjeta: this.form.value.tarjeta,
-        mesAño: this.form.value.mesAño,
         tipodoc: this.form.value.tipodoc,
-        documento: this.form.value.documento
+        mesAño: this.form.value.mesAño,
+        documento: this.form.value.documento,
+        tiempo: this.form.value.tiempo
       }
+      console.log(data.mesAño);
       
       this.client.postRequestPublicidad(`${this.BASE_API}/home`,data
         ).subscribe(
@@ -47,6 +51,7 @@ export class PublicidadComponent implements OnInit {
           localStorage.setItem('AñoMes',data.mesAño);
           localStorage.setItem('TipoDocumento',data.tipodoc);
           localStorage.setItem('Documento',data.documento);
+          localStorage.setItem('Tiempo',data.tiempo);
           
           console.log(response);
           Swal.fire(

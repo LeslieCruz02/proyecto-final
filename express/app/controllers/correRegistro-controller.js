@@ -24,7 +24,7 @@ const sendMail= async (body) =>{
         <table border="0" cellpadding="0" cellspacing="0" width="600px" background-color="#3CACAE" bgcolor="#3CACAE" text-aling:"center">
             <tr height="250px">  
                 <td bgcolor="" width="600px">
-                <a href='https://postimg.cc/BLQXq4Rz' target='_blank'><img src='https://i.postimg.cc/BLQXq4Rz/Logo.png' border='0' alt='Logo' style="float:left"/></a>
+                <a href='https://postimg.cc/BLQXq4Rz' target='_blank'><img src='https://i.postimg.cc/85LWmC4T/Logo.png' border='0' alt='Logo' style="float:left"/></a>
                     <h1 style="color: #fff; text-align:center">Bienvenido</h1>
                     <p  style="color: #fff; text-align:center">
                         <span style="color: #ffffff"> ${body.nombres}</span> 

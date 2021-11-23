@@ -1,0 +1,56 @@
+
+
+nav ul li {
+    display: flex;
+    flex-direction:row;
+    margin-top: 0.6rem;
+  }
+nav ul li a{
+    background-color:white; 
+    color: rgb(52, 52, 233);
+    font-size: 18px; 
+    margin-top: 0px;
+    border:none;
+  }
+  nav ul li a:hover{
+    background-color: #C8F4F9 ;
+  }
+  section{
+      display: flex;
+      justify-content: center;
+  }
+
+  form {
+    background-color: white;
+    border-radius: 0.6rem;
+    box-shadow: 10px 5px 5px  rgba(0, 0, 0, 0.089);
+    margin-left: 3.1rem;
+    margin-right: 6.8rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 0.6rem;
+    margin-bottom: 0.6rem;
+    padding-bottom: 0.6rem;
+    width: 25rem;
+  }
+
+  .registrate{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .ingreso button{
+    padding: 0.6rem 8.25rem 0.6rem 8.25rem ;
+  }
+  .ingreso p{
+    text-align: center;
+    color: red;
+  }
+  .fondo{
+    background-color: #c8f4f94d;
+  }
+  .crearCuenta a{
+    padding: 0.6rem 5rem 0.6rem 5rem ;
+    background-color: #3CACAE;
+  }

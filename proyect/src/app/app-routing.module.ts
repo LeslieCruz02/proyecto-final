@@ -13,6 +13,8 @@ import { GaleriaComponent } from './containers/galeria/galeria.component';
 import { ListadoAdopcionesComponent } from './containers/listado-adopciones/listado-adopciones.component';
 import { AddPublicidadComponent } from './containers/add-publicidad/add-publicidad.component';
 import { VerificationMailComponent } from './containers/verification-mail/verification-mail.component';
+import { AdminsComponent } from './containers/admins/admins.component';
+import { PanelAdminComponent } from './components/panel-admin/panel-admin.component';
 
 
 
@@ -30,7 +32,9 @@ const routes: Routes = [
   {path:'galeria', component:GaleriaComponent},
   {path:'listaAdopcion', component: ListadoAdopcionesComponent},
   {path:'addPublicidad', component: AddPublicidadComponent},
-  {path:'verificationMail', component: VerificationMailComponent}
+  {path:'verificationMail', component: VerificationMailComponent},
+  {path: 'admin', component: AdminsComponent},
+  {path: 'panelAdmin', component: PanelAdminComponent}
 ];
 
 @NgModule({

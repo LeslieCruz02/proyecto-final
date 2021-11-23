@@ -1,0 +1,15 @@
+aside{
+    display: flex;
+    flex-direction: row;
+    width: 82%;
+    background-color: white;
+  }
+
+section{
+    display: flex;
+    flex-direction: row;
+}
+#panel{
+    height: 50rem;
+}
+

@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+.carousel .indicators .indicator-item {
+    border-radius: 0;
+    transform: rotate(45deg);
+    margin: 0 15px;
+    padding: 5px;
+    background:#36221c
+}
