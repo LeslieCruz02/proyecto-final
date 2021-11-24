@@ -90,11 +90,14 @@ body {
   border-radius:0.3rem ;
 }
 .fade{
-  margin: 10px;
+  margin: 80px 400px;
 }
 .modal-body{
   text-align: center;
   padding:20px;
+}
+.btn-close{
+  margin-right: 10px;
 }
 .modal-header, .modal-footer{
   background-color:#C8F4F9  ;
@@ -111,7 +114,8 @@ body {
 }
 .input{
   border-radius: 5px;
-  font-size:15px
+  font-size:15px;
+  width: 150px;
 } 
 .enviar{
   padding: 5px 10px;

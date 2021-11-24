@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment';
 })
 export class HeaderComponent implements OnInit {
   BASE_API: string=environment.BASE_API
-  com:boolean=false;
+  // com:boolean=false;
   load:boolean=true;
   constructor(
     public client: ClientService,
