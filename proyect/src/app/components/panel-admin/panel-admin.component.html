@@ -9,36 +9,42 @@
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
           <li class="nav-item">
-            <a href="#" class="nav-link active" aria-current="page">
-              <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"/></svg>
+            <button (click)="opcion = 'usuarios01'" 
+                    (click)="titulo=!titulo"
+                    class="nav-link link-dark">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href="http://localhost:4200/panelAdmin/Usuarios"/></svg>
               Usuarios
-            </a>
+            </button>
           </li>
           <li>
-            <a href="#" class="nav-link link-dark">
-              <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
+            <button (click)="opcion = 'mascotas01'" 
+                    class="nav-link link-dark">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href="http://localhost:4200/panelAdmin/Mascotas"/></svg>
               Mascotas
-            </a>
+            </button>
           </li>
           <li>
-            <a href="#" class="nav-link link-dark">
-              <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg>
+            <button (click)="opcion = 'solicitudes01'" 
+                    class="nav-link link-dark">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href="http://localhost:4200/panelAdmin/Solicitudes"/></svg>
               Solicitudes
-            </a>
+            </button>
           </li>
           <li>
-            <a href="#" class="nav-link link-dark">
-              <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
+            <button (click)="opcion = 'publicidades01'" 
+                    class="nav-link link-dark">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href="http://localhost:4200/panelAdmin/Publicidades"/></svg>
               Publicidades
-            </a>
+            </button>
           </li>
           <li>
-            <a href="#" class="nav-link link-dark">
-              <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+            <button (click)="opcion = 'adopciones01'" 
+                    class="nav-link link-dark">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href="http://localhost:4200/panelAdmin/Adopciones"/></svg>
               Adopciones
-            </a>
+            </button>
           </li>
-        </ul>
+        </ul> 
         <hr>
         <div class="dropdown">
           <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
@@ -54,8 +60,172 @@
         </div>
     </div>
       <div class="b-example-divider"></div>
-    <aside >
 
+
+
+    <aside>
+      <div  class = "container bg" [ngSwitch]= "opcion">
+            <h1 *ngIf="titulo" class="titulo" style="margin: 100px;">
+              <em>B</em>
+              <em class="planet left">I</em>
+              <em>E</em>
+              <em>N</em>
+              <em>V</em>
+              <em>E</em>
+              <em>N</em>
+              <em>I</em>
+              <em class="planet right">D</em>
+              <em>O</em>
+            </h1>
+      
+
+        <div class = "container text-success" *ngSwitchCase="'usuarios01'" >
+          <H2 class="elegantshadow">USUARIOS</H2>
+          <thead >
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Usuario</th>
+              <th scope="col">Nombres</th>
+              <th scope="col">Apellidos</th>
+              <th scope="col">Telefono</th>
+              <th scope="col">Correo</th>
+              <th scope="col">Estado de Cuenta</th>
+            </tr>
+          </thead>
+          <table *ngFor="let usuario of usuarios" class="table">
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>{{usuario.idusuario}}</td>
+                <td>{{usuario.usuario}} </td>
+                <td>{{usuario.nombres}} </td>
+                <td>{{usuario.apellidos}} </td>
+                <td>{{usuario.telefono}} </td>
+                <td>{{usuario.correo}} </td>
+                <td>{{usuario.estadoCuenta}} </td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+        <div  class = "container text-success" *ngSwitchCase ="'mascotas01'" >
+          <h2 class="elegantshadow">MASCOTAS</h2>
+          <thead >
+            <tr>
+              <th scope="col">IdMascota</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Tipo de Mascota</th>
+              <th scope="col">Raza</th>
+              <th scope="col">Edad</th>
+              <th scope="col">Responsable</th>
+              <th scope="col">Estado</th>
+              <th scope="col">Descripcion</th>
+            </tr>
+          </thead>
+            <table *ngFor="let mascota of mascotas" class="table">
+              <tbody>
+                <tr>
+                  <th scope="row">{{mascota.idmascota}}</th>
+                  <td>{{mascota.nombre}}</td>
+                  <td>{{mascota.tipoDeMascota}}</td>
+                  <td>{{mascota.raza}}</td>
+                  <td>{{mascota.edad}}</td>
+                  <td>{{mascota.responsable}}</td>
+                  <td>{{mascota.idestado}}</td>
+                  <td>{{mascota.descripcion}}</td>
+                </tr>
+              </tbody>
+            </table>
+
+        </div>
+        <div class = "container text-success"  *ngSwitchCase ="'solicitudes01'" >
+          <h2 class="elegantshadow">SOLICITUDES</h2>
+          <thead >
+            <tr>
+              <th scope="col">Nombre Completo</th>
+              <th scope="col">correo</th>
+              <th scope="col">Nombre </th>
+              <th scope="col">Asunto</th>
+              <th scope="col">Mensaje</th>
+              <th scope="col">Fecha</th>
+            </tr>
+          </thead>
+            <table *ngFor="let solicitud of solicitudes" class="table" >
+             
+              <tbody >
+                <tr>
+                  <th scope="row">1</th>
+                  <td>{{solicitud.nombreC}}</td>
+                  <td>{{solicitud.correo}}</td>
+                  <td>{{solicitud.telefono}}</td>
+                  <td>{{solicitud.nombreO}}</td>
+                  <td>{{solicitud.asunto}}</td>
+                  <td>{{solicitud.mensaje}}</td>
+                  <td>{{solicitud.date}}</td>
+                </tr>
+              </tbody>
+            </table>
+  
+        </div>
+        <div class = "container text-success"  *ngSwitchCase ="'publicidades01'" >
+          <h2 class="elegantshadow">PUBLICIDADES</h2>
+          <thead >
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Usuario</th>
+              <th scope="col">Titulo</th>
+              <th scope="col">Descripcion</th>
+            </tr>
+          </thead>
+            <table *ngFor="let publicidad of publicidades" class="table">
+              
+              <tbody>
+                <tr>
+                  <th scope="row"> </th>
+                  <td>{{publicidad.idPublicidad}}</td>
+                  <td>{{publicidad.usuario}}</td>
+                  <td>{{publicidad.titulo}}</td>
+                  <td>{{publicidad.descripcion}}</td>
+                </tr>
+              </tbody>
+            </table>
+  
+        </div>
+        <div class = "container text-success"  *ngSwitchCase="'adopciones01'">
+          <h2 class="elegantshadow">ADOPCIONES</h2>
+          <thead >
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Mascota</th>
+              <th scope="col">Adoptante</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Email</th>
+              <th scope="col">tipo de Documento</th>
+              <th scope="col">Documento</th>
+              <th scope="col">Observaciones</th>
+            </tr>
+          </thead>
+            <table *ngFor="let adopcion of adopciones" class="table">
+              
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>{{adopcion.idAdopcion}}</td>
+                  <td>{{adopcion.mascota}}</td>
+                  <td>{{adopcion.adoptante}}</td>
+                  <td>{{adopcion.nombre}}</td>
+                  <td>{{adopcion.email}}</td>
+                  <td>{{adopcion.tipodoc}}</td>
+                  <td>{{adopcion.documento}}</td>
+                  <td>{{adopcion.observaciones}}</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+        <div class = "container text-success"  *ngSwitchCase="'default'">
+
+        </div>
+      </div>
     </aside>      
 
 </section>

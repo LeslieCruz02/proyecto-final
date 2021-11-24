@@ -50,6 +50,12 @@ nav ul li a{
   .fondo{
     background-color: #c8f4f94d;
   }
+
+  .crearCuenta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .crearCuenta a{
     padding: 0.6rem 5rem 0.6rem 5rem ;
     background-color: #3CACAE;

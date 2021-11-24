@@ -25,6 +25,7 @@ h4{
     border-radius: 5px;
     padding-left: 0px;
     margin-left: 31px;
+    
 }
 .imagen img{
     margin: 0px;
@@ -113,6 +114,7 @@ h4{
 h3{
     padding: 10px
 }   
+
 .fotoPerfil{
     display: flex;
     flex-direction: row;
