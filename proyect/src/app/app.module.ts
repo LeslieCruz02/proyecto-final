@@ -43,6 +43,9 @@ import { VerificationEmailComponent } from './components/verification-email/veri
 import { AdminsComponent } from './containers/admins/admins.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { PanelAdminComponent } from './components/panel-admin/panel-admin.component';
+import { RegisterAdminComponent } from './components/register-admin/register-admin.component';
+import { RegisterAdmonComponent } from './containers/register-admon/register-admon.component';
+import { PanelAdmonComponent } from './containers/panel-admon/panel-admon.component';
 
 
 @NgModule({
@@ -86,6 +89,9 @@ import { PanelAdminComponent } from './components/panel-admin/panel-admin.compon
     AdminsComponent,
     AdminComponent,
     PanelAdminComponent,
+    RegisterAdminComponent,
+    RegisterAdmonComponent,
+    PanelAdmonComponent,
   ],
   imports: [
     BrowserModule,

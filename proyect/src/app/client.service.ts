@@ -18,6 +18,27 @@ export class ClientService {
     return this.http.get(`${this.BASE_API}/listaMascotas`)
   }
 
+  getRequestMascotas() {
+ 
+    return this.http.get(`${this.BASE_API}/mascotasInfo`)
+  }
+  getRequestUsuarios() {
+ 
+    return this.http.get(`${this.BASE_API}/usuariosInfo`)
+  }
+  getRequestsolicitudes() {
+ 
+    return this.http.get(`${this.BASE_API}/solicitudesInfo`)
+  }
+  getRequestPublicidades() {
+ 
+    return this.http.get(`${this.BASE_API}/publicidadesInfo`)
+  }
+  getRequestAdopciones() {
+ 
+    return this.http.get(`${this.BASE_API}/adopcionesInfo`)
+  }
+
   getRequestAdop(route:string){
     let config1:any={
       responseType:"json"

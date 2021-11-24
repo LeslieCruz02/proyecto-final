@@ -1,0 +1,45 @@
+h1{
+    text-align: center;
+    padding-top: 50px;
+    padding-right: 12.5rem;
+}
+img {
+    float:left;
+}
+form{
+    margin: 50px 200px;
+    
+}
+
+.datos1{
+    padding: 10px 0px;
+}
+.usuario{
+    padding: 10px;
+
+}
+.contraseña{
+    padding: 10px;
+}
+
+.nombre{
+    margin-right: 160px;
+    padding: 10px;
+}
+.apellido{
+    margin-right: 160px;
+    padding: 10px;
+}
+.correo{
+    margin-right: 160px;
+    padding: 10px;
+}
+.telefono{
+    margin-right: 160px;
+    padding: 10px;
+}
+
+.password{
+    padding-top: 20px; 
+
+}

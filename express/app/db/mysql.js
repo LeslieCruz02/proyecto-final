@@ -39,8 +39,8 @@ function usuarios(data) {
       
       let hashPass = bcrypt.hashSync(data.password, 8);
       data.password = hashPass;
-      let insert = 'INSERT INTO usuarios(usuario, nombres, apellidos, rol correo, telefono, password, estadoCuenta) VALUES(?,?,?,?,?,?,?)';   
-      let query = mysql.format(insert,[data.usuario, data.nombres, data.apellidos, data.rol, data.correo, data.telefono, data.password, "inactivo"]);
+      let insert = 'INSERT INTO admin(usuario, nombres, apellidos, rol, correo, telefono, password, estadoCuenta, foto) VALUES(?,?,?,?,?,?,?,?,?)';   
+      let query = mysql.format(insert,[data.usuario, data.nombres, data.apellidos, data.rol, data.correo, data.telefono, data.password, "activo", null]);
       
       mysqlConnection.query(query, (error, result) => {
         if (error) reject(error);
@@ -229,6 +229,7 @@ function mascotas(){
   });
   });
 }
+
 function mascota(data){
   return new Promise((resolve,reject)=>{
     const mysqlConnection = connection();
@@ -249,6 +250,98 @@ function mascota(data){
   });
   });
 }
+
+function usuariosInfo(){
+  return new Promise((resolve,reject)=>{
+    const mysqlConnection = connection();
+    mysqlConnection.connect((err) => {
+      if (err) throw err;
+      console.log("Connected to MySQL Server!");
+    });
+    let select = 'SELECT * FROM usuarios';
+    let query = mysql.format(select);
+    mysqlConnection.query(query, (error, result) => {
+    if(error) reject (error);
+    console.log(error);
+    mysqlConnection.end();
+    resolve(result);
+    console.log(result);
+  });
+  });
+}
+
+function mascotasInfo(){
+  return new Promise((resolve,reject)=>{
+    const mysqlConnection = connection();
+    mysqlConnection.connect((err) => {
+      if (err) throw err;
+      console.log("Connected to MySQL Server!");
+    });
+    let select = 'SELECT * FROM mascotas';
+    let query = mysql.format(select);
+    mysqlConnection.query(query, (error, result) => {
+    if(error) reject (error);
+    console.log(error);
+    mysqlConnection.end();
+    resolve(result);
+    console.log(result);
+  });
+  });
+}
+function solicitudesInfo(){
+  return new Promise((resolve,reject)=>{
+    const mysqlConnection = connection();
+    mysqlConnection.connect((err) => {
+      if (err) throw err;
+      console.log("Connected to MySQL Server!");
+    });
+    let select = 'SELECT * FROM contactenos';
+    let query = mysql.format(select);
+    mysqlConnection.query(query, (error, result) => {
+    if(error) reject (error);
+    console.log(error);
+    mysqlConnection.end();
+    resolve(result);
+    console.log(result);
+  });
+  });
+}
+function publicidadesInfo(){
+  return new Promise((resolve,reject)=>{
+    const mysqlConnection = connection();
+    mysqlConnection.connect((err) => {
+      if (err) throw err;
+      console.log("Connected to MySQL Server!");
+    });
+    let select = 'SELECT * FROM publicidades';
+    let query = mysql.format(select);
+    mysqlConnection.query(query, (error, result) => {
+    if(error) reject (error);
+    console.log(error);
+    mysqlConnection.end();
+    resolve(result);
+    console.log(result);
+  });
+  });
+}
+function adopcionesInfo(){
+  return new Promise((resolve,reject)=>{
+    const mysqlConnection = connection();
+    mysqlConnection.connect((err) => {
+      if (err) throw err;
+      console.log("Connected to MySQL Server!");
+    });
+    let select = 'SELECT * FROM adopciones';
+    let query = mysql.format(select);
+    mysqlConnection.query(query, (error, result) => {
+    if(error) reject (error);
+    console.log(error);
+    mysqlConnection.end();
+    resolve(result);
+    console.log(result);
+  });
+  });
+}
 module.exports = {
     connection,
     usuarios,
@@ -262,7 +355,12 @@ module.exports = {
     mascotas,
     mascota,
     administrator,
-    loginAdmin
+    loginAdmin,
+    usuariosInfo,
+    mascotasInfo,
+    solicitudesInfo,
+    publicidadesInfo,
+    adopcionesInfo
   /*  home,
     galeryPpal,
     perfilP,

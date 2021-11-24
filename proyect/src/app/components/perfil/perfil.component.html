@@ -2,7 +2,7 @@
     <div class="container">
         <div>
             <ul class="nav flex-column">
-                <ol class=" imagen">
+                <ol class="imagen">
                     <img src="http://localhost:10101/images?image=27" class="nav-link" href="#" width="250">
                     <h4>Usuario</h4>
                 </ol> 
@@ -43,7 +43,7 @@
         </div>
         <h2 class="public1">{{public.nombre}}</h2>
         <p class="public1">{{public.descripcion}}</p>
-       <img src="{{public.fotos}}" alt="publicacion1" width="500" class="public1">
+       <img src="{{public.foto1}}" alt="publicacion1" width="500" class="public1">
         <div class="botones">
             <button class="btn btn-primary comentarios" data-bs-toggle="button" autocomplete="off" (click)="com=!com">Comentarios</button>
             <p class="text" *ngIf="com"><app-comentarios></app-comentarios></p>

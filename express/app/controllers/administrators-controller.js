@@ -11,15 +11,10 @@ function sleepTime(time) {
 }
 
 let administrator = async(req, res) => {
-  let usuario = req.body.usuario;
-  let nombres = req.body.nombres;
-  let apellidos = req.body.apellidos;
-  let correo = req.body.correo;
-  let telefono  = req.body.telefono;
-  let password = req.body.password;
+  
   let sleep = await sleepTime(1500);
 
-  correo1.sendMail(req.body)
+ // correo1.sendMail(req.body)
 
   db.administrator(req.body)
   .then((result) => {

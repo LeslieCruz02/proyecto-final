@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { PagInicioComponent } from './containers/pag-inicio/pag-inicio.component';
@@ -14,7 +14,8 @@ import { ListadoAdopcionesComponent } from './containers/listado-adopciones/list
 import { AddPublicidadComponent } from './containers/add-publicidad/add-publicidad.component';
 import { VerificationMailComponent } from './containers/verification-mail/verification-mail.component';
 import { AdminsComponent } from './containers/admins/admins.component';
-import { PanelAdminComponent } from './components/panel-admin/panel-admin.component';
+import { PanelAdmonComponent } from './containers/panel-admon/panel-admon.component';
+import { RegisterAdmonComponent } from './containers/register-admon/register-admon.component';
 
 
 
@@ -34,7 +35,8 @@ const routes: Routes = [
   {path:'addPublicidad', component: AddPublicidadComponent},
   {path:'verificationMail', component: VerificationMailComponent},
   {path: 'admin', component: AdminsComponent},
-  {path: 'panelAdmin', component: PanelAdminComponent}
+  {path: 'panelAdmin', component: PanelAdmonComponent},
+  {path:'registerAdmin', component: RegisterAdmonComponent}
 ];
 
 @NgModule({

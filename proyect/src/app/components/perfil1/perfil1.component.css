@@ -25,11 +25,9 @@ h4{
     border-radius: 5px;
     padding-left: 0px;
     margin-left: 31px;
+    margin-right: 33px;
 }
-.imagen img{
-    margin: 0px;
-    text-align: center;
-}
+
 .boton1{
     border-style: solid;
     border-color: rgba(128, 128, 128, 0.699);
@@ -112,6 +110,12 @@ h4{
 h3{
     padding: 10px
 }
+.fotoPerfil{
+    display: flex;
+    flex-direction: row;
+    margin: 0px 50px;
+
+} 
 .info ul{
     margin-bottom: 50px;
 }

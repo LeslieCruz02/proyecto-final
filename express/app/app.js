@@ -22,7 +22,12 @@ const listaMascotas = require('./routes/listaMascotas');
 const mascota = require('./routes/mascota');
 const administrators = require ('./routes/administrators');
 const loginAdmin = require ('./routes/loginAdmin');
-const images = require('./routes/images')
+const images = require('./routes/images');
+const usuariosInfo = require('./routes/usuariosInfo');
+const solicitudesInfo = require('./routes/solicitudesInfo');
+const publicidadesInfo = require('./routes/publicidadesInfo');
+const adopcionesInfo = require('./routes/adopcionesInfo');
+const mascotasInfo = require('./routes/mascotasInfo');
 
 const app = express()
   .use(cors({credentials: true, origin: 'http://localhost:4200'}))
@@ -49,8 +54,13 @@ app.set('view engine', 'ejs');
 app.use('/listaMascotas', listaMascotas);
 app.use('/mascota', mascota);
 app.use('/administrators', administrators);
-app.use('/loginAdmin', loginAdmin)
-app.use('/images', images)
+app.use('/loginAdmin', loginAdmin);
+app.use('/images', images);
+app.use('/usuariosInfo', usuariosInfo);
+app.use('/solicitudesInfo', solicitudesInfo);
+app.use('/publicidadesInfo', publicidadesInfo);
+app.use('/adopcionesInfo', adopcionesInfo);
+app.use('/mascotasInfo', mascotasInfo);
 
 module.exports = app;
 
