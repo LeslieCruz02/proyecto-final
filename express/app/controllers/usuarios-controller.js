@@ -23,6 +23,7 @@ let usuarios = async(req, res) => {
 
   db.usuarios(req.body)
   .then((result) => {
+
     return res.status(200).json({
       status: "register ok",
       auth: true,

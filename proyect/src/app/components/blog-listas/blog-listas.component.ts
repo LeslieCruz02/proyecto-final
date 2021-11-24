@@ -28,7 +28,6 @@ export class BlogListasComponent implements OnInit {
     this.client.getRequestdatosMascotas().subscribe(
       (res:any)=>{
         this.mascotas = res.mascotas;
-        console.log(this.mascotas);
       },
       (error:any)=>{
         console.log(error.status);
