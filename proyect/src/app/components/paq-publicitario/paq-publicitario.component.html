@@ -1,0 +1,69 @@
+<div class="opciones">
+    <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Un Mes</h5>
+          <p class="card-text">Tu publicidad tendrá un duración de un mes. Tiene un costo de *****</p>
+        <div class="enviar">
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">Pagar    </button>
+         </div>
+    </div>
+</div>
+    <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Tres meses</h5>
+          <p class="card-text">Tu publicidad tendrá un duración de tres meses. Tiene un costo de *****</p>
+          <div class="enviar">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">Pagar</button>
+          </div>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Un año</h5>
+            <p class="card-text">Tu publicidad tendrá un duración de un año. Tiene un costo de *****</p>
+            <div class="enviar">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">Pagar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+  <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+    <div class="modal-dialog" [formGroup]="form" (ngSubmit)="crearPublic()">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel1">FORMULARIO</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h3>Ingresa los datos</h3>
+          <div class="formularioModal">
+            <div>
+              <label for="nombre">Nombre del titular</label><br>
+              <input type="text" class="input" id="nombre" formControlName="nombreTitular"><br>
+              <label for="tarjeta">Número de tarjeta</label><br>
+              <input type="number" class="input" id="tarjeta" formControlName="tarjeta"><br>
+             </div>
+            <div>
+              <label for="tipodoc">Tipo de documento</label><br>
+              <select name="" id="tipodoc" formControlName="tipodoc"><br>
+                  <option value=""></option>
+                  <option value="CC">CC</option>
+              </select>
+              <label for="documento">Número de documento</label><br>
+              <input type="number" class="input" id="documento" formControlName="documento">
+            </div>
+          </div>
+          <label for="mesAños">Mes y año de expiración</label><br>
+          <input type="month" class="input" id="mesAños" formControlName="mesAño"><br>
+        </div>
+        <div class="modal-footer">
+        <button type="submit" class="enviar btn btn-primary" data-bs-dismiss="modal" (click)="crearPublic()" href="http://localhost:10101//">Enviar</button> 
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,50 @@
+.opciones{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 10px 50px;
+    
+}
+#tipodoc{
+    margin-bottom: 15px;
+}
+.btnPautar{
+    text-align: center;
+}
+.boton11{
+    padding: 5px 5px;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    background-color: #C8F4F9;
+    border-radius:0.3rem ;
+  }
+  .modal-body{
+    text-align: center;
+    padding:20px;
+    
+  }
+  .formularioModal{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    text-align: left;
+    margin:10px;
+  }
+  .formularioModal, div{
+    padding: 1px 10px;
+  }
+  .input{
+    border-radius: 5px;
+    font-size:15px;
+    width: 150px;
+    margin-bottom: 10px;
+  } 
+  .enviar{
+    text-align: center;
+    padding: 5px 10px;
+  }
+  select{
+      width: 100px;
+      height: 27px;
+      border-radius: 8px;
+  }

@@ -46,6 +46,8 @@ import { PanelAdminComponent } from './components/panel-admin/panel-admin.compon
 import { RegisterAdminComponent } from './components/register-admin/register-admin.component';
 import { RegisterAdmonComponent } from './containers/register-admon/register-admon.component';
 import { PanelAdmonComponent } from './containers/panel-admon/panel-admon.component';
+import { PaqPublicitarioComponent } from './components/paq-publicitario/paq-publicitario.component';
+import { FormPublicidadComponent } from './containers/form-publicidad/form-publicidad.component';
 
 
 @NgModule({
@@ -92,6 +94,8 @@ import { PanelAdmonComponent } from './containers/panel-admon/panel-admon.compon
     RegisterAdminComponent,
     RegisterAdmonComponent,
     PanelAdmonComponent,
+    PaqPublicitarioComponent,
+    FormPublicidadComponent,
   ],
   imports: [
     BrowserModule,

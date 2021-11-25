@@ -19,9 +19,7 @@ export interface Mascotas {
 	responsable: string,
 	idestado: number,	
 	descripcion: string,
-	foto1: string,
-    foto2: string,
-    foto3: string	
+	fotos: string	
 }
 
 export interface Solicitudes{

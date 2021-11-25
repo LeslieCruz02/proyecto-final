@@ -16,7 +16,7 @@ import { VerificationMailComponent } from './containers/verification-mail/verifi
 import { AdminsComponent } from './containers/admins/admins.component';
 import { PanelAdmonComponent } from './containers/panel-admon/panel-admon.component';
 import { RegisterAdmonComponent } from './containers/register-admon/register-admon.component';
-
+import { FormPublicidadComponent } from './containers/form-publicidad/form-publicidad.component';
 
 
 
@@ -36,7 +36,8 @@ const routes: Routes = [
   {path:'verificationMail', component: VerificationMailComponent},
   {path: 'admin', component: AdminsComponent},
   {path: 'panelAdmin', component: PanelAdmonComponent},
-  {path:'registerAdmin', component: RegisterAdmonComponent}
+  {path:'registerAdmin', component: RegisterAdmonComponent},
+  {path:'paqPublicidad', component: FormPublicidadComponent}
 ];
 
 @NgModule({

@@ -1,48 +1,6 @@
+<div class="btnPautar">
+  <button type="button" class="boton11" (click)="publicidad()" >
+  Pautar con nosotros
+  </button>
+</div>  
 
-
-  <div class="btnPautar">
-    <button type="button" class="boton11" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-    Pautar con nosotros
-    </button>
-  </div>  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel1">FORMULARIO</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <h3>Ingresa los datos</h3>
-          <div class="formularioModal" [formGroup]="form" (ngSubmit)="publicidad()">
-            <div>
-              <label for="nombre">Nombre del titular</label><br>
-              <input type="text" class="input" id="nombre" formControlName="nombreTitular"><br>
-              <label for="tarjeta">Número de tarjeta</label><br>
-              <input type="number" class="input" id="tarjeta" formControlName="tarjeta"><br>
-              <label for="mesAños">Mes y año de expiración</label><br>
-              <input type="month" class="input" id="mesAños" formControlName="mesAño"><br>
-            </div>
-            <div>
-              <label for="tipodoc">Tipo de documento</label><br>
-              <input type="text" class="input" id="tipodoc" formControlName="tipodoc">
-              <label for="documento">Número de documento</label><br>
-              <input type="number" class="input" id="documento" formControlName="documento">
-            
-              <label for="tiempo">Duración de la publicidad</label><br>
-              <select id="tiempo" formControlName="tiempo">
-                <option value="unMes">Un mes</option>
-                <option value="treMeses">Tres meses</option>
-                <option value="unAño">Un año</option>
-                <option value="" selected></option>
-              </select>
-              <br>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-        <button type="submit" class="enviar btn btn-primary" data-bs-dismiss="modal" (click)="publicidad()" href="http://localhost:10101//">Enviar</button> 
-      </div>
-    </div>
-  </div>

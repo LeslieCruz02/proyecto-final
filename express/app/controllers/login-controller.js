@@ -12,10 +12,7 @@ function sleepTime(time) {
 }
 
 let login = async (req, res) => {
-  // let cookie = {
-  //   domain: 'localhost/home', path: '/', secure: false,
-  //   expires: new Date(Date.now() + 300000), httpOnly: true
-  // }
+
   let usuario = req.body.usuario;
   let password = req.body.password;
   let sleep = await sleepTime(3000);
@@ -32,9 +29,13 @@ let login = async (req, res) => {
     };
     
     let jwt = nJwt.create({usuario:usuario, idusuario: result[0].idusuario  },KEY.SIGNING_KEY);
-    jwt.setExpiration(new Date().getTime() + (2* 60 * 1000));
+    jwt.setExpiration(new Date().getTime() + (20* 60 * 1000));
+    let cookieConfig = {
+      domain: 'localhost', path: '/', secure: false,
+      expires: new Date(Date.now() + 300000), httpOnly: true
+    }
     let token = jwt.compact();
-    return res.status(200).json({
+    return res.status(200).cookie('refreshtoken', token, cookieConfig).json({
       "Status": "authentication ok",
       token: token
     });

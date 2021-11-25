@@ -55,7 +55,7 @@ export class ClientService {
     config1["headers"]=header;
     return this.http.get(route,config1)
   }
-  postRequestPublicidad(route:string,data?:any){
+  getRequestPublicidad(route:string,data?:any){
     let config1:any={
       responseType:"json"
     }
@@ -109,7 +109,14 @@ export class ClientService {
     config["headers"]=header; 
     return this.http.post(route, data, config)
   }
-
+  getRequestPaquete(route:string, data?:any){
+    let config:any={
+      responseType:"json"
+    }
+    const header =new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem('token')}`);
+    config["headers"]=header; 
+    return this.http.post(route, data, config)
+  }
 
 
   //metodo que recibe como parametro una url y realiza la peticion con metodo GET
@@ -146,6 +153,7 @@ export class ClientService {
     //Notese que como segundo parametro se pasa la configuracion de la request
     return this.http.get(route, config);
   }
+  
 
 
   //metodo que recibe como parametro una url y un json a ser enviado. Esta solicitud se hace con metodo POST

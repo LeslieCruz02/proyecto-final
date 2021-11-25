@@ -21,49 +21,50 @@ export class PublicidadComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.form = this.fb.group({
-      nombreTitular: ['', Validators.required],
-      tarjeta: ['', Validators.required],
-      mesAño: ['', Validators.required],
-      documento: ['', Validators.required],
-      tipodoc: ['', Validators.required],
-      tiempo: ['', Validators.required],
-    });
+    // this.form = this.fb.group({
+    //   nombreTitular: ['', Validators.required],
+    //   tarjeta: ['', Validators.required],
+    //   mesAño: ['', Validators.required],
+    //   documento: ['', Validators.required],
+    //   tipodoc: ['', Validators.required],
+    //   tiempo: ['', Validators.required],
+    // });
   }
+
   async publicidad(){
-    if(this.form.valid){
-      let data={
-        nombreTitular: this.form.value.nombreTitular,
-        tarjeta: this.form.value.tarjeta,
-        tipodoc: this.form.value.tipodoc,
-        mesAño: this.form.value.mesAño,
-        documento: this.form.value.documento,
-        tiempo: this.form.value.tiempo
-      }
-      this.client.postRequestPublicidad(`${this.BASE_API}/home`,data
+    // if(this.form.valid){
+    //   let data={
+    //     nombreTitular: this.form.value.nombreTitular,
+    //     tarjeta: this.form.value.tarjeta,
+    //     tipodoc: this.form.value.tipodoc,
+    //     mesAño: this.form.value.mesAño,
+    //     documento: this.form.value.documento,
+    //     tiempo: this.form.value.tiempo
+    //   }
+      this.client.getRequestPublicidad(`${this.BASE_API}/home`
         ).subscribe(
         (response:any)=>{
           
-          localStorage.setItem('Nombre',data.nombreTitular);
-          localStorage.setItem('Tarjeta',data.tarjeta);
-          localStorage.setItem('AñoMes',data.mesAño);
-          localStorage.setItem('TipoDocumento',data.tipodoc);
-          localStorage.setItem('Documento',data.documento);
-          localStorage.setItem('Tiempo',data.tiempo);
+          // localStorage.setItem('Nombre',data.nombreTitular);
+          // localStorage.setItem('Tarjeta',data.tarjeta);
+          // localStorage.setItem('AñoMes',data.mesAño);
+          // localStorage.setItem('TipoDocumento',data.tipodoc);
+          // localStorage.setItem('Documento',data.documento);
+          // localStorage.setItem('Tiempo',data.tiempo);
           
           console.log(response);
-          Swal.fire(
-            'Sus datos han sido registrados!',
-            '',
-            'success'
-          )
-          this.route.navigate(['/addPublicidad']);
+          // Swal.fire(
+          //   'Sus datos han sido registrados!',
+          //   '',
+          //   'success'
+          // )
+          this.route.navigate(['/paqPublicidad']);
         },
         (error: any)=>{
           console.log(error.status);
         })
-    }else{
-      console.log("Form error");
-    }
+    // }else{
+    //   console.log("Form error");
+    // }
   }
 }
