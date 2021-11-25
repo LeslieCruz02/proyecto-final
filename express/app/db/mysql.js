@@ -28,7 +28,7 @@ function usuarios(data) {
      });
     });
   }
-
+ 
   function administrator(data) {
     return new Promise((resolve, reject)=>{
       const mysqlConnection = connection();
@@ -59,13 +59,14 @@ function login(data){
         console.log("Connected to MySQL Server!");
       });
   
-      let select = 'SELECT usuario, password FROM usuarios WHERE usuario=? AND estadoCuenta = ?';
+      let select = 'SELECT idusuario, usuario, password FROM usuarios WHERE usuario=? AND estadoCuenta = ?';
       let query = mysql.format(select,[data.usuario, "activo"]);
       mysqlConnection.query(query, (error, result) => {
       if(error) reject (error);
       console.log(error);
       mysqlConnection.end();
       resolve(result);
+      console.log(result);
     });
     });
   }
@@ -78,7 +79,7 @@ function login(data){
         console.log("Connected to MySQL Server!");
       });
   
-      let select = 'SELECT usuario, password FROM usuarios WHERE usuario=? AND estadoCuenta = ?';
+      let select = 'SELECT idadmin, usuario,  password FROM usuarios WHERE usuario=? AND estadoCuenta = ?';
       let query = mysql.format(select,[data.usuario, "activo"]);
       mysqlConnection.query(query, (error, result) => {
       if(error) reject (error);
@@ -202,7 +203,6 @@ function activar(data){
       mysqlConnection.query(query, (error, result) => {
         if (error) reject(error);
         mysqlConnection.end();
-        console.log(result);
         resolve(result);
    
      });
@@ -342,6 +342,64 @@ function adopcionesInfo(){
   });
   });
 }
+
+function consultaUser(data){
+  return new Promise((resolve,reject)=>{
+    const mysqlConnection = connection();
+    mysqlConnection.connect((err) => {
+      if (err) throw err;
+      console.log("Connected to MySQL Server!");
+    });
+    let select = 'SELECT idusuario, nombres FROM usuarios WHERE idusuario =?';
+    let query = mysql.format(select,[data]);
+    mysqlConnection.query(query, (error, result) => {
+    if(error) reject (error);
+    console.log(error);
+    mysqlConnection.end();
+    resolve(result);
+    console.log(data);
+    console.log(result);
+  });
+  });
+}
+
+function consultaDate(data){
+  return new Promise((resolve,reject)=>{
+    const mysqlConnection = connection();
+    mysqlConnection.connect((err) => {
+      if (err) throw err;
+      console.log("Connected to MySQL Server!");
+    });
+    let select = 'SELECT *  FROM usuarios WHERE idusuario =?';
+    let query = mysql.format(select,[data]);
+    mysqlConnection.query(query, (error, result) => {
+    if(error) reject (error);
+    console.log(error);
+    mysqlConnection.end();
+    resolve(result);
+    console.log(data);
+    console.log(result);
+  });
+  });
+}
+function dateMascotas(data){
+  return new Promise((resolve,reject)=>{
+    const mysqlConnection = connection();
+    mysqlConnection.connect((err) => {
+      if (err) throw err;
+      console.log("Connected to MySQL Server!");
+    });
+    let select = 'SELECT nombre, tipoDeMascota, raza, edad, responsable, idestado, descripcion, fotos  FROM mascotas WHERE responsable =?';
+    let query = mysql.format(select,[data]);
+    mysqlConnection.query(query, (error, result) => {
+    if(error) reject (error);
+    console.log(error);
+    mysqlConnection.end();
+    resolve(result);
+    console.log(result);
+  });
+  });
+}
 module.exports = {
     connection,
     usuarios,
@@ -360,7 +418,10 @@ module.exports = {
     mascotasInfo,
     solicitudesInfo,
     publicidadesInfo,
-    adopcionesInfo
+    adopcionesInfo,
+    consultaUser,
+    consultaDate,
+    dateMascotas
   /*  home,
     galeryPpal,
     perfilP,

@@ -25,9 +25,20 @@ export class BlogListasComponent implements OnInit {
  
   ngOnInit(): void {
 
+    this.client.getRequestLista(`${this.BASE_API}/listaAdopcion`).subscribe(
+      (response:any)=>{
+        console.log(response);
+        this.route.navigate(['/listaAdopcion']);
+      },
+      (error)=>{
+        console.log(error.status);
+      }
+    )
+          
     this.client.getRequestdatosMascotas().subscribe(
       (res:any)=>{
         this.mascotas = res.mascotas;
+        console.log(this.mascotas);
       },
       (error:any)=>{
         console.log(error.status);

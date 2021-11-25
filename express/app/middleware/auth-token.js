@@ -9,9 +9,10 @@ let njwtAuth = (req, res, next) => {
   let token = sub[1];
   nJwt.verify(token, config.SIGNING_KEY, function(err, decoded) {
     if (err) {
-      return res.status(500).send({ auth: false, message: err });
+      return res.status(400).send({ auth: false, message: err });
     }
     usuario = decoded.body.usuario;
+    idusuario = decoded.body.idusuario;
     
     next();
   });

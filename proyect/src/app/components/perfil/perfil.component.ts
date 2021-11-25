@@ -3,6 +3,7 @@ import { ClientService } from '../../client.service';
 import { Router } from '@angular/router';
 import { Mascotas } from '../../interface/mascotas.interface'
 import { environment } from 'src/environments/environment';
+import { Usuarios } from 'src/app/interface/info.interface';
 
 @Component({
   selector: 'app-perfil',
@@ -17,17 +18,26 @@ export class PerfilComponent implements OnInit {
     private route:  Router
   ) { }
   mascotas : Mascotas [] = [];
+  usuarios: Usuarios[] =[]
 
   ngOnInit(): void {
-    this.client.getRequestdatosMascotas().subscribe(
-      (res:any)=>{
-        this.mascotas = res.mascotas;
-        console.log(this.mascotas);
+    this.client.getRequestPerfil(`${this.BASE_API}/date`).subscribe(
+      (response: any) => {  
+        this.usuarios = response.usuarios;
+          console.log(this.usuarios);
       },
-      (error:any)=>{
+      (error) => {
         console.log(error.status);
-      }
-    )
+        }
+      )
+      this.client. getRequestdatosMascotas().subscribe(
+        (res:any)=>{
+          this.mascotas = res.mascotas;
+        },
+        (error:any)=>{
+          console.log(error.status);
+        }
+      )
   }
   quieroAdop(){
     this.client.getRequestAdop(`${this.BASE_API}/home`).subscribe(
@@ -42,7 +52,7 @@ export class PerfilComponent implements OnInit {
   }
 
   regMascota(){
-    this.client.getRequestRegMascota("http://localhost:10101/perfilP").subscribe(
+    this.client.getRequestRegMascota(`${this.BASE_API}/perfilP`).subscribe(
     (response: any) => {
         console.log(response);
         this.route.navigate(['/rmascota']);

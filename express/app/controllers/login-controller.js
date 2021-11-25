@@ -29,7 +29,7 @@ let login = async (req, res) => {
     };
     
     let jwt = nJwt.create({usuario:usuario, idusuario: result[0].idusuario  },KEY.SIGNING_KEY);
-    jwt.setExpiration(new Date().getTime() + (2* 60 * 1000));
+    jwt.setExpiration(new Date().getTime() + (30* 60 * 1000));
     let token = jwt.compact();
 
     return res.status(200).json({

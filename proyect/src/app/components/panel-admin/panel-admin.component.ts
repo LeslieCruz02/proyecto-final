@@ -8,13 +8,17 @@ import { Publicidades } from '../../interface/info.interface';
 import { Adopciones } from '../../interface/info.interface';
 import { environment } from 'src/environments/environment';
 
+import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-panel-admin',
   templateUrl: './panel-admin.component.html',
   styleUrls: ['./panel-admin.component.css']
 })
 export class PanelAdminComponent implements OnInit {
-  BASE_API: string=environment.BASE_API
+  BASE_API: string=environment.BASE_API;
+
+  load: boolean = true;
 
   /*usuarios01: boolean = false;
   mascotas01: boolean = false;
@@ -49,7 +53,6 @@ export class PanelAdminComponent implements OnInit {
         console.log(error.status);
       }
     )
-
 
     this.client.getRequestUsuarios().subscribe(
       (res:any)=>{
@@ -87,7 +90,12 @@ export class PanelAdminComponent implements OnInit {
         console.log(error.status);
       }
     )
-  
+  }
+  eliminarUsuario(id:number){
+    console.log("Hago peticion por delete al server para eliminar el user de id: ", id);
+  }
+  actualizarUsuario(id:number){
+    console.log("Hago peticion por delete al server para eliminar el user de id: ", id);
   }
  
 }

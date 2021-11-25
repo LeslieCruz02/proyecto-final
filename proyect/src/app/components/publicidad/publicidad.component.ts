@@ -40,7 +40,7 @@ export class PublicidadComponent implements OnInit {
         documento: this.form.value.documento,
         tiempo: this.form.value.tiempo
       }
-      this.client.postRequestPublicidad(`${this.BASE_API}/home`,data
+      this.client.postRequestPublicidad(`${this.BASE_API}`,data
         ).subscribe(
         (response:any)=>{
           

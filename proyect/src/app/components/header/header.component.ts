@@ -3,6 +3,7 @@ import { ClientService } from '../../client.service';
 import { Router } from '@angular/router';
 import { Mascotas } from '../../interface/mascotas.interface'
 import { environment } from 'src/environments/environment';
+import { Usuarios } from 'src/app/interface/info.interface';
 
 @Component({
   selector: 'app-header',
@@ -19,8 +20,21 @@ export class HeaderComponent implements OnInit {
   ) { }
   mascotas : Mascotas [] = [];
 
+  nombres : Usuarios[]=[]
 
   ngOnInit(): void {
+
+
+    this.client.getRequestAdop(`${this.BASE_API}/home`).subscribe(
+      (response:any)=>{
+        this.nombres = response.nombres;
+        console.log(response);
+      },
+      (error)=>{
+        console.log(error.status);
+      }
+    )
+
     this.client.getRequestdatosMascotas().subscribe(
       (res:any)=>{
         this.mascotas = res.mascotas;
@@ -30,17 +44,8 @@ export class HeaderComponent implements OnInit {
         console.log(error.status);
       }
     )
+     
   }
-  async quieroAdop(){
-    this.load=false;
-    this.client.getRequestAdop(`${this.BASE_API}/home`).subscribe(
-      (response:any)=>{
-        console.log(response);
-        this.route.navigate(['/listaAdopcion']);
-      },
-      (error)=>{
-        console.log(error.status);
-      }
-    )
-  }
+  
+ 
 }
