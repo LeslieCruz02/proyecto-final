@@ -1,10 +1,10 @@
-<div class="perfil">
+<div class="perfil" *ngFor="let element of usuarios" >
     <div class="container">
         <div>
             <ul class="nav flex-column">
                 <ol class="imagen">
-                    <img src="http://localhost:10101/images?image=27" class="nav-link" href="#" width="250">
-                    <h4>Usuario</h4>
+                    <img src="http://localhost:10101/images?image={{element.idusuario}}" class="nav-link" href="#" width="250">
+                    <h4>{{element.nombres}}</h4>
                 </ol> 
             </ul>
         </div>
@@ -36,13 +36,13 @@
         </div>
         <ul>
             <ol><strong>Nombres</strong></ol>
-            <ol>*Nombre del usuario*</ol>
+            <ol>{{element.nombres}} </ol>
             <ol><strong>Apellidos</strong></ol>
-            <ol>*Apeillido del usuario*</ol>
+            <ol>{{element.apellidos}}</ol>
             <ol><strong>Correo electrónico</strong></ol>
-            <ol>*Correo del usuario*</ol>
+            <ol>{{element.correo}}</ol>
             <ol><strong>Teléfono</strong></ol>
-            <ol>*Teléfono del usuario*</ol>
+            <ol>{{element.telefono}}</ol>
         </ul>
     </div>
 </div>

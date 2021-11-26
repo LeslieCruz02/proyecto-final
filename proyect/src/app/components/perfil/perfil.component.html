@@ -1,10 +1,10 @@
-<div class="perfil">
+<div class="perfil" *ngFor="let element of usuarios" >
     <div class="container">
         <div>
             <ul class="nav flex-column">
                 <ol class="imagen">
-                    <img src="http://localhost:10101/images?image=27" class="nav-link" href="#" width="250">
-                    <h4>Usuario</h4>
+                    <img src="http://localhost:10101/images?image={{element.idusuario}}" class="nav-link" href="#" width="250">
+                    <h4>{{element.nombres}}</h4>
                 </ol> 
             </ul>
         </div>
@@ -31,7 +31,7 @@
         </div>
     </div>    
   
-    <div class="Publicaciones" *ngFor="let public of mascotas">
+    <div class="Publicaciones" *ngFor="let mascota of mascotas">
         <div class="mb-3">
             <input type="submit" value="Mis Publicaciones" class="form-control" id="formGroupExampleInput">
         </div>
@@ -41,9 +41,9 @@
             <input type="checkbox" name="Adoptado" id="Adop">
             <label for="Adop">Adoptado</label>            
         </div>
-        <h2 class="public1">{{public.nombre}}</h2>
-        <p class="public1">{{public.descripcion}}</p>
-       <img src="{{public.fotos}}" alt="publicacion1" width="500" class="public1">
+        <h2 class="public1">{{mascota.nombre}}</h2>
+        <p class="public1">{{mascota.descripcion}}</p>
+       <img src="{{mascota.foto1}}" alt="publicacion1" width="500" class="public1">
         <div class="botones">
             <button class="btn btn-primary comentarios" data-bs-toggle="button" autocomplete="off" (click)="com=!com">Comentarios</button>
             <p class="text" *ngIf="com"><app-comentarios></app-comentarios></p>

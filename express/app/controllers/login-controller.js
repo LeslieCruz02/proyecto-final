@@ -29,12 +29,12 @@ let login = async (req, res) => {
     };
     
     let jwt = nJwt.create({usuario:usuario, idusuario: result[0].idusuario  },KEY.SIGNING_KEY);
-    jwt.setExpiration(new Date().getTime() + (20* 60 * 1000));
+    jwt.setExpiration(new Date().getTime() + (30* 60 * 1000));
+    let token = jwt.compact();
     let cookieConfig = {
       domain: 'localhost', path: '/', secure: false,
       expires: new Date(Date.now() + 300000), httpOnly: true
     }
-    let token = jwt.compact();
     return res.status(200).cookie('refreshtoken', token, cookieConfig).json({
       "Status": "authentication ok",
       token: token

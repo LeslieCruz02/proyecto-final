@@ -28,6 +28,8 @@ const solicitudesInfo = require('./routes/solicitudesInfo');
 const publicidadesInfo = require('./routes/publicidadesInfo');
 const adopcionesInfo = require('./routes/adopcionesInfo');
 const mascotasInfo = require('./routes/mascotasInfo');
+const date = require('./routes/date');
+const dateMascotas = require('./routes/dateMascotas');
 
 const app = express()
   .use(cors({credentials: true, origin: 'http://localhost:4200'}))
@@ -61,6 +63,7 @@ app.use('/solicitudesInfo', solicitudesInfo);
 app.use('/publicidadesInfo', publicidadesInfo);
 app.use('/adopcionesInfo', adopcionesInfo);
 app.use('/mascotasInfo', mascotasInfo);
-
+app.use('/date', date);
+app.use('/dateMascotas', date);
 module.exports = app;
 

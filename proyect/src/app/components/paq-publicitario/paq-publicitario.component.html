@@ -1,31 +1,31 @@
 <div class="opciones">
     <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
+        <!-- <img src="..." class="card-img-top" alt="..."> -->
         <div class="card-body">
           <h5 class="card-title">Un Mes</h5>
-          <p class="card-text">Tu publicidad tendrá un duración de un mes. Tiene un costo de *****</p>
+          <p class="card-text">Tu publicidad tendrá un duración de un mes. Tiene un costo de ${{precio1}}</p>
         <div class="enviar">
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">Pagar    </button>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1" (click)="paquete1()">Pagar</button>
          </div>
     </div>
 </div>
     <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
+        <!-- <img src="..." class="card-img-top" alt="..."> -->
         <div class="card-body">
           <h5 class="card-title">Tres meses</h5>
-          <p class="card-text">Tu publicidad tendrá un duración de tres meses. Tiene un costo de *****</p>
+          <p class="card-text">Tu publicidad tendrá un duración de tres meses. Tiene un costo de ${{precio2}}</p>
           <div class="enviar">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">Pagar</button>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1" (click)="paquete2()" >Pagar</button>
           </div>
         </div>
     </div>
     <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
+        <!-- <img src="..." class="card-img-top" alt="..."> -->
         <div class="card-body">
             <h5 class="card-title">Un año</h5>
-            <p class="card-text">Tu publicidad tendrá un duración de un año. Tiene un costo de *****</p>
+            <p class="card-text">Tu publicidad tendrá un duración de un año. Tiene un costo de ${{precio3}}</p>
             <div class="enviar">
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">Pagar</button>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1" (click)="paquete3()">Pagar</button>
             </div>
         </div>
     </div>
@@ -40,8 +40,11 @@
           <h5 class="modal-title" id="exampleModalLabel1">FORMULARIO</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body" [ngSwitch]='paq'>
           <h3>Ingresa los datos</h3>
+          <p class="pago" *ngSwitchCase='1'>Su pago del paquete de un mes es de ${{precio1}}</p>
+          <p class="pago" *ngSwitchCase='2'>Su pago del paquete de tres meses es de ${{precio2}}</p>
+          <p class="pago" *ngSwitchCase='3'>Su pago del paquete de un año es de ${{precio3}}</p>
           <div class="formularioModal">
             <div>
               <label for="nombre">Nombre del titular</label><br>

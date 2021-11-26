@@ -13,13 +13,15 @@ import Swal from 'sweetalert2';
 export class PaqPublicitarioComponent implements OnInit {
   BASE_API: string=environment.BASE_API
   form!: FormGroup;
-  tiempo: boolean = false;
+  precio1: number = 30000;
+  precio2: number = 90000;
+  precio3: number = 360000;
+  paq:any;
   constructor(
     public client: ClientService,
     private fb: FormBuilder,
     private route:  Router
   ) { }
-
   ngOnInit(): void {
     this.form = this.fb.group({
       nombreTitular: ['', Validators.required],
@@ -29,7 +31,15 @@ export class PaqPublicitarioComponent implements OnInit {
       tipodoc: ['', Validators.required],
     });
   }
-
+  paquete1(){
+    this.paq=1;
+  };
+  paquete2(){
+    this.paq=2;
+  };
+  paquete3(){
+    this.paq=3;
+  };
   async crearPublic(){
     if(this.form.valid){
       

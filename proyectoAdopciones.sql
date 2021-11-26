@@ -92,13 +92,14 @@ CREATE TABLE `mascotas` (
   `tipoDeMascota` char(100) DEFAULT NULL,
   `raza` char(30) DEFAULT NULL,
   `edad` char(20) DEFAULT NULL,
-  `responsable` char(100) DEFAULT NULL,
+  `responsable` int DEFAULT NULL,
   `idestado` tinyint DEFAULT NULL,
   `descripcion` varchar(1000) DEFAULT NULL,
   `foto1` varchar(256) DEFAULT NULL,
   `foto2` varchar(256) DEFAULT NULL,
   `foto3` varchar(256) DEFAULT NULL,
-  PRIMARY KEY (`idmascota`)
+  PRIMARY KEY (`idmascota`),
+  CONSTRAINT `mascotas` FOREIGN KEY (`responsable`) REFERENCES `usuarios` (`idusuario`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 

@@ -68,18 +68,13 @@ footer{
 @media screen and (max-width: 576px){
 
   footer{
-    font-size: 9px;
-    padding-left: 4rem;
-    height: 3rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px 0px;
   }
-
   .redesSociales{
-    float: right;
-    padding-left: 8rem;
+    padding-right: 220px;
+    text-align: center; 
   }
-
-  .redesSociales img{
-    width: 25px;
-    height: 15px;
- }
 }

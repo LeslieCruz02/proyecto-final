@@ -68,21 +68,22 @@ tbody{
     margin: 20px;
 }
 th{
-    width: 150px;
+    width: 100px;
+    text-align: center;
 }
 td{
-    width: 150px;
+    text-align: center;
+    padding: 0px;
 }
 #panel{
     height: 50rem;
 }
+.btn:hover{
+    background: transparent;
+    width: 0px;
+}
 
 .titulo {
-    margin: 0;
-    height: 400px;
-  }
-  
-  .titulo {
     margin: 0;
     height: 100%;
     overflow: hidden;

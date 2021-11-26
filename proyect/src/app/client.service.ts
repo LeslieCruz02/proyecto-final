@@ -14,10 +14,12 @@ export class ClientService {
   constructor(private http: HttpClient) { }
 
   getRequestdatosMascotas() {
+    
  
     return this.http.get(`${this.BASE_API}/listaMascotas`)
+ 
   }
-
+ 
   getRequestMascotas() {
  
     return this.http.get(`${this.BASE_API}/mascotasInfo`)
@@ -47,6 +49,15 @@ export class ClientService {
     config1["headers"]=header;
     return this.http.get(route,config1)
   }
+  getRequestPerfil(route:string){
+    let config:any={
+      responseType:"json"
+    }
+    const header =new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem('token')}`);
+    config["headers"]=header;
+    return this.http.get(route,config)
+  }
+
   getRequestCom(route:string){
     let config1:any={
       responseType:"json"
@@ -101,6 +112,15 @@ export class ClientService {
     return this.http.get(route,config)
   }
   
+  getRequestLista(route:string){
+    let config:any={
+      responseType:"json"
+    }
+    const header =new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem('token')}`);
+    config["headers"]=header;
+    return this.http.get(route,config)
+  }
+
   getReqPublicidad(route:string, data?:any){
     let config:any={
       responseType:"json"
@@ -201,5 +221,9 @@ export class ClientService {
 
   postRequestMascota(route: string, data?:any) {
     return this.http.post(route,data)
+  }
+
+  deleteRequestUsuarios(route: string, data?:any) {
+    return this.http.delete(route,data)
   }
 }
