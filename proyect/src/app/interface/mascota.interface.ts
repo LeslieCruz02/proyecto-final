@@ -7,6 +7,7 @@ export interface Mascota {
 	responsable: string,
 	idestado: number,	
 	descripcion: string,
+	fotos: string
 	foto1: string,
     foto2: string,
     foto3: string	
