@@ -5,6 +5,7 @@ import {ClientService} from '../../client.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
+import { Usuarios } from 'src/app/interface/info.interface';
 
 import Swal from 'sweetalert2';
 
@@ -18,26 +19,35 @@ export class RegMascota1Component implements OnInit {
   BASE_API: string=environment.BASE_API
   form!: FormGroup;
   load: boolean = true;
+  usuarios: Usuarios[] =[]
+
 
 
   constructor(
     public client: ClientService,
     private fb: FormBuilder,
-    private route: Router
+    private route: Router,
+  
     ) 
     {
     }
+   
 
   ngOnInit(): void {
-
-
+    this.client.getRequestPerfil(`${this.BASE_API}/date`).subscribe(
+      (response: any) => {  
+        this.usuarios = response.usuarios;
+          console.log(this.usuarios);
+      },
+      (error) => {
+        console.log(error.status);
+        }
+      )
     this.form = this.fb.group({
       nombre: ['', Validators.required],
       tipoDeMascota: ['', Validators.required],
       raza: ['', Validators.required],
       edad: ['', Validators.required],
-      responsable: ['', Validators.required],
-      idestado: ['', Validators.required],
       descripcion: ['', Validators.required],
       fotos: ['', Validators.required]
     });
@@ -55,8 +65,9 @@ export class RegMascota1Component implements OnInit {
         fotos: this.form.value.fotos,
 
       }
+      
       this.load = false;
-      this.client.postRequestSendForm(`${this.BASE_API}/addMascotas`,data)
+      this.client.postRequestSendForm(`${this.BASE_API}/addMascotas`, data)
       .subscribe(
         (response:any)=>{
           this.load = true;
@@ -73,7 +84,7 @@ export class RegMascota1Component implements OnInit {
           }).then((result) => {
             //Read more about isConfirmed, isDenied below
             if (result.isConfirmed) {
-              this.route.navigate(['/galeria']);
+              this.route.navigate(['/listaAdopcion']);
             } else if (result.isDenied) {
               Swal.fire('Los cambios no han sido guardados', '', 'info')
             }

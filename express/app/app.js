@@ -64,6 +64,7 @@ app.use('/publicidadesInfo', publicidadesInfo);
 app.use('/adopcionesInfo', adopcionesInfo);
 app.use('/mascotasInfo', mascotasInfo);
 app.use('/date', date);
-app.use('/dateMascotas', date);
+app.use('/dateMascotas', dateMascotas);
+
 module.exports = app;
 

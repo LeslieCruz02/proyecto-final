@@ -19,12 +19,12 @@ let date = (req, res) => {
 };
 
 let mascotas = (req, res) => {
-
+console.log("estoy llegando");
   db.dateMascotas(idusuario)
  // devolver mensaje de biendevnida Json con el nombre propio del usuario
  .then((result) => {
   return res.status(200).json({
-    Mascotas: result
+    mascotas: result
   });
   
 })
