@@ -30,15 +30,19 @@ export class PerfilComponent implements OnInit {
         console.log(error.status);
         }
       )
-      this.client. getRequestdatosMascotas().subscribe(
+      this.client. getRequestdateMascotas(`${this.BASE_API}/dateMascotas`).subscribe(
         (res:any)=>{
           this.mascotas = res.mascotas;
+          console.log(this.mascotas);
+          
         },
         (error:any)=>{
           console.log(error.status);
         }
       )
   }
+
+ 
   quieroAdop(){
     this.client.getRequestAdop(`${this.BASE_API}/home`).subscribe(
       (response:any)=>{

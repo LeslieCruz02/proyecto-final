@@ -111,7 +111,7 @@ function login(data){
     });
   }
 
-  function addMascotas(data) {
+  function addMascotas(data,idusuario) {
     return new Promise((resolve, reject)=>{
       const mysqlConnection = connection();
       mysqlConnection.connect((err) => {
@@ -119,7 +119,7 @@ function login(data){
         console.log("Connected to MySQL Server!");
       });
       
-      let insert = 'INSERT INTO mascotas (nombre, tipoDeMascota, raza, edad, responsable, idestado, descripcion, fotos) VALUES(?,?,?,?,?,?,?,?)';   
+      let insert = 'INSERT INTO mascotas (nombre, tipoDeMascota, raza, edad, responsable, idestado, descripcion, foto1) VALUES(?,?,?,?,?,?,?,?)';   
       let query = mysql.format(insert,[data.nombre, data.tipoDeMascota, data.raza, data.edad, data.responsable, data.idestado, data.descripcion, data.fotos]);
       mysqlConnection.query(query, (error, result) => {
         if (error) reject(error);
@@ -389,7 +389,7 @@ function dateMascotas(data){
       if (err) throw err;
       console.log("Connected to MySQL Server!");
     });
-    let select = 'SELECT nombre, tipoDeMascota, raza, edad, responsable, idestado, descripcion, fotos  FROM mascotas WHERE responsable =?';
+    let select = 'SELECT * FROM mascotas WHERE responsable =?';
     let query = mysql.format(select,[data]);
     mysqlConnection.query(query, (error, result) => {
     if(error) reject (error);
