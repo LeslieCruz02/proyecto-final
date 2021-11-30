@@ -400,6 +400,25 @@ function dateMascotas(data){
   });
   });
 }
+function publicidades(data){
+  return new Promise((resolve,reject)=>{
+    const mysqlConnection = connection();
+    mysqlConnection.connect((err) => {
+      if (err) throw err;
+      console.log("Connected to MySQL Server!");
+    });
+    let select = 'SELECT * FROM publicidades WHERE estado =?';
+    let query = mysql.format(select,[1]);
+    mysqlConnection.query(query, (error, result) => {
+    if(error) reject (error);
+    console.log(error);
+    mysqlConnection.end();
+    resolve(result);
+    console.log(data);
+    console.log(result);
+  });
+  });
+}
 module.exports = {
     connection,
     usuarios,
@@ -421,7 +440,8 @@ module.exports = {
     adopcionesInfo,
     consultaUser,
     consultaDate,
-    dateMascotas
+    dateMascotas,
+    publicidades
   /*  home,
     galeryPpal,
     perfilP,
