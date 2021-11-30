@@ -1,3 +1,6 @@
+.paquetes{
+  margin: 100px 30px;
+}
 .opciones{
     display: flex;
     flex-direction: row;
@@ -22,6 +25,9 @@
     text-align: center;
     padding:20px;
     
+  }
+  .card{
+    padding: 12px;
   }
   .formularioModal{
     display: flex;

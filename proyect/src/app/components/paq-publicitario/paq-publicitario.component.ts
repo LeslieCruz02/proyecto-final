@@ -50,7 +50,7 @@ export class PaqPublicitarioComponent implements OnInit {
         mesAño: this.form.value.mesAño,
         documento: this.form.value.documento,
       }
-      this.client.getRequestPaquete(`${this.BASE_API}`,data
+      this.client.getRequestPaquete(`${this.BASE_API}/`,data
         ).subscribe(
         (response:any)=>{
           console.log('funciona');

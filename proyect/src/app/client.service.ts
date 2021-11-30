@@ -50,7 +50,14 @@ export class ClientService {
  
     return this.http.get(`${this.BASE_API}/adopcionesInfo`)
   }
-
+  getRequestPaquete(route:string, data?:any){
+    let config:any={
+      responseType:"json"
+    }
+    const header =new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem('token')}`);
+    config["headers"]=header; 
+    return this.http.post(route,data, config)
+  }
   getRequestAdop(route:string){
     let config1:any={
       responseType:"json"
@@ -139,14 +146,7 @@ export class ClientService {
     config["headers"]=header; 
     return this.http.post(route, data, config)
   }
-  getRequestPaquete(route:string, data?:any){
-    let config:any={
-      responseType:"json"
-    }
-    const header =new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem('token')}`);
-    config["headers"]=header; 
-    return this.http.post(route, data, config)
-  }
+ 
 
 
   //metodo que recibe como parametro una url y realiza la peticion con metodo GET
