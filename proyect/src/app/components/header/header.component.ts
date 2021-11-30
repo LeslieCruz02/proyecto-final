@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientService } from '../../client.service';
 import { Router } from '@angular/router';
-import { Mascotas } from '../../interface/info.interface';
+import { Mascotas } from '../../interface/mascotas.interface';
 import { environment } from 'src/environments/environment';
 import { Usuarios } from 'src/app/interface/info.interface';
 
@@ -20,7 +20,8 @@ export class HeaderComponent implements OnInit {
   ) { }
   mascotas : Mascotas [] = [];
 
-  nombres : Usuarios[]=[]
+  nombres : Usuarios[]=[];
+  
 
   ngOnInit(): void {
 
@@ -37,8 +38,7 @@ export class HeaderComponent implements OnInit {
 
     this.client.getRequestdatosMascotas().subscribe(
       (res:any)=>{
-        this.mascotas = res.mascotas;
-        // console.log(this.mascotas); 
+        this.mascotas = res.mascotas; 
       },
       (error:any)=>{
         console.log(error.status);

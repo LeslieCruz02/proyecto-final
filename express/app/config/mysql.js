@@ -2,7 +2,7 @@
 const CREDENTIALS = {
   host     : 'localhost',
   user     : 'root',
-  password : 'tupassword',
+  password : '252402',
   database : 'ProyectoAdopciones'
 }
 

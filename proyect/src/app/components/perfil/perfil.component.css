@@ -23,9 +23,12 @@ h4{
     border-style: solid;
     border-color: rgba(128, 128, 128, 0.699);
     border-radius: 5px;
-    padding-left: 0px;
+    padding: 0px;
     margin-left: 31px;
-    
+    width: 300px;
+}   
+li{
+    list-style: none;
 }
 .nav-link{
     padding: 8px 0px;
@@ -39,8 +42,8 @@ h4{
     border-color: rgba(128, 128, 128, 0.699);
     border-radius: 5px;
     float: left;
-    padding-right: 115px;
-    padding-left: 115px;
+    width: 300px;
+    text-align: center;
 }
 .boton1:hover{
     text-decoration: underline;
@@ -52,9 +55,9 @@ h4{
     border-color: rgba(128, 128, 128, 0.699);
     border-radius: 5px;
     float: left;
-    padding-right: 85px;
-    padding-left: 85px;
+    width: 300px;
     text-decoration: none;
+    text-align: center;
 }
 .boton2:hover{
     text-decoration: underline;
@@ -66,9 +69,9 @@ h4{
     border-color: rgba(128, 128, 128, 0.699);
     border-radius: 5px;
     float: left;
-    padding-right: 57px;
-    padding-left: 57px;
+    width: 300px;
     text-decoration: none;
+    text-align: center;
 }
 .boton3:hover{
     text-decoration: underline;
@@ -80,9 +83,9 @@ h4{
     border-color: rgba(128, 128, 128, 0.699);
     border-radius: 5px;
     float: left;
-    padding-right: 58px;
-    padding-left: 58px;
+    width: 300px;
     text-decoration: none;
+    text-align: center;
 }
 .boton4:hover{
     text-decoration: underline;
@@ -94,9 +97,9 @@ h4{
     border-color: rgba(128, 128, 128, 0.699);
     border-radius: 5px;
     float: left;
-    padding-right: 85px;
-    padding-left: 85px;
+    width: 300px;
     text-decoration: none;
+    text-align: center;    
 }
 .boton5:hover{
     text-decoration: underline;

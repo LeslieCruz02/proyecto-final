@@ -421,6 +421,25 @@ function dateMascotas(data){
   });
   });
 }
+function publicidades(data){
+  return new Promise((resolve,reject)=>{
+    const mysqlConnection = connection();
+    mysqlConnection.connect((err) => {
+      if (err) throw err;
+      console.log("Connected to MySQL Server!");
+    });
+    let select = 'SELECT * FROM publicidades WHERE estado =?';
+    let query = mysql.format(select,[1]);
+    mysqlConnection.query(query, (error, result) => {
+    if(error) reject (error);
+    console.log(error);
+    mysqlConnection.end();
+    resolve(result);
+    console.log(data);
+    console.log(result);
+  });
+  });
+}
 module.exports = {
     connection,
     usuarios,
@@ -443,7 +462,11 @@ module.exports = {
     consultaUser,
     consultaDate,
     dateMascotas,
+<<<<<<< HEAD
     consultaDateAdmin
+=======
+    publicidades
+>>>>>>> 0474a1ebb22d2a4c28d1927981617c8f8f893cd3
   /*  home,
     galeryPpal,
     perfilP,

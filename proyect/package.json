@@ -20,8 +20,15 @@
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
+<<<<<<< HEAD
     "jasmine": "^3.10.0",
     "jasminewd2": "^2.2.0",
+=======
+    "@ng-bootstrap/ng-bootstrap": "^10.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemailer": "^6.7.0",
+>>>>>>> 0474a1ebb22d2a4c28d1927981617c8f8f893cd3
     "rxjs": "~6.6.0",
     "sweetalert2": "^11.1.10",
     "tslib": "^2.3.0",
@@ -31,6 +38,7 @@
     "@angular-devkit/build-angular": "~12.2.0",
     "@angular/cli": "~12.2.0",
     "@angular/compiler-cli": "~12.2.0",
+    "@angular/localize": "^12.2.2",
     "@types/jasmine": "~3.8.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
