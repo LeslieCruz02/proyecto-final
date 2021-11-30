@@ -1,6 +1,6 @@
 <div class="perfil">
-    <div class="container">
-        <div *ngFor="let element of usuarios" >
+    <div class="container" *ngFor="let element of usuarios">
+        <div  >
             <ul class="nav flex-column">
                 <ol class="imagen">
                     <img src="http://localhost:10101/images?image={{element.idusuario}}" class="nav-link" href="#" width="250">
@@ -22,7 +22,7 @@
                     <a class="nav-link" href="http://localhost:4200/perfilInfo">Información Personal</a>
                   </ol>
                   <ol class="nav-item boton4">
-                    <a class="nav-link" href="http://localhost:4200/rmascota">Registrar Mascota</a>
+                    <a class="nav-link" href="http://localhost:4200/rmascota?idusuario={{element.idusuario}}">Registrar Mascota</a>
                   </ol>
                   <ol class="nav-item boton5">
                     <a class="nav-link" href="http://localhost:4200/">Cerrar Sesión</a>

@@ -48,6 +48,7 @@ import { RegisterAdmonComponent } from './containers/register-admon/register-adm
 import { PanelAdmonComponent } from './containers/panel-admon/panel-admon.component';
 import { PaqPublicitarioComponent } from './components/paq-publicitario/paq-publicitario.component';
 import { FormPublicidadComponent } from './containers/form-publicidad/form-publicidad.component';
+import { RegMascotaComponent } from './components/reg-mascota/reg-mascota.component';
 
 
 @NgModule({
@@ -76,7 +77,7 @@ import { FormPublicidadComponent } from './containers/form-publicidad/form-publi
     PerfilComponent,
     Perfil1Component,
     RegistrarComponent,
-    RegMascota1Component,
+    RegMascota1Component, 
     SliderComponent,
     GaleriaComponent,
     ListadoAdopcionesComponent,
@@ -96,6 +97,7 @@ import { FormPublicidadComponent } from './containers/form-publicidad/form-publi
     PanelAdmonComponent,
     PaqPublicitarioComponent,
     FormPublicidadComponent,
+    RegMascotaComponent,
   ],
   imports: [
     BrowserModule,

@@ -56,7 +56,7 @@ export class RegisterAdminComponent implements OnInit {
             '',
             'success'
           )
-          this.route.navigate(['']);
+          this.route.navigate(['/admin']);
         },
         (error: any)=>{
           Swal.fire(

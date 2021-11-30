@@ -7,6 +7,7 @@ import { Solicitudes } from '../../interface/info.interface';
 import { Publicidades } from '../../interface/info.interface';
 import { Adopciones } from '../../interface/info.interface';
 import { environment } from 'src/environments/environment';
+import { Admon } from '../../interface/info.interface';
 
 import Swal from 'sweetalert2';
 
@@ -29,7 +30,7 @@ export class PanelAdminComponent implements OnInit {
   opcion = 'default'
   
   titulo: boolean = true;
-
+  admon: Admon [] = []
   usuarios : Usuarios [] = [];
   title = "mascotas"
   mascotas : Mascotas [] = [];
@@ -44,6 +45,16 @@ export class PanelAdminComponent implements OnInit {
 /*let opcion = this.route.snapshot.paramMap.get("opcion");
     console.log(opcion);*/
   ngOnInit(): void {
+    this.client.getRequestPerfil(`${this.BASE_API}/dateAdmin`).subscribe(
+      (response: any) => {  
+        this.admon = response.admon;
+          console.log(this.admon);
+      },
+      (error) => {
+        console.log(error.status);
+        }
+      )
+
     this.client.getRequestdatosMascotas().subscribe(
       (res:any)=>{
         this.mascotas = res.mascotas;

@@ -39,7 +39,7 @@ function usuarios(data) {
       
       let hashPass = bcrypt.hashSync(data.password, 8);
       data.password = hashPass;
-      let insert = 'INSERT INTO admin(usuario, nombres, apellidos, rol, correo, telefono, password, estadoCuenta, foto) VALUES(?,?,?,?,?,?,?,?,?)';   
+      let insert = 'INSERT INTO admon(usuario, nombres, apellidos, rol, correo, telefono, password, estadoCuenta, foto) VALUES(?,?,?,?,?,?,?,?,?)';   
       let query = mysql.format(insert,[data.usuario, data.nombres, data.apellidos, data.rol, data.correo, data.telefono, data.password, "activo", null]);
       
       mysqlConnection.query(query, (error, result) => {
@@ -79,7 +79,7 @@ function login(data){
         console.log("Connected to MySQL Server!");
       });
   
-      let select = 'SELECT idadmin, usuario,  password FROM usuarios WHERE usuario=? AND estadoCuenta = ?';
+      let select = 'SELECT idadmin, usuario,  password FROM admon WHERE usuario=? AND estadoCuenta = ?';
       let query = mysql.format(select,[data.usuario, "activo"]);
       mysqlConnection.query(query, (error, result) => {
       if(error) reject (error);
@@ -156,9 +156,9 @@ function login(data){
         if (err) throw err;
         console.log("Connected to MySQL Server!");
       });
-      
-      let insert = 'INSERT INTO contactenos (nombreC, correo, telefono, nombreO,  asunto, mensaje, date) VALUES(?,?,?,?,?,?, now())';   
-      let query = mysql.format(insert,[data.nombreC, data.correo, data.telefono, data.nombreO,  data.asunto, data.mensaje]);
+      let date = new Date()
+      let insert = 'INSERT INTO contactenos (nombreC, correo, telefono, nombreO,  asunto, mensaje, date) VALUES(?,?,?,?,?,?,?)';   
+      let query = mysql.format(insert,[data.nombreC, data.correo, data.telefono, data.nombreO,  data.asunto, data.mensaje,  date]);
       
       mysqlConnection.query(query, (error, result) => {
         if (error) reject(error);
@@ -382,6 +382,27 @@ function consultaDate(data){
   });
   });
 }
+
+
+function consultaDateAdmin(data){
+  return new Promise((resolve,reject)=>{
+    const mysqlConnection = connection();
+    mysqlConnection.connect((err) => {
+      if (err) throw err;
+      console.log("Connected to MySQL Server!");
+    });
+    let select = 'SELECT *  FROM admon WHERE idadmin =?';
+    let query = mysql.format(select,[data]);
+    mysqlConnection.query(query, (error, result) => {
+    if(error) reject (error);
+    console.log(error);
+    mysqlConnection.end();
+    resolve(result);
+    console.log(data);
+    console.log(result);
+  });
+  });
+}
 function dateMascotas(data){
   return new Promise((resolve,reject)=>{
     const mysqlConnection = connection();
@@ -421,7 +442,8 @@ module.exports = {
     adopcionesInfo,
     consultaUser,
     consultaDate,
-    dateMascotas
+    dateMascotas,
+    consultaDateAdmin
   /*  home,
     galeryPpal,
     perfilP,

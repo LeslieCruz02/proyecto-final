@@ -30,6 +30,8 @@ const adopcionesInfo = require('./routes/adopcionesInfo');
 const mascotasInfo = require('./routes/mascotasInfo');
 const date = require('./routes/date');
 const dateMascotas = require('./routes/dateMascotas');
+const dateAdmin = require('./routes/dateAdmin');
+
 
 const app = express()
   .use(cors({credentials: true, origin: 'http://localhost:4200'}))
@@ -65,6 +67,8 @@ app.use('/adopcionesInfo', adopcionesInfo);
 app.use('/mascotasInfo', mascotasInfo);
 app.use('/date', date);
 app.use('/dateMascotas', dateMascotas);
+app.use('/dateAdmin', dateAdmin);
+
 
 module.exports = app;
 

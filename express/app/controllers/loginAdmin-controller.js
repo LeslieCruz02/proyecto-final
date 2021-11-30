@@ -28,7 +28,7 @@ let loginAdmin = async (req, res) => {
       );
     };
     
-    let jwt = nJwt.create({usuario:usuario, idusuario: result[0].idusuario  },KEY.SIGNING_KEY);
+    let jwt = nJwt.create({usuario:usuario, idadmin: result[0].idadmin  },KEY.SIGNING_KEY);
     jwt.setExpiration(new Date().getTime() + (2* 60 * 1000));
     let token = jwt.compact();
 
