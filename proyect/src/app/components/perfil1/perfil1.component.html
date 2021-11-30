@@ -2,31 +2,31 @@
     <div class="container">
         <div>
             <ul class="nav flex-column">
-                <ol class="imagen">
+                <li class="imagen">
                     <img src="http://localhost:10101/images?image={{element.idusuario}}" class="nav-link" href="#" width="250">
                     <h4>{{element.nombres}}</h4>
-                </ol> 
+                </li> 
             </ul>
         </div>
         <div>
             <input type="checkbox" id="menu1">
             <label for="menu1" class="iconomenu">☰</label>
             <ul class="lista">
-                <ol class="nav-item boton1">
+                <li class="nav-item boton1">
                     <a class="nav-link active " aria-current="page" href="http://localhost:4200/home">Inicio</a>
-                  </ol>
-                  <ol class="nav-item boton2">
+                  </li>
+                  <li class="nav-item boton2">
                       <a class="nav-link" href="http://localhost:4200/perfilP">Publicaciones</a>
-                  </ol>
-                  <ol class="nav-item boton3">
+                  </li>
+                  <li class="nav-item boton3">
                     <a class="nav-link" href="http://localhost:4200/perfilInfo">Información Personal</a>
-                  </ol>
-                  <ol class="nav-item boton4">
+                  </li>
+                  <li class="nav-item boton4">
                     <a  class="nav-link" type="button" (click)="regMascota()">Registrar Mascota</a>
-                  </ol>
-                  <ol class="nav-item boton5">
+                  </li>
+                  <li class="nav-item boton5">
                     <a class="nav-link" href="#">Cerrar Sesión</a>
-                  </ol> 
+                  </li> 
             </ul>
         </div>
     </div>
@@ -34,15 +34,15 @@
         <div class="mb-3">
             <input type="submit" value="Información Personal" class="form-control" id="formGroupExampleInput">
         </div>
-        <ul>
-            <ol><strong>Nombres</strong></ol>
-            <ol>{{element.nombres}} </ol>
-            <ol><strong>Apellidos</strong></ol>
-            <ol>{{element.apellidos}}</ol>
-            <ol><strong>Correo electrónico</strong></ol>
-            <ol>{{element.correo}}</ol>
-            <ol><strong>Teléfono</strong></ol>
-            <ol>{{element.telefono}}</ol>
+        <ul class="date">
+            <li><strong>Nombres</strong></li>
+            <li>{{element.nombres}} </li>
+            <li><strong>Apellidos</strong></li>
+            <li>{{element.apellidos}}</li>
+            <li><strong>Correo electrónico</strong></li>
+            <li>{{element.correo}}</li>
+            <li><strong>Teléfono</strong></li>
+            <li>{{element.telefono}}</li>
         </ul>
     </div>
 </div>

@@ -23,18 +23,20 @@ h4{
     border-style: solid;
     border-color: rgba(128, 128, 128, 0.699);
     border-radius: 5px;
-    padding-left: 0px;
+    padding: 0px;
     margin-left: 31px;
-    margin-right: 33px;
+    width: 300px;
 }
-
+li{
+    list-style: none;
+}
 .boton1{
     border-style: solid;
     border-color: rgba(128, 128, 128, 0.699);
     border-radius: 5px;
     float: left;
-    padding-right: 90px;
-    padding-left: 90px;
+    width: 300px;
+    text-align: center;
     }
 .boton1:hover{
     text-decoration: underline;
@@ -46,9 +48,9 @@ h4{
     border-color: rgba(128, 128, 128, 0.699);
     border-radius: 5px;
     float: left;
-    padding-right: 60px;
-    padding-left: 60px;
+    width: 300px;
     text-decoration: none;
+    text-align: center;
 }
 .boton2:hover{
     text-decoration: underline;
@@ -60,9 +62,9 @@ h4{
     border-color: rgba(128, 128, 128, 0.699);
     border-radius: 5px;
     float: left;
-    padding-right: 32px;
-    padding-left: 32px;
+    width: 300px;
     text-decoration: none;
+    text-align: center;
 }
 .boton3:hover{
     text-decoration: underline;
@@ -74,9 +76,9 @@ h4{
     border-color: rgba(128, 128, 128, 0.699);
     border-radius: 5px;
     float: left;
-    padding-right: 43px;
-    padding-left: 43px;
+    width: 300px;
     text-decoration: none;
+    text-align: center;
 }
 .boton4:hover{
     text-decoration: underline;
@@ -88,9 +90,9 @@ h4{
     border-color: rgba(128, 128, 128, 0.699);
     border-radius: 5px;
     float: left;
-    padding-right: 60px;
-    padding-left: 60px;
+    width: 300px;
     text-decoration: none;
+    text-align: center;    
 }
 .boton5:hover{
     text-decoration: underline;
@@ -125,6 +127,9 @@ h3{
 input:hover{
     background-color: #C8F4F9;
 
+}
+.date li{
+    margin: 20px 0px;
 }
 
 
