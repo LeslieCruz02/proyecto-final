@@ -30,7 +30,13 @@ const adopcionesInfo = require('./routes/adopcionesInfo');
 const mascotasInfo = require('./routes/mascotasInfo');
 const date = require('./routes/date');
 const dateMascotas = require('./routes/dateMascotas');
+<<<<<<< HEAD
+const dateAdmin = require('./routes/dateAdmin');
 
+
+=======
+const publicidades = require('./routes/publicidades');
+>>>>>>> 0474a1ebb22d2a4c28d1927981617c8f8f893cd3
 const app = express()
   .use(cors({credentials: true, origin: 'http://localhost:4200'}))
   .use(bodyParser.json())
@@ -65,6 +71,12 @@ app.use('/adopcionesInfo', adopcionesInfo);
 app.use('/mascotasInfo', mascotasInfo);
 app.use('/date', date);
 app.use('/dateMascotas', dateMascotas);
+<<<<<<< HEAD
+app.use('/dateAdmin', dateAdmin);
 
+
+=======
+app.use('/publicidades', publicidades);
+>>>>>>> 0474a1ebb22d2a4c28d1927981617c8f8f893cd3
 module.exports = app;
 

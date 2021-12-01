@@ -20,8 +20,8 @@ export interface Mascotas {
 	idestado: number,	
 	descripcion: string,
 	foto1: string,
-	foto2: string,
-	foto3: string,
+    foto2: string,
+    foto3: string		
 }
 
 export interface Solicitudes{

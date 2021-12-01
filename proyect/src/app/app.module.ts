@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -48,6 +50,7 @@ import { RegisterAdmonComponent } from './containers/register-admon/register-adm
 import { PanelAdmonComponent } from './containers/panel-admon/panel-admon.component';
 import { PaqPublicitarioComponent } from './components/paq-publicitario/paq-publicitario.component';
 import { FormPublicidadComponent } from './containers/form-publicidad/form-publicidad.component';
+import { RegMascotaComponent } from './components/reg-mascota/reg-mascota.component';
 
 
 @NgModule({
@@ -76,7 +79,7 @@ import { FormPublicidadComponent } from './containers/form-publicidad/form-publi
     PerfilComponent,
     Perfil1Component,
     RegistrarComponent,
-    RegMascota1Component,
+    RegMascota1Component, 
     SliderComponent,
     GaleriaComponent,
     ListadoAdopcionesComponent,
@@ -96,13 +99,15 @@ import { FormPublicidadComponent } from './containers/form-publicidad/form-publi
     PanelAdmonComponent,
     PaqPublicitarioComponent,
     FormPublicidadComponent,
+    RegMascotaComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

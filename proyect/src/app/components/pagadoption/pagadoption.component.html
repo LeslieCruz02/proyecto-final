@@ -25,144 +25,52 @@
         </div>
     </div>
 </aside>
-<article>
-    <div class="seccionadopcion">
-    <h2>Adopta un amigo para toda la vida</h2>
-    <p>Hay muchas razones para adoptar un animal, pero la mejor de todas es que salvarás una vida.</p> <br>
+<!-- <article>
+  <div *ngFor="let mascotas of mascota" class="card"  style="width: 300px; height: 530px;">
+    <img src="{{mascota.fotos}}" class="card-img-top" alt="..." height="250">
+    <div class="card-body">
+    <h5 class="card-title" ><strong>{{mascota.nombre | uppercase}}</strong></h5>
+    <hr>
+        <p>
+          Edad: {{mascota.edad }}<br>
+          Raza: {{mascota.raza | uppercase}}<br>
+          Responsable: {{mascota.responsable}}<br>
+          Tipo de mascota: {{mascota.tipoDeMascota | uppercase}}
+        </p>
+        <div class="adopcion">
+            <a type="button" href="http://localhost:4200/galeria?idmascota={{mascota.idmascota}}" class="btn btn-primary">Adoptar</a>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Donar
+              </button>
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Gracias por Donar!</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Puedes realizar tus donaciones de las siguientes formas:</p><br>
+                        <p> 1. Por medio de transferencia Bancaria:</p>   
+                        <ul>
+                          <li>Nombre: Petswords</li>
+                          <li>Nit: 900526328-6</li>
+                          <li>Entidad Bancaria: Bancolombia</li>
+                          <li>Número de cuenta: 9550222035</li>
+                        </ul>
+                        <p>2. Por medio de App:</p>   
+                        <ul>
+                          <li>Nequi: 3206720233</li>
+                          <li>Daviplata: 3206720233</li>
+                        </ul> 
+                        <p> Con tú aporte ayudas a muchos!</p>    
+                    </div>
+                  </div>
+                </div>
+              </div>
     </div>
-    <div class="article">
-        <div class="card" style="width: 300px; height: 500px;">
-            <img src="../../../assets/Adopcion1.jpeg" class="card-img-top" alt="...">
-            <div class="card-body">
-            <h5 class="card-title"><strong>Nombre</strong></h5>
-            <hr>
-            <p class="card-text">Edad:</p>
-            <p class="card-text">Raza:</p>
-            <p class="card-text">Responsable:</p>
-            <p class="card-text">Estado:</p>
-                <div class="adopcion">
-                    <a href="http://localhost:4200/galeria" class="btn btn-primary">Adoptar</a>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Donar
-                      </button>
-                      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h5 class="modal-title" id="exampleModalLabel">Gracias por Donar!</h5>
-                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <p>Puedes realizar tus donaciones de las siguientes formas:</p><br>
-                                <p> 1. Por medio de transferencia Bancaria:</p>   
-                                <ul>
-                                  <li>Nombre: Petswords</li>
-                                  <li>Nit: 900526328-6</li>
-                                  <li>Entidad Bancaria: Bancolombia</li>
-                                  <li>Número de cuenta: 9550222035</li>
-                                </ul>
-                                <p>2. Por medio de App:</p>   
-                                <ul>
-                                  <li>Nequi: 3206720233</li>
-                                  <li>Daviplata: 3206720233</li>
-                                </ul> 
-                                <p> Con tú aporte ayudas a muchos!</p>    
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                </div>
-            </div>
-        </div>
-        <div class="card" style="width: 300px; height: 500px;">
-            <img src="../../../assets/Adopcion1.jpeg" class="card-img-top" alt="...">
-            <div class="card-body">
-            <h5 class="card-title"><strong>Nombre</strong></h5>
-            <hr>
-            <p class="card-text">Edad:</p>
-            <p class="card-text">Raza:</p>
-            <p class="card-text">Responsable:</p>
-            <p class="card-text">Estado:</p>
-                <div class="adopcion">
-                    <a href="http://localhost:4200/galeria"class="btn btn-primary">Adoptar</a>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Donar
-                      </button>
-                      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h5 class="modal-title" id="exampleModalLabel">Gracias por Donar!</h5>
-                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <p>Puedes realizar tus donaciones de las siguientes formas:</p><br>
-                                <p> 1. Por medio de transferencia Bancaria:</p>   
-                                <ul>
-                                  <li>Nombre: Petswords</li>
-                                  <li>Nit: 900526328-6</li>
-                                  <li>Entidad Bancaria: Bancolombia</li>
-                                  <li>Número de cuenta: 9550222035</li>
-                                </ul>
-                                <p>2. Por medio de App:</p>   
-                                <ul>
-                                  <li>Nequi: 3206720233</li>
-                                  <li>Daviplata: 3206720233</li>
-                                </ul> 
-                                <p> Con tú aporte ayudas a muchos!</p>    
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                </div>
-            </div>
-        </div>
-        <div class="card" style="width: 300px; height: 500px;">
-            <img src="../../../assets/Adopcion1.jpeg" class="card-img-top" alt="...">
-            <div class="card-body">
-            <h5 class="card-title"><strong>Nombre</strong></h5>
-            <hr>
-            <p class="card-text">Edad:</p>
-            <p class="card-text">Raza:</p>
-            <p class="card-text">Responsable:</p>
-            <p class="card-text">Estado:</p>
-                <div class="adopcion">
-                    <a href="http://localhost:4200/galeria" class="btn btn-primary">Adoptar</a>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Donar
-                      </button>
-                      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h5 class="modal-title" id="exampleModalLabel">Gracias por Donar!</h5>
-                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <p>Puedes realizar tus donaciones de las siguientes formas:</p><br>
-                                <p> 1. Por medio de transferencia Bancaria:</p>   
-                                <ul>
-                                  <li>Nombre: Petswords</li>
-                                  <li>Nit: 900526328-6</li>
-                                  <li>Entidad Bancaria: Bancolombia</li>
-                                  <li>Número de cuenta: 9550222035</li>
-                                </ul>
-                                <p>2. Por medio de App:</p>   
-                                <ul>
-                                  <li>Nequi: 3206720233</li>
-                                  <li>Daviplata: 3206720233</li>
-                                </ul> 
-                                <p> Con tú aporte ayudas a muchos!</p>    
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                </div>
-            </div>
-        </div>
-        
-    </div>   <br>
+</div>
     <div class="centrar">
       <button type="button" class="btn btn-primary" (click)="verMas()">Ver Más...</button>
     </div>
-</article>
+</article> -->

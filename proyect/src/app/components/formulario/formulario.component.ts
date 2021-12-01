@@ -54,9 +54,9 @@ export class FormularioComponent implements OnInit {
       this.client.postRequestSendForm(`${this.BASE_API}/contactenos`, data)
     
       .subscribe(
-     
+       
         (response: any) => {
-  
+          this.load =true;
           console.log(response);
           Swal.fire(
             'Gracias por contactarnos!',
@@ -64,6 +64,7 @@ export class FormularioComponent implements OnInit {
             'success'
 
           )
+          this.route.navigate(['/galery-ppal']);
       },
       
       (error:any) => {
@@ -74,6 +75,7 @@ export class FormularioComponent implements OnInit {
           'No hemos recibido tú mensaje',
           'error'
         )
+        this.route.navigate(['/contactenos']);
       });
    
     } else {
@@ -83,6 +85,8 @@ export class FormularioComponent implements OnInit {
         'No hemos recibido tú mensaje',
         'error'
       )
+
+      this.route.navigate(['/contactenos']);
     }
   }
 }

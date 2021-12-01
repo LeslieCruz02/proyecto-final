@@ -13,6 +13,7 @@ let njwtAuth = (req, res, next) => {
     }
     usuario = decoded.body.usuario;
     idusuario = decoded.body.idusuario;
+    idadmin = decoded.body.idadmin
     
     next();
   });

@@ -1,51 +1,47 @@
-const nodeMailer = require('nodemailer');
-
-const sendEmail = (req, res) =>{
-    
-    let transport = nodeMailer.createTransport({
+const nodemailer = require('nodemailer');
+const createTrans = () =>{
+    const transport = nodemailer.createTransport({
         service: 'gmail',
         hostname: 'smtp.gmail.com',
         port:456,
         secure:true,
         auth:{
-            user: 'info.petsworldaxm@gmail.com',
-            pass:'lhuigugbmypswpbp'
+            user: 'petsworld2508@gmail.com',
+            pass:'esjkkdldizfrkwbu'
         }
     });
+    return transport;
+}
 
-    
-    const opciones ={
-        from: 'info.petsworldaxm@gmail.com',
-        to: "abglesliecruz@gmail.com",
-        subject: "Petición enviada",
+const sendEmail= async (body) =>{
+    console.log(body.nombreC, body.correo);
+    const transporter = createTrans()
+    const info = await transporter.sendMail({
+        from: "petsworld2508@gmail.com",
+        to: body.correo, //Se pueden pasar la lista de correos por medio de un array
+        subject: "Hemos recibido tú petición",
         html: `
-            <table border="0" cellpadding="0" cellspacing="0" width="600px" background-color="#3CACAE" bgcolor="#3CACAE" text-aling:"center">
+        <table border="0" cellpadding="0" cellspacing="0" width="600px" background-color="#3CACAE" bgcolor="#3CACAE" text-aling:"center">
             <tr height="250px">  
                 <td bgcolor="" width="600px">
                 <a href='https://postimg.cc/BLQXq4Rz' target='_blank'><img src='https://i.postimg.cc/BLQXq4Rz/Logo.png' border='0' alt='Logo' style="float:left"/></a>
                     <h1 style="color: #fff; text-align:center">Hemos recibido tu petición</h1>
                     <p  style="color: #fff; text-align:center">
-                        <span style="color: #000000">Leslie</span> 
+                        <span style="color: #000000">${body.nombreC}</span> 
                         pronto nos contactaremos contigo!
                     </p>
                 </td>
             </tr>
             </table>
-        `,
-        attachments:[
-            {filename:'PETSWORLD.png', path: './PETSWORLD.png'}
-        ]
-    };
+            `,
+                /* attachments:[
+                {filename:'PETSWORLD.png', path: './PETSWORLD.png'}
+                ]*/
+                        
+    })
+    console.log("Mensaje sent: %s",info.messageId);
 
-    transport.sendMail(opciones,function(error,result){
-        if (error) return res.json({ok:false, msg:error});
-     
-        return res.json({
-         ok: true,
-         msg:result
-     });
-    });
-};
+}
 
 module.exports ={
     sendEmail

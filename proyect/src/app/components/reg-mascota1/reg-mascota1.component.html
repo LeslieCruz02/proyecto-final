@@ -20,7 +20,7 @@
           </div>
           <div class="mb-3" *ngFor="let usuario of usuarios">
             <label for="exampleInputResponsable" class="form-label">Responsable</label>
-            <input type="text" class="form-control"   value={{usuario.idusuario}} formControlName="responsable" readonly>
+            <input type="text" class="form-control"  placeholder="{{usuario.nombres}}" value={{usuario.idusuario}} formControlName="responsable" readonly>
           </div>
     </div>      
     <div class="container2">

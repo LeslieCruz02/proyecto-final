@@ -55,17 +55,6 @@ export class PerfilComponent implements OnInit {
     )
   }
 
-  regMascota(){
-    this.client.getRequestRegMascota(`${this.BASE_API}/perfilP`).subscribe(
-    (response: any) => {
-        console.log(response);
-        this.route.navigate(['/rmascota']);
-  
-    },
-    (error) => {
-      console.log(error.status);
-      }
-    )
-  }
+
 }
 

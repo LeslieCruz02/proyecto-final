@@ -27,6 +27,7 @@ export class RegMascota1Component implements OnInit {
     public client: ClientService,
     private fb: FormBuilder,
     private route: Router,
+
   
     ) 
     {
@@ -34,6 +35,15 @@ export class RegMascota1Component implements OnInit {
    
 
   ngOnInit(): void {
+
+   /* this.route.queryParams.subscribe(params => {
+      const IDUSUARIO= parseInt(params['idusuario']);
+
+      let idusuario ={
+        idusuario: IDUSUARIO  
+      }
+      console.log(idusuario);*/
+
     this.client.getRequestPerfil(`${this.BASE_API}/date`).subscribe(
       (response: any) => {  
         this.usuarios = response.usuarios;
@@ -52,6 +62,7 @@ export class RegMascota1Component implements OnInit {
       fotos: ['', Validators.required]
     });
   }
+
   async onSubmit(){
     if (this.form.valid) {
       let data ={
