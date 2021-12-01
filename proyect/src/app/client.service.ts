@@ -236,4 +236,8 @@ export class ClientService {
   deleteRequestUsuarios(route: string, data?:any) {
     return this.http.delete(route,data)
   }
+  getRequestminilista() {
+ 
+    return this.http.get(`${this.BASE_API}/minilista`)
+  }
 }

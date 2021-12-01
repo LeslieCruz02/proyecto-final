@@ -68,7 +68,10 @@ section{
     font-family: 'Dancing Script', cursive;
     margin-top: 0;
 }
-
+span {
+    display: none;
+   
+ }
 .carousel.pointer-event {
     -ms-touch-action: pan-y;
     touch-action: pan-y;
@@ -116,7 +119,7 @@ section{
     transform: translateX(-100%);
 }
 .carousel-fade .carousel-item {
-    opacity: 0;
+    opacity: 5;
     transition-property: opacity;
     -webkit-transform: none;
     transform: none;
@@ -154,7 +157,7 @@ section{
     width: 15%;
     color: #fff;
     text-align: center;
-    opacity: 0.5;
+    opacity: 5;
     transition: opacity 0.15s ease;
 }
 @media (prefers-reduced-motion: reduce) {

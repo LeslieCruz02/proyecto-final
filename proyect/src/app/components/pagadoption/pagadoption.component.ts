@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ClientService} from '../../client.service';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
+import { minilista } from 'src/app/interface/minilista.interface';
 
 @Component({
   selector: 'app-pagadoption',
@@ -15,20 +16,18 @@ export class PagadoptionComponent implements OnInit {
     public client: ClientService,
     private route:  Router
     ) { }
+  minilista : minilista [] = []
 
   ngOnInit(): void {
-  }
-    verMas(){
-      this.client.getRequestListaAdop(`${this.BASE_API}/galeryPpal`).subscribe(
-      (response: any) => {
-          console.log(response);
-          this.route.navigate(['/listaAdopcion']);
-    
+          
+    this.client.getRequestminilista().subscribe(
+      (res:any)=>{
+        this.minilista = res.minilista;
+        console.log(this.minilista);
       },
-      (error) => {
+      (error:any)=>{
         console.log(error.status);
-        this.route.navigate(['']);
-        }
-      )
-    }
+      }
+    )
+  }
 }

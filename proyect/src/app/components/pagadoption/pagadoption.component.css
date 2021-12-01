@@ -19,7 +19,15 @@ aside p{
 	padding: 20px 350px 20px 350px;
 }
 article{
+	margin: 0 0 10 0;
+	padding:20px 15px;
 	height: 48rem;
+	display:flex;
+	width: 100vw;
+    border-radius: 15px;
+    align-content: stretch;
+    justify-content: center;
+    flex-wrap: wrap-reverse;
 }
 article h2{
 	text-align: center;
@@ -90,14 +98,7 @@ img:hover{
 	font-weight: 100;
 }
 
-.article{
-	width: 100vw;
-    display: flex;
-    border-radius: 15px;
-    align-content: stretch;
-    justify-content: center;
-    flex-wrap: wrap-reverse;
-}
+
 
 .seccionadopcion {
 	text-align: center;

@@ -31,6 +31,8 @@ const mascotasInfo = require('./routes/mascotasInfo');
 const date = require('./routes/date');
 const dateMascotas = require('./routes/dateMascotas');
 const publicidades = require('./routes/publicidades');
+const minilista = require('./routes/minilista');
+
 const app = express()
   .use(cors({credentials: true, origin: 'http://localhost:4200'}))
   .use(bodyParser.json())
@@ -66,5 +68,6 @@ app.use('/mascotasInfo', mascotasInfo);
 app.use('/date', date);
 app.use('/dateMascotas', dateMascotas);
 app.use('/publicidades', publicidades);
+app.use('/minilista', minilista);
 module.exports = app;
 

@@ -2,7 +2,7 @@
   <ngb-carousel class="carousel" *ngIf="publicidades">
     <ng-template ngbSlide class="carousel-container" *ngFor="let publicar of publicidades">
       <div class="picsum-img-wrapper">
-        <img class="carousel-container_img" src="http://localhost:10101/images?image={{publicar.imagenes}}" alt="Random first slide">
+        <img class="carousel-container_img" src="http://localhost:10101/images?image={{publicar.imagenes}}" >
       </div>
       <div class="carousel-caption">
         <h3 class="titulo">{{publicar.titulo}}</h3>
