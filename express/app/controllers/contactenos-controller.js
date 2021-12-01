@@ -1,4 +1,5 @@
 let db = require('../db/mysql');
+let correo2 = require('../controllers/emails-controller')
 
 function sleepTime(time) {
   return new Promise((resolve, reject)=>{
@@ -16,6 +17,7 @@ let contactenos = async(req, res) => {
   let mensaje = req.body.mensaje;
   let sleep = await sleepTime(3000);
 
+  correo2.sendEmail(req.body)
   db.contactenos(req.body)
   .then((result) => {
     return res.status(200).json({
@@ -27,6 +29,8 @@ let contactenos = async(req, res) => {
   .catch((err) => {
     console.log(err);
   });
+  
+
 };
 
 /*  let insert = 'INSERT INTO contactenos (nombreC, correo, nombreO, telefono, asunto, mensaje) VALUES(?,?,?,?,?,?)';   

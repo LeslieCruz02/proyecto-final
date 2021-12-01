@@ -5,6 +5,7 @@ const bearerToken = require('express-bearer-token');
 const cookieParser = require('cookie-parser');
 
 const addMascotas = require('./routes/addMascotas'); 
+const fileUpload = require('express-fileupload');
 const adopciones = require('./routes/adopciones'); 
 const contactenos = require('./routes/contactenos'); 
 const galeria = require('./routes/galeria'); 
@@ -30,15 +31,22 @@ const adopcionesInfo = require('./routes/adopcionesInfo');
 const mascotasInfo = require('./routes/mascotasInfo');
 const date = require('./routes/date');
 const dateMascotas = require('./routes/dateMascotas');
+const dateAdmin = require('./routes/dateAdmin');
 const publicidades = require('./routes/publicidades');
-const minilista = require('./routes/minilista');
+const deleteUser = require('./routes/deleteUser');
+const deleteMascota = require('./routes/deleteMascota');
+const deletePublicidad = require('./routes/deletePublicidad');
+const deleteSolicitud = require('./routes/deleteSolicitud');
+const deleteAdopcion = require('./routes/deleteAdopcion');
+const paqPublicidad = require('./routes/paqPublicidad');('./routes/deleteAdopcion');
 
 const app = express()
   .use(cors({credentials: true, origin: 'http://localhost:4200'}))
   .use(bodyParser.json())
   .use(bodyParser.urlencoded({extended: true}))
   .use(cookieParser())
-  .use(bearerToken());
+  .use(bearerToken())
+  .use(fileUpload());
 
 app.use('/addMascotas', addMascotas);
 app.use('/adopciones', adopciones);
@@ -67,7 +75,14 @@ app.use('/adopcionesInfo', adopcionesInfo);
 app.use('/mascotasInfo', mascotasInfo);
 app.use('/date', date);
 app.use('/dateMascotas', dateMascotas);
+app.use('/dateAdmin', dateAdmin);
 app.use('/publicidades', publicidades);
-app.use('/minilista', minilista);
+app.use('/deleteUser', deleteUser);
+app.use('/deleteMascota ', deleteMascota );
+app.use('/deletePublicidad', deletePublicidad);
+app.use('/deleteSolicitud', deleteSolicitud);
+app.use('/deleteAdopcion', deleteAdopcion);
+app.use('/paqPublicidad', paqPublicidad);
+
 module.exports = app;
 

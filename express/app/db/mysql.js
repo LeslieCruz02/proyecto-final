@@ -39,7 +39,7 @@ function usuarios(data) {
       
       let hashPass = bcrypt.hashSync(data.password, 8);
       data.password = hashPass;
-      let insert = 'INSERT INTO admin(usuario, nombres, apellidos, rol, correo, telefono, password, estadoCuenta, foto) VALUES(?,?,?,?,?,?,?,?,?)';   
+      let insert = 'INSERT INTO admon(usuario, nombres, apellidos, rol, correo, telefono, password, estadoCuenta, foto) VALUES(?,?,?,?,?,?,?,?,?)';   
       let query = mysql.format(insert,[data.usuario, data.nombres, data.apellidos, data.rol, data.correo, data.telefono, data.password, "activo", null]);
       
       mysqlConnection.query(query, (error, result) => {
@@ -79,7 +79,7 @@ function login(data){
         console.log("Connected to MySQL Server!");
       });
   
-      let select = 'SELECT idadmin, usuario,  password FROM usuarios WHERE usuario=? AND estadoCuenta = ?';
+      let select = 'SELECT idadmin, usuario,  password FROM admon WHERE usuario=? AND estadoCuenta = ?';
       let query = mysql.format(select,[data.usuario, "activo"]);
       mysqlConnection.query(query, (error, result) => {
       if(error) reject (error);
@@ -111,7 +111,7 @@ function login(data){
     });
   }
 
-  function addMascotas(data,idusuario) {
+  function addMascotas(data,fotos) {
     return new Promise((resolve, reject)=>{
       const mysqlConnection = connection();
       mysqlConnection.connect((err) => {
@@ -120,11 +120,12 @@ function login(data){
       });
       
       let insert = 'INSERT INTO mascotas (nombre, tipoDeMascota, raza, edad, responsable, idestado, descripcion, foto1) VALUES(?,?,?,?,?,?,?,?)';   
-      let query = mysql.format(insert,[data.nombre, data.tipoDeMascota, data.raza, data.edad, data.responsable, data.idestado, data.descripcion, data.fotos]);
+      let query = mysql.format(insert,[data.nombre, data.tipoDeMascota, data.raza, data.edad, data.responsable, data.idestado, data.descripcion, fotos]);
       mysqlConnection.query(query, (error, result) => {
         if (error) reject(error);
         mysqlConnection.end();
         resolve(result);
+        console.log(result);
       });
     });
   }
@@ -156,9 +157,9 @@ function login(data){
         if (err) throw err;
         console.log("Connected to MySQL Server!");
       });
-      
-      let insert = 'INSERT INTO contactenos (nombreC, correo, telefono, nombreO,  asunto, mensaje, date) VALUES(?,?,?,?,?,?, now())';   
-      let query = mysql.format(insert,[data.nombreC, data.correo, data.telefono, data.nombreO,  data.asunto, data.mensaje]);
+      let date = new Date()
+      let insert = 'INSERT INTO contactenos (nombreC, correo, telefono, nombreO,  asunto, mensaje, date) VALUES(?,?,?,?,?,?,?)';   
+      let query = mysql.format(insert,[data.nombreC, data.correo, data.telefono, data.nombreO,  data.asunto, data.mensaje,  date]);
       
       mysqlConnection.query(query, (error, result) => {
         if (error) reject(error);
@@ -225,7 +226,6 @@ function mascotas(){
     console.log(error);
     mysqlConnection.end();
     resolve(result);
-    console.log(result);
   });
   });
 }
@@ -245,8 +245,6 @@ function mascota(data){
     console.log(error);
     mysqlConnection.end();
     resolve(result);
-    console.log(data);
-    console.log(result);
   });
   });
 }
@@ -265,7 +263,6 @@ function usuariosInfo(){
     console.log(error);
     mysqlConnection.end();
     resolve(result);
-    console.log(result);
   });
   });
 }
@@ -284,7 +281,6 @@ function mascotasInfo(){
     console.log(error);
     mysqlConnection.end();
     resolve(result);
-    console.log(result);
   });
   });
 }
@@ -302,7 +298,6 @@ function solicitudesInfo(){
     console.log(error);
     mysqlConnection.end();
     resolve(result);
-    console.log(result);
   });
   });
 }
@@ -320,7 +315,6 @@ function publicidadesInfo(){
     console.log(error);
     mysqlConnection.end();
     resolve(result);
-    console.log(result);
   });
   });
 }
@@ -338,7 +332,6 @@ function adopcionesInfo(){
     console.log(error);
     mysqlConnection.end();
     resolve(result);
-    console.log(result);
   });
   });
 }
@@ -357,8 +350,6 @@ function consultaUser(data){
     console.log(error);
     mysqlConnection.end();
     resolve(result);
-    console.log(data);
-    console.log(result);
   });
   });
 }
@@ -377,8 +368,25 @@ function consultaDate(data){
     console.log(error);
     mysqlConnection.end();
     resolve(result);
-    console.log(data);
-    console.log(result);
+  });
+  });
+}
+
+
+function consultaDateAdmin(data){
+  return new Promise((resolve,reject)=>{
+    const mysqlConnection = connection();
+    mysqlConnection.connect((err) => {
+      if (err) throw err;
+      console.log("Connected to MySQL Server!");
+    });
+    let select = 'SELECT *  FROM admon WHERE idadmin =?';
+    let query = mysql.format(select,[data]);
+    mysqlConnection.query(query, (error, result) => {
+    if(error) reject (error);
+    console.log(error);
+    mysqlConnection.end();
+    resolve(result);
   });
   });
 }
@@ -396,7 +404,7 @@ function dateMascotas(data){
     console.log(error);
     mysqlConnection.end();
     resolve(result);
-    console.log(result);
+
   });
   });
 }
@@ -420,22 +428,98 @@ function publicidades(data){
   });
 }
 
-function minilista(){
+function deleteUser(data){
   return new Promise((resolve,reject)=>{
     const mysqlConnection = connection();
     mysqlConnection.connect((err) => {
       if (err) throw err;
       console.log("Connected to MySQL Server!");
-    }); 
-
-    let select = 'SELECT * FROM mascotas WHERE idestado =? ORDER BY Rand() limit 3 ';
-    let query = mysql.format(select,['2']);
+    });
+    let select = 'DELETE FROM usuarios WHERE idusuario =?';
+    let query = mysql.format(select,[data]);
     mysqlConnection.query(query, (error, result) => {
     if(error) reject (error);
     console.log(error);
     mysqlConnection.end();
     resolve(result);
-    console.log(result);``
+    console.log(data);
+    console.log(result);
+  });
+  });
+}
+function deleteMascota(data){
+  return new Promise((resolve,reject)=>{
+    const mysqlConnection = connection();
+    mysqlConnection.connect((err) => {
+      if (err) throw err;
+      console.log("Connected to MySQL Server!");
+    });
+    let select = 'DELETE FROM mascota WHERE idmascotas =?';
+    let query = mysql.format(select,[data]);
+    mysqlConnection.query(query, (error, result) => {
+    if(error) reject (error);
+    console.log(error);
+    mysqlConnection.end();
+    resolve(result);
+    console.log(data);
+    console.log(result);
+  });
+  });
+}
+function deleteSolicitud(data){
+  return new Promise((resolve,reject)=>{
+    const mysqlConnection = connection();
+    mysqlConnection.connect((err) => {
+      if (err) throw err;
+      console.log("Connected to MySQL Server!");
+    });
+    let select = 'DELETE FROM contactenos WHERE idsolicitud =?';
+    let query = mysql.format(select,[data]);
+    mysqlConnection.query(query, (error, result) => {
+    if(error) reject (error);
+    console.log(error);
+    mysqlConnection.end();
+    resolve(result);
+    console.log(data);
+    console.log(result);
+  });
+  });
+}
+function deletePublicidad(data){
+  return new Promise((resolve,reject)=>{
+    const mysqlConnection = connection();
+    mysqlConnection.connect((err) => {
+      if (err) throw err;
+      console.log("Connected to MySQL Server!");
+    });
+    let select = 'DELETE FROM publicidades WHERE idPublicidad =?';
+    let query = mysql.format(select,[data]);
+    mysqlConnection.query(query, (error, result) => {
+    if(error) reject (error);
+    console.log(error);
+    mysqlConnection.end();
+    resolve(result);
+    console.log(data);
+    console.log(result);
+  });
+  });
+}
+function deleteAdopcion(data){
+  return new Promise((resolve,reject)=>{
+    const mysqlConnection = connection();
+    mysqlConnection.connect((err) => {
+      if (err) throw err;
+      console.log("Connected to MySQL Server!");
+    });
+    let select = 'DELETE FROM adopciones WHERE idAdopcion =?';
+    let query = mysql.format(select,[data]);
+    mysqlConnection.query(query, (error, result) => {
+    if(error) reject (error);
+    console.log(error);
+    mysqlConnection.end();
+    resolve(result);
+    console.log(data);
+    console.log(result);
   });
   });
 }
@@ -461,8 +545,13 @@ module.exports = {
     consultaUser,
     consultaDate,
     dateMascotas,
+    consultaDateAdmin,
     publicidades,
-    minilista
+    deleteUser,
+    deleteMascota,
+    deletePublicidad,
+    deleteSolicitud,
+    deleteAdopcion,
   /*  home,
     galeryPpal,
     perfilP,

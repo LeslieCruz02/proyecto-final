@@ -17,6 +17,7 @@ import { AdminsComponent } from './containers/admins/admins.component';
 import { PanelAdmonComponent } from './containers/panel-admon/panel-admon.component';
 import { RegisterAdmonComponent } from './containers/register-admon/register-admon.component';
 import { FormPublicidadComponent } from './containers/form-publicidad/form-publicidad.component';
+import { RemascotaComponent } from './containers/remascota/remascota.component';
 
 
 
@@ -37,7 +38,8 @@ const routes: Routes = [
   {path: 'admin', component: AdminsComponent},
   {path: 'panelAdmin', component: PanelAdmonComponent},
   {path:'registerAdmin', component: RegisterAdmonComponent},
-  {path:'paqPublicidad', component: FormPublicidadComponent}
+  {path:'paqPublicidad', component: FormPublicidadComponent},
+  {path: 'remascota', component: RemascotaComponent}
 ];
 
 @NgModule({

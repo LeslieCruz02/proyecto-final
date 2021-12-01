@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientService } from '../../client.service';
 import { Router } from '@angular/router';
-import { Mascotas } from '../../interface/mascotas.interface'
+import { Mascotas } from '../../interface/info.interface'
 import { environment } from 'src/environments/environment';
 import { Usuarios } from 'src/app/interface/info.interface';
 
@@ -55,17 +55,6 @@ export class PerfilComponent implements OnInit {
     )
   }
 
-  regMascota(){
-    this.client.getRequestRegMascota(`${this.BASE_API}/perfilP`).subscribe(
-    (response: any) => {
-        console.log(response);
-        this.route.navigate(['/rmascota']);
-  
-    },
-    (error) => {
-      console.log(error.status);
-      }
-    )
-  }
+
 }
 

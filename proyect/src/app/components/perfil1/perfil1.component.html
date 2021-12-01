@@ -3,7 +3,7 @@
         <div>
             <ul class="nav flex-column">
                 <li class="imagen">
-                    <img src="http://localhost:10101/images?image={{element.idusuario}}" class="nav-link" href="#" width="250">
+                    <img src="http://localhost:10101/images?image={{element.idusuario}}" class="nav-link" href="#" width="250" style="padding-left: 50px;">
                     <h4>{{element.nombres}}</h4>
                 </li> 
             </ul>
@@ -22,7 +22,10 @@
                     <a class="nav-link" href="http://localhost:4200/perfilInfo">Información Personal</a>
                   </li>
                   <li class="nav-item boton4">
-                    <a  class="nav-link" type="button" (click)="regMascota()">Registrar Mascota</a>
+                    <a  class="nav-link" href="http://localhost:4200/rmascota?idusuario={{element.idusuario}}">Registrar Mascota</a>
+                  </li>
+                  <li class="nav-item boton4">
+                    <a  class="nav-link" type="button" href="http://localhost:4200/paqPublicidad">Enviar Publicidad</a>
                   </li>
                   <li class="nav-item boton5">
                     <a class="nav-link" href="#">Cerrar Sesión</a>

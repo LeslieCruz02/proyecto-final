@@ -25,6 +25,7 @@ export interface Mascotas {
 }
 
 export interface Solicitudes{
+	idsolicitud:number,
     nombreC: string,
 	correo: string,
 	telefono: string,

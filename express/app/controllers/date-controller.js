@@ -5,6 +5,7 @@ const KEY= require('../config/keys');
 let db = require('../db/mysql');
 
 let date = (req, res) => {
+  
   db.consultaDate(idusuario)
  // devolver mensaje de biendevnida Json con el nombre propio del usuario
  .then((result) => {
@@ -19,7 +20,6 @@ let date = (req, res) => {
 };
 
 let mascotas = (req, res) => {
-console.log("estoy llegando");
   db.dateMascotas(idusuario)
  // devolver mensaje de biendevnida Json con el nombre propio del usuario
  .then((result) => {
