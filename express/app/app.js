@@ -32,6 +32,11 @@ const date = require('./routes/date');
 const dateMascotas = require('./routes/dateMascotas');
 const dateAdmin = require('./routes/dateAdmin');
 const publicidades = require('./routes/publicidades');
+const deleteUser = require('./routes/deleteUser');
+const deleteMascota = require('./routes/deleteMascota');
+const deletePublicidad = require('./routes/deletePublicidad');
+const deleteSolicitud = require('./routes/deleteSolicitud');
+const deleteAdopcion = require('./routes/deleteAdopcion');
 
 const app = express()
   .use(cors({credentials: true, origin: 'http://localhost:4200'}))
@@ -69,6 +74,11 @@ app.use('/date', date);
 app.use('/dateMascotas', dateMascotas);
 app.use('/dateAdmin', dateAdmin);
 app.use('/publicidades', publicidades);
+app.use('/deleteUser', deleteUser);
+app.use('/deleteMascota ', deleteMascota );
+app.use('/deletePublicidad', deletePublicidad);
+app.use('/deleteSolicitud', deleteSolicitud);
+app.use('/deleteAdopcion', deleteAdopcion);
 
 module.exports = app;
 

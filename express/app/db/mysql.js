@@ -440,6 +440,102 @@ function publicidades(data){
   });
   });
 }
+
+function deleteUser(data){
+  return new Promise((resolve,reject)=>{
+    const mysqlConnection = connection();
+    mysqlConnection.connect((err) => {
+      if (err) throw err;
+      console.log("Connected to MySQL Server!");
+    });
+    let select = 'DELETE FROM usuarios WHERE idusuario =?';
+    let query = mysql.format(select,[data]);
+    mysqlConnection.query(query, (error, result) => {
+    if(error) reject (error);
+    console.log(error);
+    mysqlConnection.end();
+    resolve(result);
+    console.log(data);
+    console.log(result);
+  });
+  });
+}
+function deleteMascota(data){
+  return new Promise((resolve,reject)=>{
+    const mysqlConnection = connection();
+    mysqlConnection.connect((err) => {
+      if (err) throw err;
+      console.log("Connected to MySQL Server!");
+    });
+    let select = 'DELETE FROM mascota WHERE idmascotas =?';
+    let query = mysql.format(select,[data]);
+    mysqlConnection.query(query, (error, result) => {
+    if(error) reject (error);
+    console.log(error);
+    mysqlConnection.end();
+    resolve(result);
+    console.log(data);
+    console.log(result);
+  });
+  });
+}
+function deleteSolicitud(data){
+  return new Promise((resolve,reject)=>{
+    const mysqlConnection = connection();
+    mysqlConnection.connect((err) => {
+      if (err) throw err;
+      console.log("Connected to MySQL Server!");
+    });
+    let select = 'DELETE FROM contactenos WHERE idsolicitud =?';
+    let query = mysql.format(select,[data]);
+    mysqlConnection.query(query, (error, result) => {
+    if(error) reject (error);
+    console.log(error);
+    mysqlConnection.end();
+    resolve(result);
+    console.log(data);
+    console.log(result);
+  });
+  });
+}
+function deletePublicidad(data){
+  return new Promise((resolve,reject)=>{
+    const mysqlConnection = connection();
+    mysqlConnection.connect((err) => {
+      if (err) throw err;
+      console.log("Connected to MySQL Server!");
+    });
+    let select = 'DELETE FROM publicidades WHERE idPublicidad =?';
+    let query = mysql.format(select,[data]);
+    mysqlConnection.query(query, (error, result) => {
+    if(error) reject (error);
+    console.log(error);
+    mysqlConnection.end();
+    resolve(result);
+    console.log(data);
+    console.log(result);
+  });
+  });
+}
+function deleteAdopcion(data){
+  return new Promise((resolve,reject)=>{
+    const mysqlConnection = connection();
+    mysqlConnection.connect((err) => {
+      if (err) throw err;
+      console.log("Connected to MySQL Server!");
+    });
+    let select = 'DELETE FROM adopciones WHERE idAdopcion =?';
+    let query = mysql.format(select,[data]);
+    mysqlConnection.query(query, (error, result) => {
+    if(error) reject (error);
+    console.log(error);
+    mysqlConnection.end();
+    resolve(result);
+    console.log(data);
+    console.log(result);
+  });
+  });
+}
 module.exports = {
     connection,
     usuarios,
@@ -463,7 +559,12 @@ module.exports = {
     consultaDate,
     dateMascotas,
     consultaDateAdmin,
-    publicidades
+    publicidades,
+    deleteUser,
+    deleteMascota,
+    deletePublicidad,
+    deleteSolicitud,
+    deleteAdopcion
   /*  home,
     galeryPpal,
     perfilP,
