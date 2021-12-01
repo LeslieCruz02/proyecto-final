@@ -37,7 +37,6 @@ const routes: Routes = [
   {path: 'panelAdmin', component: PanelAdmonComponent},
   {path:'registerAdmin', component: RegisterAdmonComponent},
   {path:'paqPublicidad', component: FormPublicidadComponent},
-  {path: 'remascota', component: RemascotaComponent}
 ];
 
 @NgModule({
