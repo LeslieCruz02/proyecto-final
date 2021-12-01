@@ -5,6 +5,7 @@ const bearerToken = require('express-bearer-token');
 const cookieParser = require('cookie-parser');
 
 const addMascotas = require('./routes/addMascotas'); 
+const fileUpload = require('express-fileupload');
 const adopciones = require('./routes/adopciones'); 
 const contactenos = require('./routes/contactenos'); 
 const galeria = require('./routes/galeria'); 
@@ -44,7 +45,8 @@ const app = express()
   .use(bodyParser.json())
   .use(bodyParser.urlencoded({extended: true}))
   .use(cookieParser())
-  .use(bearerToken());
+  .use(bearerToken())
+  .use(fileUpload());
 
 app.use('/addMascotas', addMascotas);
 app.use('/adopciones', adopciones);

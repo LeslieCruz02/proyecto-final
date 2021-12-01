@@ -111,7 +111,7 @@ function login(data){
     });
   }
 
-  function addMascotas(data,idusuario) {
+  function addMascotas(data,fotos) {
     return new Promise((resolve, reject)=>{
       const mysqlConnection = connection();
       mysqlConnection.connect((err) => {
@@ -120,11 +120,12 @@ function login(data){
       });
       
       let insert = 'INSERT INTO mascotas (nombre, tipoDeMascota, raza, edad, responsable, idestado, descripcion, foto1) VALUES(?,?,?,?,?,?,?,?)';   
-      let query = mysql.format(insert,[data.nombre, data.tipoDeMascota, data.raza, data.edad, data.responsable, data.idestado, data.descripcion, data.foto1]);
+      let query = mysql.format(insert,[data.nombre, data.tipoDeMascota, data.raza, data.edad, data.responsable, data.idestado, data.descripcion, fotos]);
       mysqlConnection.query(query, (error, result) => {
         if (error) reject(error);
         mysqlConnection.end();
         resolve(result);
+        console.log(result);
       });
     });
   }
@@ -225,7 +226,6 @@ function mascotas(){
     console.log(error);
     mysqlConnection.end();
     resolve(result);
-    console.log(result);
   });
   });
 }
@@ -245,8 +245,6 @@ function mascota(data){
     console.log(error);
     mysqlConnection.end();
     resolve(result);
-    console.log(data);
-    console.log(result);
   });
   });
 }
@@ -265,7 +263,6 @@ function usuariosInfo(){
     console.log(error);
     mysqlConnection.end();
     resolve(result);
-    console.log(result);
   });
   });
 }
@@ -284,7 +281,6 @@ function mascotasInfo(){
     console.log(error);
     mysqlConnection.end();
     resolve(result);
-    console.log(result);
   });
   });
 }
@@ -302,7 +298,6 @@ function solicitudesInfo(){
     console.log(error);
     mysqlConnection.end();
     resolve(result);
-    console.log(result);
   });
   });
 }
@@ -320,7 +315,6 @@ function publicidadesInfo(){
     console.log(error);
     mysqlConnection.end();
     resolve(result);
-    console.log(result);
   });
   });
 }
@@ -338,7 +332,6 @@ function adopcionesInfo(){
     console.log(error);
     mysqlConnection.end();
     resolve(result);
-    console.log(result);
   });
   });
 }
@@ -357,8 +350,6 @@ function consultaUser(data){
     console.log(error);
     mysqlConnection.end();
     resolve(result);
-    console.log(data);
-    console.log(result);
   });
   });
 }
@@ -377,8 +368,6 @@ function consultaDate(data){
     console.log(error);
     mysqlConnection.end();
     resolve(result);
-    console.log(data);
-    console.log(result);
   });
   });
 }
@@ -398,8 +387,6 @@ function consultaDateAdmin(data){
     console.log(error);
     mysqlConnection.end();
     resolve(result);
-    console.log(data);
-    console.log(result);
   });
   });
 }
@@ -417,7 +404,7 @@ function dateMascotas(data){
     console.log(error);
     mysqlConnection.end();
     resolve(result);
-    console.log(result);
+
   });
   });
 }
