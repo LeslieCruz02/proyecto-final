@@ -51,6 +51,7 @@ import { PanelAdmonComponent } from './containers/panel-admon/panel-admon.compon
 import { PaqPublicitarioComponent } from './components/paq-publicitario/paq-publicitario.component';
 import { FormPublicidadComponent } from './containers/form-publicidad/form-publicidad.component';
 import { RegMascotaComponent } from './components/reg-mascota/reg-mascota.component';
+import { RemascotaComponent } from './containers/remascota/remascota.component';
 
 
 @NgModule({
@@ -100,6 +101,7 @@ import { RegMascotaComponent } from './components/reg-mascota/reg-mascota.compon
     PaqPublicitarioComponent,
     FormPublicidadComponent,
     RegMascotaComponent,
+    RemascotaComponent,
   ],
   imports: [
     BrowserModule,

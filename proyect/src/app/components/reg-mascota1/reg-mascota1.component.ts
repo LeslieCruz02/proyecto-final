@@ -22,7 +22,6 @@ export class RegMascota1Component implements OnInit {
   form!: FormGroup;
   load: boolean = true;
   usuarios: Usuarios[] =[]
-  idusuario: number = 27
   estado1: number = 1
   estado2: number = 2
 
