@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormsModule} from '@angular/forms' ;
 
 import {ClientService} from '../../client.service';
 //importacion de clases necesarias para manejar formularios reactivos y el routing
@@ -20,6 +21,9 @@ export class RegMascota1Component implements OnInit {
   form!: FormGroup;
   load: boolean = true;
   usuarios: Usuarios[] =[]
+  idusuario: number = 27
+  estado1: number = 1
+  estado2: number = 2
 
 
 
@@ -47,6 +51,7 @@ export class RegMascota1Component implements OnInit {
     this.client.getRequestPerfil(`${this.BASE_API}/date`).subscribe(
       (response: any) => {  
         this.usuarios = response.usuarios;
+        
           console.log(this.usuarios);
       },
       (error) => {
@@ -58,6 +63,8 @@ export class RegMascota1Component implements OnInit {
       tipoDeMascota: ['', Validators.required],
       raza: ['', Validators.required],
       edad: ['', Validators.required],
+      responsable: ['', Validators.required],
+        idestado: ['', Validators.required],
       descripcion: ['', Validators.required],
       fotos: ['', Validators.required]
     });

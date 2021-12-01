@@ -20,7 +20,7 @@
           </div>
           <div class="mb-3" *ngFor="let usuario of usuarios">
             <label for="exampleInputResponsable" class="form-label">Responsable</label>
-            <input type="text" class="form-control"  placeholder="{{usuario.nombres}}" value={{usuario.idusuario}} formControlName="responsable" readonly>
+            <input type="text" class="FormControl"  placeholder="{{usuario.nombres}}"  formControlName="responsable" >
           </div>
     </div>      
     <div class="container2">
@@ -29,13 +29,10 @@
           </div>
             <div class="check">
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" formControlName="idestado" value="1">
+                    <input class = ”form-control” type="checkbox" formControlName="idestado" [ngModel]="estado1">
                     <label class="form-check-label" for="inlineCheckbox1">Por adoptar</label>
                 </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" formControlName="idestado" value="2">
-                    <label class="form-check-label" for="inlineCheckbox2">Adoptado </label>
-                </div>
+   
             </div>      
             <div>
                 <div>
