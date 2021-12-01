@@ -25,7 +25,7 @@ export class RegMascotaComponent  implements OnInit{
     });
   }
 
- /* upload(event) {
+ /*upload(event) {
     const file = (event.target as HTMLInputElement).files[0];
     this.form.patchValue({
       img: file

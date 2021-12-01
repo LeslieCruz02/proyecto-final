@@ -462,11 +462,8 @@ module.exports = {
     consultaUser,
     consultaDate,
     dateMascotas,
-<<<<<<< HEAD
-    consultaDateAdmin
-=======
+    consultaDateAdmin,
     publicidades
->>>>>>> 0474a1ebb22d2a4c28d1927981617c8f8f893cd3
   /*  home,
     galeryPpal,
     perfilP,
