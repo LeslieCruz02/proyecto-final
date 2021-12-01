@@ -10,6 +10,8 @@ h5{
     text-align: center;
 }
 article{
+    margin: 15px;
+    padding: 0px;
     width: 98vw;
     height: 100%;
     display: flex;
@@ -17,8 +19,15 @@ article{
     align-content: center;
     justify-content: space-evenly;
     flex-wrap: wrap-reverse;
+   
 }
-
+.fondo{
+    
+    background-image: url(../../../../../express/images/huellas_fondo.jpg);
+   
+ 
+    opacity: 0.6;
+}
 .card{
     padding: 10px;
     margin: 15px;
