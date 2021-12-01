@@ -37,6 +37,7 @@ const deleteMascota = require('./routes/deleteMascota');
 const deletePublicidad = require('./routes/deletePublicidad');
 const deleteSolicitud = require('./routes/deleteSolicitud');
 const deleteAdopcion = require('./routes/deleteAdopcion');
+const paqPublicidad = require('./routes/paqPublicidad');('./routes/deleteAdopcion');
 
 const app = express()
   .use(cors({credentials: true, origin: 'http://localhost:4200'}))
@@ -79,6 +80,7 @@ app.use('/deleteMascota ', deleteMascota );
 app.use('/deletePublicidad', deletePublicidad);
 app.use('/deleteSolicitud', deleteSolicitud);
 app.use('/deleteAdopcion', deleteAdopcion);
+app.use('/paqPublicidad', paqPublicidad);
 
 module.exports = app;
 

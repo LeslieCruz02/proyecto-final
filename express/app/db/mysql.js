@@ -564,7 +564,7 @@ module.exports = {
     deleteMascota,
     deletePublicidad,
     deleteSolicitud,
-    deleteAdopcion
+    deleteAdopcion,
   /*  home,
     galeryPpal,
     perfilP,

@@ -102,7 +102,15 @@ export class PanelAdminComponent implements OnInit {
       }
     )
   }
+  // eliminarUsuario(id:number){
+  //   console.log("Hago peticion por delete al server para eliminar el user de id: ", id);
+  // }
+  // actualizarUsuario(id:number){
+  //   console.log("Hago peticion por delete al server para eliminar el user de id: ", id);
+  // }
   eliminarUsuario(id:any){
+    console.log(id);
+    
     this.client.delete(`${this.BASE_API}/deleteUser`, id)
         .subscribe( (response:any)=>{
           console.log(response);
@@ -311,5 +319,5 @@ export class PanelAdminComponent implements OnInit {
         })
   }
  
- 
+
 }
