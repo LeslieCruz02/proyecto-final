@@ -24,11 +24,26 @@ export class RegMascotaComponent  implements OnInit{
   estado1: number = 1
   constructor(
     public client: ClientService,
-    private fb: FormBuilder){
+    private fb: FormBuilder,
+    private route: Router,
+    private router:ActivatedRoute
+    ){
+      
 
   }
 
   ngOnInit(): void {
+
+    this.client.getRequestPerfil(`${this.BASE_API}/date`).subscribe(
+      (response: any) => {  
+        this.usuarios = response.usuarios;
+        
+          console.log(this.usuarios);
+      },
+      (error) => {
+        console.log(error.status);
+        }
+      )
    
     this.form = this.fb.group({
       nombre: ['', Validators.required],
@@ -49,7 +64,14 @@ export class RegMascotaComponent  implements OnInit{
     this.form.get('fotos')?.updateValueAndValidity()
   }
 
- onSubmit(){
+onSubmit(){
+  this.router.queryParams.subscribe(params => {
+    const IDUSUARIO= parseInt(params['idusuario']);
+
+    let responsable = IDUSUARIO
+
+    console.log(responsable);
+
     if (this.form.valid) {
       var formData: any = new FormData();
       formData.append("nombre", this.form.get('nombre').value);
@@ -59,11 +81,31 @@ export class RegMascotaComponent  implements OnInit{
       formData.append("idestado", this.form.get('idestado').value);
       formData.append("descripcion", this.form.get('descripcion').value);
       formData.append("fotos", this.form.get('fotos').value);
+      formData.append("responsable", responsable);
 
       this.load = false;
      
-      this.client.postRequestSendForm('http://localhost:10101/upload', formData).subscribe(
-        (response: any) => {
+      this.client.postRequestSendForm(`${this.BASE_API}/addMascotas`, formData).subscribe(
+        (response:any)=>{
+          this.load = true;
+          console.log(response);
+          Swal.fire({
+            icon: 'question',
+            title: 'Desea continuar con esta publicación',
+            showCancelButton: true,
+            cancelButtonText: `Cancelar`,
+            showDenyButton: false,
+            denyButtonText: `No guardar`,
+            showConfirmButton: true,
+            confirmButtonText: `Aceptar`
+          }).then((result) => {
+            //Read more about isConfirmed, isDenied below
+            if (result.isConfirmed) {
+              this.route.navigate(['/listaAdopcion']);
+            } else if (result.isDenied) {
+              Swal.fire('Los cambios no han sido guardados', '', 'info')
+            }
+          }) 
         
       },
       (error) => {
@@ -74,7 +116,7 @@ export class RegMascotaComponent  implements OnInit{
     } else {
       console.log("Form error");
     }
+  });
   }
-
 }
 

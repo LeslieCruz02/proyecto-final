@@ -1,9 +1,14 @@
 let db = require('../db/mysql');
 
 
-let addMascotas = async(req,res)=>{
+let addMascotas = (req,res)=>{
+  console.log(req.body);
 
-  db.addMascotas(req.body)
+  let file = req['files'].fotos.mv("./images/"+req.body.nombre+".jpg", function(err) {
+    console.log(err);
+  });
+fotos= req.body.nombre
+  db.addMascotas(req.body,fotos)
   .then((result) => {
     return res.status(200).json({
       status: "register ok",
@@ -14,12 +19,6 @@ let addMascotas = async(req,res)=>{
   .catch((err) => {
     console.log(err);
   });
-
-  /*let file = req['files'].img.mv("../../images/leslie.jpg", function(err) {
-    console.log(err);
-  });
-        
-  return res.status(201).json({"Status": "upload ok"}); */
 }
 
  
