@@ -83,7 +83,7 @@ export class SleaderComponent implements OnInit {
             timer: 4000
           })
           console.log(response);
-         // this.route.navigate(['/galeria']);
+         this.router.navigate(['/galeria']);
         },
         (error: any)=>{
           console.log(error.status); 

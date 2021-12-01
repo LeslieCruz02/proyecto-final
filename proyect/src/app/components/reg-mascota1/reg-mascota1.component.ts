@@ -7,6 +7,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { Usuarios } from 'src/app/interface/info.interface';
+import { ActivatedRoute } from '@angular/router';
 
 import Swal from 'sweetalert2';
 
@@ -21,7 +22,6 @@ export class RegMascota1Component implements OnInit {
   form!: FormGroup;
   load: boolean = true;
   usuarios: Usuarios[] =[]
-  idusuario: number = 27
   estado1: number = 1
   estado2: number = 2
 
@@ -31,6 +31,7 @@ export class RegMascota1Component implements OnInit {
     public client: ClientService,
     private fb: FormBuilder,
     private route: Router,
+    private router:ActivatedRoute
 
   
     ) 
@@ -38,15 +39,10 @@ export class RegMascota1Component implements OnInit {
     }
    
 
-  ngOnInit(): void {
+  ngOnInit(){
 
-   /* this.route.queryParams.subscribe(params => {
-      const IDUSUARIO= parseInt(params['idusuario']);
-
-      let idusuario ={
-        idusuario: IDUSUARIO  
-      }
-      console.log(idusuario);*/
+   
+   
 
     this.client.getRequestPerfil(`${this.BASE_API}/date`).subscribe(
       (response: any) => {  
@@ -58,26 +54,34 @@ export class RegMascota1Component implements OnInit {
         console.log(error.status);
         }
       )
+
+
     this.form = this.fb.group({
       nombre: ['', Validators.required],
       tipoDeMascota: ['', Validators.required],
       raza: ['', Validators.required],
       edad: ['', Validators.required],
-      responsable: ['', Validators.required],
-        idestado: ['', Validators.required],
+      idestado: ['', Validators.required],
       descripcion: ['', Validators.required],
       fotos: ['', Validators.required]
     });
   }
 
   async onSubmit(){
+    this.router.queryParams.subscribe(params => {
+      const IDUSUARIO= parseInt(params['idusuario']);
+
+      let responsable = IDUSUARIO
+
+      console.log(responsable);
+
     if (this.form.valid) {
       let data ={
         nombre: this.form.value.nombre,
         tipoDeMascota: this.form.value.tipoDeMascota,
         raza: this.form.value.raza,
-        edad: this.form.value.edad,        
-        responsable: this.form.value.responsable,
+        edad: this.form.value.edad,  
+        responsable:responsable,      
         idestado: this.form.value.idestado,
         descripcion: this.form.value.descripcion,
         fotos: this.form.value.fotos,
@@ -85,6 +89,7 @@ export class RegMascota1Component implements OnInit {
       }
       
       this.load = false;
+     
       this.client.postRequestSendForm(`${this.BASE_API}/addMascotas`, data)
       .subscribe(
         (response:any)=>{
@@ -107,15 +112,17 @@ export class RegMascota1Component implements OnInit {
               Swal.fire('Los cambios no han sido guardados', '', 'info')
             }
           }) 
-          
+        
           
         },
         (error: any)=>{
-          console.log(error.status);          
-        })
+          console.log(error.status);  
+        });      
+       
     }else{
       console.log("Form error");
     }
+  });
   }
 
 }
