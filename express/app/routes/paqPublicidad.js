@@ -3,7 +3,7 @@ const paqPublicidad = require('../controllers/paqPublicidad-controller');
 const router = express.Router();
 
 
-router.get('/',paqPublicidad.paquete);
+router.post('/',paqPublicidad.paquete);
 
 
 module.exports = router; 
