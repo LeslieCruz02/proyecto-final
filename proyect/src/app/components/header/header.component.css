@@ -6,9 +6,12 @@ img {
     border-radius: 15px;
 }
 section{
-    background-image: url(../../../../../express/images/huellas_fondo.jpg) ;
+    background-image: url(../../../../../express/images/huellas_fond.jpg) ;
     font-family: 'Yellowtail', cursive; 
     
+}
+font{
+    display: none;
 }
 .datePublic{
     display: flex;
