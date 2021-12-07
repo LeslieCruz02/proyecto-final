@@ -104,6 +104,18 @@
   .registrateHoy a{
     background-color: #3CACAE;
   }
+  .olvidar:hover{
+    cursor: pointer;
+  }
+  .inputNewPass{
+    text-align: center;
+  }
+  .newpass{
+    padding: 5px 5px;
+    border-radius: 5px;
+    width:200px;
+    text-align: center;
+  }
 
 @media screen and (max-width: 1200px){
   section{

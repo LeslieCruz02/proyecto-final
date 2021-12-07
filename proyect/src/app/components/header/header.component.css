@@ -2,17 +2,31 @@ header{
     width: 80%;
    
 }
+img {
+    border-radius: 15px;
+}
+section{
+    background-image: url(../../../../../express/images/huellas_fondo.jpg) ;
+    font-family: 'Yellowtail', cursive; 
+    
+}
 .datePublic{
     display: flex;
     flex-direction: column;
     justify-content:center;
     align-items:center;
     border-style: hidden;
-    }
-
-.imagen{
-    margin-left:100px;
+    margin:  10px 20px;
+    color: black;
 }
+
+ h3{
+    font-size: 45px;
+    color:#1557f1;
+ }
+p{
+    font-size: 25px;   
+} 
 
 .texto{
     padding: 5px;
@@ -20,7 +34,11 @@ header{
     border-radius: 8px;
 }
 
-
+h2{
+    font-family: 'Yellowtail', cursive;
+    text-align: center;
+    font-size:50px
+}
 
 a{
     padding: 10px;
@@ -67,11 +85,6 @@ label{
     background-color: rgba(139, 135, 135, 0.26);
     color: black;
     text-align: center;   
-}
-.datePublic{
-    margin:  5px 20px;
-    color: black;
-
 }
 
 @media screen and (max-width:768px) {

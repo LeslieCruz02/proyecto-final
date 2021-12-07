@@ -50,6 +50,10 @@ import { RegisterAdmonComponent } from './containers/register-admon/register-adm
 import { PanelAdmonComponent } from './containers/panel-admon/panel-admon.component';
 import { PaqPublicitarioComponent } from './components/paq-publicitario/paq-publicitario.component';
 import { FormPublicidadComponent } from './containers/form-publicidad/form-publicidad.component';
+import { RegMascotaComponent } from './components/reg-mascota/reg-mascota.component';
+import { RemascotaComponent } from './containers/remascota/remascota.component';
+import { ChangePasswordComponent } from './components/change-password/change-password.component';
+import { FormChangePasswordComponent } from './containers/form-change-password/form-change-password.component';
 
 
 @NgModule({
@@ -97,7 +101,11 @@ import { FormPublicidadComponent } from './containers/form-publicidad/form-publi
     RegisterAdmonComponent,
     PanelAdmonComponent,
     PaqPublicitarioComponent,
-    FormPublicidadComponent
+    FormPublicidadComponent,
+    RegMascotaComponent,
+    RemascotaComponent,
+    ChangePasswordComponent,
+    FormChangePasswordComponent,
   ],
   imports: [
     BrowserModule,

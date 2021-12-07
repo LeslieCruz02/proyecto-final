@@ -35,10 +35,7 @@ function usuarios(data) {
       mysqlConnection.connect((err) => {
         if (err) throw err;
         console.log("Connected to MySQL Server!");
-      });
-      
-      let hashPass = bcrypt.hashSync(data.password, 8);
-      data.password = hashPass;
+      });ss;
       let insert = 'INSERT INTO admon(usuario, nombres, apellidos, rol, correo, telefono, password, estadoCuenta, foto) VALUES(?,?,?,?,?,?,?,?,?)';   
       let query = mysql.format(insert,[data.usuario, data.nombres, data.apellidos, data.rol, data.correo, data.telefono, data.password, "activo", null]);
       
@@ -70,6 +67,27 @@ function login(data){
     });
     });
   }
+
+function changePassword(data) {
+//   return new Promise((resolve, reject) => {
+//     const mysqlConnection = connection();
+//     mysqlConnection.connect((err)=>{
+//       if(err) throw err;
+//       console.log("Connected to MySQL Server!");
+//     });
+//     let hashPass1 = bcrypt.hashSync(data.password1, 8);
+//     data.password1 = hashPass1;
+//     let update = 'UPDATE usuarios set password=password1 WHERE usuario=? AND correo=?'
+//     let query = mysql.format(update,[data.password1]);
+//     mysqlConnection.query(query, (error, result) => {
+//       if (error) reject (error);
+//       console.log(error);
+//       mysqlConnection.end();
+//       resolve(result)
+//       console.log(result);
+//     });
+//   });
+}
 
   function loginAdmin(data){
     return new Promise((resolve,reject)=>{
@@ -552,6 +570,7 @@ module.exports = {
     deletePublicidad,
     deleteSolicitud,
     deleteAdopcion,
+    changePassword,
   /*  home,
     galeryPpal,
     perfilP,

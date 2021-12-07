@@ -8,7 +8,7 @@ let minilista = async (req, res) => {
     db.minilista()
     .then((result) => {
       return res.status(200).json({
-       minilista: result.minilista
+       minilista: result
       });
       
     })

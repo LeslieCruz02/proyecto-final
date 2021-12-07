@@ -52,7 +52,12 @@
             <button type="submit" class="btn btn-primary">Iniciar sesión </button>
           </div>
           <div class="registrate">
-            <a class="nav-link" href="http://localhost:4200/registro">¿Olvidaste tu contraseña?</a>
+            <a class="olvidar nav-link" (click)='newPassword=!newPassword'>¿Olvidaste tu contraseña?</a>
+          </div>
+          <div class="inputNewPass" *ngIf="newPassword">
+            <input class="newpass" type="email" name="newPassword" placeholder="Correo electrónico"><br>
+            <button class="btn btn-primary mx-5 my-2" (click)="formNewPassword=!formNewPassword">Enviar</button><br>
+            <a *ngIf="formNewPassword" href="http://localhost:4200/changePassword">Restablecer contraseña</a>
           </div>
           <hr> 
           <div class="crearCuenta">
