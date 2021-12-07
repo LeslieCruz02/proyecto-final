@@ -3,6 +3,9 @@ import { ClientService } from '../../client.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { environment } from 'src/environments/environment';
+import { Usuarios } from '../../interface/info.interface';
+
+import { ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -17,12 +20,27 @@ export class PaqPublicitarioComponent implements OnInit {
   precio2: number = 90000;
   precio3: number = 360000;
   paq:any;
+
+  usuarios : Usuarios []=[];
+
   constructor(
     public client: ClientService,
     private fb: FormBuilder,
-    private route:  Router
+    private route:  Router,
+    private router:ActivatedRoute
   ) { }
   ngOnInit(): void {
+
+    this.client.getRequestPerfil(`${this.BASE_API}/date`).subscribe(
+      (response: any) => {  
+        this.usuarios = response.usuarios;
+          console.log(this.usuarios);
+      },
+      (error) => {
+        console.log(error.status);
+        }
+      )
+  
     this.form = this.fb.group({
       nombreTitular: ['', Validators.required],
       tarjeta: ['', Validators.required],
@@ -40,7 +58,13 @@ export class PaqPublicitarioComponent implements OnInit {
   paquete3(){
     this.paq=3;
   };
-  async crearPublic(){
+  async paquete(){
+    this.router.queryParams.subscribe(params => {
+      const IDUSUARIO= parseInt(params['idusuario']);
+  
+      let id = IDUSUARIO
+  
+      console.log(id);
     if(this.form.valid){
       
       let data={
@@ -50,7 +74,7 @@ export class PaqPublicitarioComponent implements OnInit {
         mesAño: this.form.value.mesAño,
         documento: this.form.value.documento,
       }
-      this.client.getRequestPaquete(`${this.BASE_API}/paqPublicidad`,data
+      this.client.postRequestPaquete(`${this.BASE_API}/paqPublicidad`,data
         ).subscribe(
         (response:any)=>{
           console.log('funciona');
@@ -67,7 +91,9 @@ export class PaqPublicitarioComponent implements OnInit {
             '',
             'success'
           )
-          this.route.navigate(['/addPublicidad']);
+            
+        
+          this.route.navigate([`/addPublicidad`], {queryParams: {idusuario: id}});
         },
         (error: any)=>{
           console.log(error.status);
@@ -75,5 +101,6 @@ export class PaqPublicitarioComponent implements OnInit {
     }else{
       console.log("Form error");
     }
+  });
   }
 }

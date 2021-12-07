@@ -50,7 +50,7 @@ export class ClientService {
  
     return this.http.get(`${this.BASE_API}/adopcionesInfo`)
   }
-  getRequestPaquete(route:string, data?:any){
+  postRequestPaquete(route:string, data?:any){
     let config:any={
       responseType:"json"
     }
@@ -209,7 +209,15 @@ export class ClientService {
     //Notese que como tercer parametro se pasa la configuracion de la request
     return this.http.post(route, data, config);
   }
-
+  putReqNewPassword(route: string, data?:any) {
+    let config:any = {
+      responseType: "json"
+    }
+    const header = new HttpHeaders().set('Authorization', '57ydf544ljka559ahjkfgd1');
+    config["header"] = header;
+    //Notese que como tercer parametro se pasa la configuracion de la request
+    return this.http.put(route, data, config);
+  }
 
   postReqSendForm(route: string, data?:any) {
     let config:any = {

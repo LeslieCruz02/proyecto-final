@@ -52,6 +52,8 @@ import { PaqPublicitarioComponent } from './components/paq-publicitario/paq-publ
 import { FormPublicidadComponent } from './containers/form-publicidad/form-publicidad.component';
 import { RegMascotaComponent } from './components/reg-mascota/reg-mascota.component';
 import { RemascotaComponent } from './containers/remascota/remascota.component';
+import { ChangePasswordComponent } from './components/change-password/change-password.component';
+import { FormChangePasswordComponent } from './containers/form-change-password/form-change-password.component';
 
 
 @NgModule({
@@ -102,6 +104,8 @@ import { RemascotaComponent } from './containers/remascota/remascota.component';
     FormPublicidadComponent,
     RegMascotaComponent,
     RemascotaComponent,
+    ChangePasswordComponent,
+    FormChangePasswordComponent,
   ],
   imports: [
     BrowserModule,

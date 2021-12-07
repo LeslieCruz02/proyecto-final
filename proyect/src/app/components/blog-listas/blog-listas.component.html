@@ -15,8 +15,8 @@
                   Responsable: {{mascota.responsable}}<br>
                   Tipo de mascota: {{mascota.tipoDeMascota | uppercase}}
                 </p>
-                <div class="adopcion">
-                    <a type="button" href="http://localhost:4200/galeria?idmascota={{mascota.idmascota}}" class="btn btn-primary">Adoptar</a>
+                <div class="adopcion"  *ngFor="let element of usuarios">
+                    <a type="button" href="http://localhost:4200/galeria?idmascota={{mascota.idmascota}}&idusuario={{element.idusuario}}" class="btn btn-primary">Adoptar</a>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         Donar
                       </button>

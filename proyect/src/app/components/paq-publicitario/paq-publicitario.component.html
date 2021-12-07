@@ -34,8 +34,8 @@
 
 
 
-  <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
-    <div class="modal-dialog" [formGroup]="form" (ngSubmit)="crearPublic()">
+  <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true" *ngFor="let usuario of usuarios" >
+    <div class="modal-dialog" [formGroup]="form" (click)="paquete()">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel1">FORMULARIO</h5>
@@ -66,8 +66,8 @@
           <label for="mesAños">Mes y año de expiración</label><br>
           <input type="month" class="input" id="mesAños" formControlName="mesAño"><br>
         </div>
-        <div class="modal-footer">
-        <button type="submit" class="enviar btn btn-primary" data-bs-dismiss="modal" (click)="crearPublic()" href="http://localhost:10101//">Enviar</button> 
+        <div class="modal-footer" >
+        <button type="submit" class="enviar btn btn-primary" data-bs-dismiss="modal"  (click)="paquete()">Enviar</button> 
       </div>
     </div>
   </div>

@@ -14,6 +14,8 @@ export class InicioComponent implements OnInit {
   inactiva:any;
   formInicio!:FormGroup;
   load: boolean = true;
+  newPassword:boolean=false;
+  formNewPassword:boolean=false;
   constructor(
     public client: ClientService,
     private fb: FormBuilder,

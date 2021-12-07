@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RemascotaComponent } from './remascota.component';
+import { FormChangePasswordComponent } from './form-change-password.component';
 
-describe('RemascotaComponent', () => {
-  let component: RemascotaComponent;
-  let fixture: ComponentFixture<RemascotaComponent>;
+describe('FormChangePasswordComponent', () => {
+  let component: FormChangePasswordComponent;
+  let fixture: ComponentFixture<FormChangePasswordComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RemascotaComponent ]
+      declarations: [ FormChangePasswordComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RemascotaComponent);
+    fixture = TestBed.createComponent(FormChangePasswordComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
