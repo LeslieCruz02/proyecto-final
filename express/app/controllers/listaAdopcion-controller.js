@@ -6,7 +6,9 @@ let db = require('../db/mysql');
 
 let listaAdopcion = (req, res) => {
   
+
    return res.status(200).json({
+     idusuario:idusuario,
       "Status":"token ok"
     })
 

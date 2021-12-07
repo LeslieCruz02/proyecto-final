@@ -38,7 +38,7 @@ const deleteMascota = require('./routes/deleteMascota');
 const deletePublicidad = require('./routes/deletePublicidad');
 const deleteSolicitud = require('./routes/deleteSolicitud');
 const deleteAdopcion = require('./routes/deleteAdopcion');
-const paqPublicidad = require('./routes/paqPublicidad');('./routes/deleteAdopcion');
+const paqPublicidad = require('./routes/paqPublicidad');
 
 const app = express()
   .use(cors({credentials: true, origin: 'http://localhost:4200'}))

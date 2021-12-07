@@ -17,7 +17,7 @@ let galeria = (req, res) => {
       return res.status(403).send({auth: false,message:err});
     }
     return res.status(200).json({
-      "Status":"token ok"
+      "Status":"token ok galeria"
     })
   });
 };

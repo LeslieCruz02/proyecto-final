@@ -3,7 +3,7 @@
         <h2><strong>Adopta un mascota para toda la vida</strong></h2><br>
         <p>Aquí podrás encontrar todas las mascotas que esperan ser adoptados en un hogar para toda su vida, recuerda que adoptando salvas una vida y ganas un compañero.</p><br>
     </div>
-    <article>
+    <article >
         <div *ngFor="let mascota of mascotas" class="card"  style="width: 300px; height: 530px;">
             <img src="http://localhost:10101/images?image={{mascota.foto1}}" class="card-img-top" alt="..." height="250">
             <div class="card-body">
@@ -15,8 +15,8 @@
                   Responsable: {{mascota.responsable}}<br>
                   Tipo de mascota: {{mascota.tipoDeMascota | uppercase}}
                 </p>
-                <div class="adopcion">
-                    <a type="button" href="http://localhost:4200/galeria?idmascota={{mascota.idmascota}}" class="btn btn-primary">Adoptar</a>
+                <div class="adopcion"  *ngFor="let element of usuarios">
+                    <a type="button" href="http://localhost:4200/galeria?idmascota={{mascota.idmascota}}&idusuario={{element.idusuario}}" class="btn btn-primary">Adoptar</a>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         Donar
                       </button>

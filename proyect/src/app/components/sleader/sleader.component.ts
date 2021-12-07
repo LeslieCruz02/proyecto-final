@@ -62,14 +62,23 @@ export class SleaderComponent implements OnInit {
 
   }
  async onSubmit(){
+  this.route.queryParams.subscribe(params => {
+    const IDMASCOTA= parseInt(params['idmascota']);
+    const IDUSUARIO= parseInt(params['idusuario']);
+    let idmascota = IDMASCOTA;
+    let idusuario= IDUSUARIO;
+
     if (this.form.valid) {
       let data = {
+        idmascota:idmascota,
+        idusuario:idusuario,
         nombre: this.form.value.nombre,
         email: this.form.value.email,
         tipodoc: this.form.value.tipodoc,
         documento: this.form.value.documento,        
-        observaciones: this.form.value.observaciones,
+        observaciones: this.form.value.observaciones
       }
+    
       this.load = false;
       this.client.postRequestSendForm(`${this.BASE_API}/adopciones`,data
       ).subscribe(
@@ -83,7 +92,7 @@ export class SleaderComponent implements OnInit {
             timer: 4000
           })
           console.log(response);
-         this.router.navigate(['/galeria']);
+         this.router.navigate(['/listaAdopcion']);
         },
         (error: any)=>{
           console.log(error.status); 
@@ -103,7 +112,9 @@ export class SleaderComponent implements OnInit {
         text: 'Por favor verifica los datos ingresados',
         footer: '<a href="http://localhost:4200/registro">Más informacion aquí</a>'
       })
-    }
+    };
+
+    });
   }
 
   reqAdoptar(){

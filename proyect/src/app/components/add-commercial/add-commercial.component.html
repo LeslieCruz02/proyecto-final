@@ -1,5 +1,6 @@
   <section>
-    <form [formGroup]="form" (ngSubmit)="onSubmit()" >
+    <form [formGroup]="form" (ngSubmit)="onSubmit()"  *ngFor="let usuario of usuarios">
+      <input type="text" class="form-control" placeholder="{{usuario.nombres}}"formControlName="titulo"><br>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Titulo de la publicidad</label>
             <input type="text" class="form-control" formControlName="titulo"><br>
@@ -12,19 +13,19 @@
                  <input class="descripcion" type="text" formControlName="descripcion" rows= "7" cols="40">      
           </div>
          <div>
-              <div class="mb-3">
-                  <label for="formFile" class="form-label">Adjuntar Archivo</label>
-                  <input class="form-control" type="file" formControlName="imagenes">
-                </div>
+            <div class="form-group">
+              <label for="formFile" class="form-label">Adjuntar Archivo</label><br>
+              <input type = "file"  (change)="upload($event)"/>
+            </div>
           
           </div>
           <div class="form-group form-check">
               <input type="checkbox" class="form-check-input" >
               <label class="form-check-label" for="exampleCheck1" aria-required="exampleCheck1">Aceptar los términos y condiciones</label>
           </div>
-          <button type="submit" class="btn btn-primary" href="http://localhost:10101//">Enviar</button>
+          <button type="submit" class="btn btn-primary" >Enviar</button>
           <div *ngIf="!load" class="spinner-border text-info" role="status">
-            <span class="sr-only">Loading...</span>
+            <span class="sr-only"></span>
         </div>
     </form>
   </section>  

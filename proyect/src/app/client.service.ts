@@ -50,7 +50,7 @@ export class ClientService {
  
     return this.http.get(`${this.BASE_API}/adopcionesInfo`)
   }
-  getRequestPaquete(route:string, data?:any){
+  postRequestPaquete(route:string, data?:any){
     let config:any={
       responseType:"json"
     }

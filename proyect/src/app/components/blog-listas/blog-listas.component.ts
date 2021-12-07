@@ -3,6 +3,7 @@ import { ClientService } from '../../client.service';
 import { Router } from '@angular/router';
 import { Mascotas } from '../../interface/mascotas.interface';
 import { environment } from 'src/environments/environment';
+import { Usuarios } from 'src/app/interface/info.interface';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class BlogListasComponent implements OnInit {
   
   title = "mascotas"
   mascotas : Mascotas [] = [];
-  
+  usuarios:Usuarios[]=[]
   
   constructor(
     public client: ClientService,
@@ -25,6 +26,15 @@ export class BlogListasComponent implements OnInit {
  
   ngOnInit(): void {
 
+    this.client.getRequestPerfil(`${this.BASE_API}/date`).subscribe(
+      (response: any) => {  
+        this.usuarios = response.usuarios;
+          console.log(this.usuarios);
+      },
+      (error) => {
+        console.log(error.status);
+        }
+      )
     this.client.getRequestLista(`${this.BASE_API}/listaAdopcion`).subscribe(
       (response:any)=>{
         console.log(response);

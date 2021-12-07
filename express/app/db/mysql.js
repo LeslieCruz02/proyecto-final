@@ -99,8 +99,8 @@ function login(data){
         console.log("Connected to MySQL Server!");
       });
       
-      let insert = 'INSERT INTO adopciones (nombre, email, tipodoc, documento, observaciones) VALUES(?,?,?,?,?)';   
-      let query = mysql.format(insert,[data.nombre, data.email, data.tipodoc, data.documento, data.observaciones]);
+      let insert = 'INSERT INTO adopciones (mascota, adoptante, nombre, email, tipodoc, documento, observaciones) VALUES(?,?,?,?,?,?,?)';   
+      let query = mysql.format(insert,[data.idmascota,data.idusuario,data.nombre, data.email, data.tipodoc, data.documento, data.observaciones]);
  
         mysqlConnection.query(query, (error, result) => {
         if (error) reject(error);
@@ -131,7 +131,7 @@ function login(data){
   }
    
 
-   function addPublicidad(data) {
+   function addPublicidad(data, imagenes) {
    return new Promise((resolve, reject)=>{
      const mysqlConnection = connection();
        mysqlConnection.connect((err) => {
@@ -139,8 +139,8 @@ function login(data){
          console.log("Connected to MySQL Server!");
        });
       
-       let insert = 'INSERT INTO publicidades (titulo, descripcion, imagenes) VALUES(?,?,?)';   
-       let query = mysql.format(insert,[data.titulo, data.descripcion, data.imagenes]);
+       let insert = 'INSERT INTO publicidades (usuario,titulo, descripcion, imagenes, estado) VALUES(?,?,?,?,?)';   
+       let query = mysql.format(insert,[data.idusuario, data.titulo, data.descripcion, imagenes, 1]);
   
          mysqlConnection.query(query, (error, result) => {
          if (error) reject(error);

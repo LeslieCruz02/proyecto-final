@@ -3,8 +3,8 @@ const { check, validationResult } = require('express-validator');
 
 validatorParams = [
         check('titulo').isString(),
-        check('descripcion').isString(),
-        check('imagenes').isString()
+        check('descripcion').isString()
+       // check('imagenes').isString()
       ];
 
       
