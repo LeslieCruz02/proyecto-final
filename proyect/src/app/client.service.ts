@@ -244,11 +244,6 @@ export class ClientService {
   }
 
   delete(route: string, data?:any) {
-    let config:any = {
-      responseType: "json"
-    }
-    const header = new HttpHeaders().set('Authorization', '57ydf544ljka559ahjkfgd1');
-    config["header"] = header;
     return this.http.delete(route,data);
   }
 

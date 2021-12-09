@@ -453,8 +453,8 @@ function deleteUser(data){
       if (err) throw err;
       console.log("Connected to MySQL Server!");
     });
-    let select = 'DELETE FROM usuarios WHERE idusuario =?';
-    let query = mysql.format(select,[data]);
+    let DELETE = 'DELETE FROM usuarios WHERE idusuario = ?';
+    let query = mysql.format(DELETE,[data.idusuario]);
     mysqlConnection.query(query, (error, result) => {
     if(error) reject (error);
     console.log(error);
