@@ -8,7 +8,7 @@ function sleepTime(time) {
 }
 
 let adopciones = async(req, res) => {
- 
+
   db.adopciones(req.body)
   .then((result) => {
     return res.status(200).json({

@@ -109,9 +109,14 @@ export class PanelAdminComponent implements OnInit {
   //   console.log("Hago peticion por delete al server para eliminar el user de id: ", id);
   // }
   eliminarUsuario(id:any){
-    console.log(id);
+
+    let data ={
+      idusuario: id
+    }
+    console.log(data);
     
-    this.client.delete(`${this.BASE_API}/deleteUser`, id)
+    
+    this.client.delete(`${this.BASE_API}/deleteUser`, data)
         .subscribe( (response:any)=>{
           console.log(response);
           Swal.fire(
@@ -119,7 +124,7 @@ export class PanelAdminComponent implements OnInit {
             '',
             'success'
           )
-          this.route.navigate(['/admin']);
+          this.route.navigate(['/panelAdmin']);
         },
         (error: any)=>{
           Swal.fire(
@@ -193,8 +198,8 @@ export class PanelAdminComponent implements OnInit {
         })
   }
  
-  eliminarSolicitud(id:number){
-    this.client.delete(`${this.BASE_API}/deleteSolicitud`, id)
+  eliminarSolicitud(correo:string){
+    this.client.delete(`${this.BASE_API}/deleteSolicitud`, correo)
         .subscribe( (response:any)=>{
           console.log(response);
           Swal.fire(
@@ -214,8 +219,8 @@ export class PanelAdminComponent implements OnInit {
         })
       }
   
-  actualizarSolicitud(id:number){
-    this.client.update(`${this.BASE_API}/updateSolicitud`, id)
+  actualizarSolicitud(correo:string){
+    this.client.update(`${this.BASE_API}/updateSolicitud`, correo)
         .subscribe( (response:any)=>{
           console.log(response);
           Swal.fire(

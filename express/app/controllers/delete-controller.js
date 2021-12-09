@@ -3,14 +3,12 @@ let db = require('../db/mysql');
 
 let usuarios = async(req, res) => {
 
-
+  console.log(req.body);
   db.deleteUser(req.body)
   .then((result) => {
 
     return res.status(200).json({
-      status: "delete ok",
-      auth: true,
-      documents: result, 
+      status: "delete ok" 
     });
   })
   .catch((err) => {
