@@ -7,11 +7,11 @@ img {
 }
 section{
     background-image: url(../../../../../express/images/huellas_fond.jpg) ;
-    font-family: 'Yellowtail', cursive; 
-    
+    font-family: 'Yellowtail', cursiva;    
 }
 font{
     display: none;
+    background-color: red;
 }
 .datePublic{
     display: flex;

@@ -11,7 +11,7 @@ h5{
 }
 article{
     margin: 15px;
-    padding: 0px;
+    padding: 25px;
     width: 98vw;
     height: 100%;
     display: flex;
@@ -23,10 +23,8 @@ article{
 }
 .fondo{
     
-    background-image: url(../../../../../express/images/huellas_fondo.jpg);
-   
- 
-    opacity: 0.6;
+    background-image: url(../../../../../express/images/huellas_fond.jpg);
+	background-position: center;
 }
 .card{
     padding: 10px;

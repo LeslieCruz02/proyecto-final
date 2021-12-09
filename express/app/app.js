@@ -39,6 +39,7 @@ const deletePublicidad = require('./routes/deletePublicidad');
 const deleteSolicitud = require('./routes/deleteSolicitud');
 const deleteAdopcion = require('./routes/deleteAdopcion');
 const paqPublicidad = require('./routes/paqPublicidad');
+const minilista = require('./routes/minilista');
 
 const app = express()
   .use(cors({credentials: true, origin: 'http://localhost:4200'}))
@@ -83,6 +84,6 @@ app.use('/deletePublicidad', deletePublicidad);
 app.use('/deleteSolicitud', deleteSolicitud);
 app.use('/deleteAdopcion', deleteAdopcion);
 app.use('/paqPublicidad', paqPublicidad);
-
+app.use('/minilista', minilista);
 module.exports = app;
 
