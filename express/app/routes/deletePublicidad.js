@@ -3,7 +3,7 @@ const deleteController = require('../controllers/delete-controller');
 const router = express.Router();
 
 
-router.post('/', deleteController.publicidad);
+router.delete('/', deleteController.publicidad);
 
 
 module.exports = router; 

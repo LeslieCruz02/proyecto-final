@@ -3,7 +3,7 @@ const deleteController = require('../controllers/delete-controller');
 const router = express.Router();
 
 
-router.post('/', deleteController.mascota);
+router.delete('/', deleteController.mascota);
 
 
 module.exports = router; 

@@ -3,12 +3,14 @@ let db = require('../db/mysql');
 
 let usuarios = async(req, res) => {
 
-  console.log(req.body);
-  db.deleteUser(req.body)
+  console.log(req.query.id);
+  let id= req.query.id
+  db.deleteUser(id)
   .then((result) => {
 
     return res.status(200).json({
-      status: "delete ok" 
+      status: "delete ok",
+      documents: result
     });
   })
   .catch((err) => {
@@ -16,14 +18,14 @@ let usuarios = async(req, res) => {
   });
 };
 let mascota = async(req, res) => {
+  console.log(req.query.id);
+  let id= req.query.id
 
-
-  db.deleteMascota(req.body)
+  db.deleteMascota(id)
   .then((result) => {
 
     return res.status(200).json({
       status: "delete ok",
-      auth: true,
       documents: result, 
     });
   })
@@ -32,14 +34,14 @@ let mascota = async(req, res) => {
   });
 };
 let solicitud = async(req, res) => {
+  console.log(req.query.correo);
+  let correo= req.query.correo
 
-
-  db.deleteSolicitud(req.body)
+  db.deleteSolicitud(correo)
   .then((result) => {
 
     return res.status(200).json({
       status: "delete ok",
-      auth: true,
       documents: result, 
     });
   })
@@ -48,14 +50,14 @@ let solicitud = async(req, res) => {
   });
 };
 let adopcion = async(req, res) => {
+  console.log(req.query.id);
+  let id= req.query.id
 
-
-  db.deleteAdopcion(req.body)
+  db.deleteAdopcion(id)
   .then((result) => {
 
     return res.status(200).json({
       status: "delete ok",
-      auth: true,
       documents: result, 
     });
   })
@@ -64,14 +66,14 @@ let adopcion = async(req, res) => {
   });
 };
 let publicidad = async(req, res) => {
+  console.log(req.query.id);
+  let id= req.query.id
 
-
-  db.deletePublicidad(req.body)
+  db.deletePublicidad(id)
   .then((result) => {
 
     return res.status(200).json({
       status: "delete ok",
-      auth: true,
       documents: result, 
     });
   })

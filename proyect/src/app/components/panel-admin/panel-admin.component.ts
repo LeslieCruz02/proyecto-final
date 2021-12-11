@@ -110,13 +110,7 @@ export class PanelAdminComponent implements OnInit {
   // }
   eliminarUsuario(id:any){
 
-    let data ={
-      idusuario: id
-    }
-    console.log(data);
-    
-    
-    this.client.delete(`${this.BASE_API}/deleteUser`, data)
+    this.client.delete(`${this.BASE_API}/deleteUser?id=${id}`)
         .subscribe( (response:any)=>{
           console.log(response);
           Swal.fire(
@@ -145,7 +139,7 @@ export class PanelAdminComponent implements OnInit {
             '',
             'success'
           )
-          this.route.navigate(['/admin']);
+          this.route.navigate(['/panelAdmin']);
         },
         (error: any)=>{
           Swal.fire(
@@ -157,7 +151,7 @@ export class PanelAdminComponent implements OnInit {
         })
   }
   eliminarMascota(id:number){
-    this.client.delete(`${this.BASE_API}/deleteMascota`, id)
+    this.client.delete(`${this.BASE_API}/deleteMascota?id=${id}`)
         .subscribe( (response:any)=>{
           console.log(response);
           Swal.fire(
@@ -165,7 +159,7 @@ export class PanelAdminComponent implements OnInit {
             '',
             'success'
           )
-          this.route.navigate(['/admin']);
+          this.route.navigate(['/panelAdmin']);
         },
         (error: any)=>{
           Swal.fire(
@@ -186,7 +180,7 @@ export class PanelAdminComponent implements OnInit {
             '',
             'success'
           )
-          this.route.navigate(['/admin']);
+          this.route.navigate(['/panelAdmin']);
         },
         (error: any)=>{
           Swal.fire(
@@ -199,7 +193,7 @@ export class PanelAdminComponent implements OnInit {
   }
  
   eliminarSolicitud(correo:string){
-    this.client.delete(`${this.BASE_API}/deleteSolicitud`, correo)
+    this.client.delete(`${this.BASE_API}/deleteSolicitud?correo=${correo}`)
         .subscribe( (response:any)=>{
           console.log(response);
           Swal.fire(
@@ -207,7 +201,7 @@ export class PanelAdminComponent implements OnInit {
             '',
             'success'
           )
-          this.route.navigate(['/admin']);
+          this.route.navigate(['/panelAdmin']);
         },
         (error: any)=>{
           Swal.fire(
@@ -228,7 +222,7 @@ export class PanelAdminComponent implements OnInit {
             '',
             'success'
           )
-          this.route.navigate(['/admin']);
+          this.route.navigate(['panelAdmin']);
         },
         (error: any)=>{
           Swal.fire(
@@ -241,7 +235,7 @@ export class PanelAdminComponent implements OnInit {
   }
  
   eliminarPublicidad(id:number){
-    this.client.delete(`${this.BASE_API}/deletePublicidad`, id)
+    this.client.delete(`${this.BASE_API}/deletePublicidad?id=${id}`)
         .subscribe( (response:any)=>{
           console.log(response);
           Swal.fire(
@@ -249,7 +243,7 @@ export class PanelAdminComponent implements OnInit {
             '',
             'success'
           )
-          this.route.navigate(['/admin']);
+          this.route.navigate(['/panelAdmin']);
         },
         (error: any)=>{
           Swal.fire(
@@ -270,7 +264,7 @@ export class PanelAdminComponent implements OnInit {
             '',
             'success'
           )
-          this.route.navigate(['/admin']);
+          this.route.navigate(['/panelAdmin']);
         },
         (error: any)=>{
           Swal.fire(
@@ -283,7 +277,7 @@ export class PanelAdminComponent implements OnInit {
   }
  
   eliminarAdopcion(id:number){
-    this.client.delete(`${this.BASE_API}/deleteAdopcion`, id)
+    this.client.delete(`${this.BASE_API}/deleteAdopcion?id=${id}`)
         .subscribe( (response:any)=>{
           console.log(response);
           Swal.fire(
@@ -291,7 +285,7 @@ export class PanelAdminComponent implements OnInit {
             '',
             'success'
           )
-          this.route.navigate(['/admin']);
+          this.route.navigate(['/panelAdmin']);
         },
         (error: any)=>{
           Swal.fire(
@@ -312,7 +306,7 @@ export class PanelAdminComponent implements OnInit {
             '',
             'success'
           )
-          this.route.navigate(['/admin']);
+          this.route.navigate(['/panelAdmin']);
         },
         (error: any)=>{
           Swal.fire(

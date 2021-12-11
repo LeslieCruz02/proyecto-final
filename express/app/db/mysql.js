@@ -176,8 +176,8 @@ function changePassword(data) {
         console.log("Connected to MySQL Server!");
       });
       let date = new Date()
-      let insert = 'INSERT INTO contactenos (nombreC, correo, telefono, nombreO,  asunto, mensaje, date) VALUES(?,?,?,?,?,?,?)';   
-      let query = mysql.format(insert,[data.nombreC, data.correo, data.telefono, data.nombreO,  data.asunto, data.mensaje,  date]);
+      let insert = 'INSERT INTO contactenos (nombreC, correo, telefono, apellido,  asunto, mensaje, date) VALUES(?,?,?,?,?,?,?)';   
+      let query = mysql.format(insert,[data.nombreC, data.correo, data.telefono, data.apellido,  data.asunto, data.mensaje,  date]);
       
       mysqlConnection.query(query, (error, result) => {
         if (error) reject(error);
@@ -446,7 +446,7 @@ function publicidades(data){
   });
 }
 
-function deleteUser(data){
+function deleteUser(id){
   return new Promise((resolve,reject)=>{
     const mysqlConnection = connection();
     mysqlConnection.connect((err) => {
@@ -454,83 +454,79 @@ function deleteUser(data){
       console.log("Connected to MySQL Server!");
     });
     let DELETE = 'DELETE FROM usuarios WHERE idusuario = ?';
-    let query = mysql.format(DELETE,[data.idusuario]);
+    let query = mysql.format(DELETE, id);
     mysqlConnection.query(query, (error, result) => {
     if(error) reject (error);
     console.log(error);
     mysqlConnection.end();
     resolve(result);
-    console.log(data);
     console.log(result);
   });
   });
 }
-function deleteMascota(data){
+function deleteMascota(id){
   return new Promise((resolve,reject)=>{
     const mysqlConnection = connection();
     mysqlConnection.connect((err) => {
       if (err) throw err;
       console.log("Connected to MySQL Server!");
     });
-    let select = 'DELETE FROM mascota WHERE idmascotas =?';
-    let query = mysql.format(select,[data]);
+    let DELETE = 'DELETE FROM mascota WHERE idmascotas =?';
+    let query = mysql.format(DELETE,id);
     mysqlConnection.query(query, (error, result) => {
     if(error) reject (error);
     console.log(error);
     mysqlConnection.end();
     resolve(result);
-    console.log(data);
     console.log(result);
   });
   });
 }
-function deleteSolicitud(data){
+function deleteSolicitud(correo){
   return new Promise((resolve,reject)=>{
     const mysqlConnection = connection();
     mysqlConnection.connect((err) => {
       if (err) throw err;
       console.log("Connected to MySQL Server!");
     });
-    let select = 'DELETE FROM contactenos WHERE idsolicitud =?';
-    let query = mysql.format(select,[data]);
+    let DELETE = 'DELETE FROM contactenos WHERE correo =?';
+    let query = mysql.format(DELETE,correo);
     mysqlConnection.query(query, (error, result) => {
     if(error) reject (error);
     console.log(error);
     mysqlConnection.end();
     resolve(result);
-    console.log(data);
     console.log(result);
   });
   });
 }
-function deletePublicidad(data){
+function deletePublicidad(id){
   return new Promise((resolve,reject)=>{
     const mysqlConnection = connection();
     mysqlConnection.connect((err) => {
       if (err) throw err;
       console.log("Connected to MySQL Server!");
     });
-    let select = 'DELETE FROM publicidades WHERE idPublicidad =?';
-    let query = mysql.format(select,[data]);
+    let DELETE = 'DELETE FROM publicidades WHERE idPublicidad =?';
+    let query = mysql.format(DELETE,id);
     mysqlConnection.query(query, (error, result) => {
     if(error) reject (error);
     console.log(error);
     mysqlConnection.end();
     resolve(result);
-    console.log(data);
     console.log(result);
   });
   });
 }
-function deleteAdopcion(data){
+function deleteAdopcion(id){
   return new Promise((resolve,reject)=>{
     const mysqlConnection = connection();
     mysqlConnection.connect((err) => {
       if (err) throw err;
       console.log("Connected to MySQL Server!");
     });
-    let select = 'DELETE FROM adopciones WHERE idAdopcion =?';
-    let query = mysql.format(select,[data]);
+    let DELETE = 'DELETE FROM adopciones WHERE idAdopcion =?';
+    let query = mysql.format(DELETE,id);
     mysqlConnection.query(query, (error, result) => {
     if(error) reject (error);
     console.log(error);
