@@ -1,23 +1,21 @@
 * {
-    margin: 10; 
-    padding: 10;
+    margin: 0; 
+    padding: 0px;
     box-sizing: border-box;
 }
 
 section{
+    display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Raleway', sans-serif;
-    padding: 10px;
-    margin: 10px;
 }
 .carousel {
     width: 100%;
     height:600px;
     overflow: auto;
     position: relative;
-    margin: 0; 
-    padding: 1px;    
+    color: white;
     justify-content: center;  
 }
 .carousel-container{
@@ -54,22 +52,22 @@ section{
     height:100%;
 }
 .titulo {
-    font-size: 40px;
+    font-size: 50px;
     font-family: 'Dancing Script', cursive;
     margin-bottom: 10px;
-    color: rgb(3, 3, 3);
+    color:#1557f1;
 }
 .subtitulo {
     color: rgb(255, 255, 255);
     margin: 7px 0;
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 10px;
     text-shadow: 2px 2px 1px rgba(0,0,0,0.7);
     font-family: 'Dancing Script', cursive;
     margin-top: 0;
 }
 span {
-    display: none;
+   color: white;
    
  }
 .carousel.pointer-event {

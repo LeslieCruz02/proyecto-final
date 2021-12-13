@@ -26,9 +26,19 @@ font{
  h3{
     font-size: 45px;
     color:#1557f1;
+    background-color: white;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
  }
 p{
-    font-size: 25px;   
+    font-size: 25px;
+    color:#1557f1;
+    background-color: white;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+       
 } 
 
 .texto{
@@ -40,13 +50,14 @@ p{
 h2{
     font-family: 'Yellowtail', cursive;
     text-align: center;
-    font-size:50px
+    font-size:50px;
+    color:#1557f1;
 }
 
 a{
     padding: 10px;
     text-decoration: none;
-    color: black;
+    color: rgb(253, 253, 253);
     font-size: 30px;
 }
 .boton1{
