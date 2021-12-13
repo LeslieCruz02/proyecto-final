@@ -33,7 +33,7 @@ export class FormularioComponent implements OnInit {
       nombreC: ['', Validators.required],
       correo: ['', Validators.email],
       telefono: ['', Validators.required],
-      nombreO: ['', Validators.required],
+      apellido: ['', Validators.required],
       asunto:['', Validators.required],
       mensaje:['', Validators.required]
 
@@ -45,7 +45,7 @@ export class FormularioComponent implements OnInit {
       let data ={
         nombreC: this.form.value.nombreC,
         correo: this.form.value.correo,
-        nombreO: this.form.value.nombreO,  
+        apellido: this.form.value.nombreO,  
         telefono: this.form.value.telefono,
         asunto: this.form.value.asunto,
         mensaje: this.form.value.mensaje

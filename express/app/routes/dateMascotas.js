@@ -4,7 +4,7 @@ const authToken = require('../middleware/auth-token');
 const router = express.Router();
 
 
-router.get('/', authToken.njwtAuth,  dateController.mascotas);
+router.delete('/', dateController.mascotas);
 
 
 module.exports = router; 

@@ -243,8 +243,8 @@ export class ClientService {
     return this.http.post(route,data)
   }
 
-  delete(route: string, data?:any) {
-    return this.http.delete(route,data);
+  delete(route: string) {
+    return this.http.delete(route);
   }
 
   update(route: string, data?:any) {

@@ -3,8 +3,8 @@ const CREDENTIALS = {
   host     : 'localhost',
   user     : 'root',
   password : '252402',
-  database : 'proyectoAdopciones'
+  database : 'ProyectoAdopciones'
 }
 
-  
+
 module.exports = CREDENTIALS;
