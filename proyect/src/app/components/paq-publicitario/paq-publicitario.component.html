@@ -3,8 +3,9 @@
     <div class="card" style="width: 18rem;">
         <!-- <img src="..." class="card-img-top" alt="..."> -->
         <div class="card-body">
-          <h5 class="card-title">Un Mes</h5>
-          <p class="card-text">Tu publicidad tendrá un duración de un mes. Tiene un costo de ${{precio1}}</p>
+          <img src="../../../assets/pago_publicidad.png" alt="publicidad" width="200px" height="200px">
+          <h4 class="card-title">1 MES</h4>
+          <p class="card-text">Tu publicidad tendrá un duración de un mes. Tiene un costo de {{precio1 | currency: 'USD'}}</p>
         <div class="enviar">
           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1" (click)="paquete1()">Pagar</button>
          </div>
@@ -13,8 +14,9 @@
     <div class="card" style="width: 18rem;">
         <!-- <img src="..." class="card-img-top" alt="..."> -->
         <div class="card-body">
-          <h5 class="card-title">Tres meses</h5>
-          <p class="card-text">Tu publicidad tendrá un duración de tres meses. Tiene un costo de ${{precio2}}</p>
+          <img src="../../../assets/pago_publicidad1.png" alt="publicidad" width="200px" height="200px">
+          <h4 class="card-title">TRES MESES</h4>
+          <p class="card-text">Tu publicidad tendrá un duración de tres meses. Tiene un costo de {{precio2 | currency: 'USD'}}</p>
           <div class="enviar">
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1" (click)="paquete2()" >Pagar</button>
           </div>
@@ -23,8 +25,9 @@
     <div class="card" style="width: 18rem;">
         <!-- <img src="..." class="card-img-top" alt="..."> -->
         <div class="card-body">
-            <h5 class="card-title">Un año</h5>
-            <p class="card-text">Tu publicidad tendrá un duración de un año. Tiene un costo de ${{precio3}}</p>
+          <img src="../../../assets/pago_publicidad2.png" alt="publicidad" width="200px" height="200px">
+          <h4 class="card-title">1 AÑO</h4>
+            <p class="card-text">Tu publicidad tendrá un duración de un año. Tiene un costo de {{precio3 | currency: 'USD'}}</p>
             <div class="enviar">
               <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1" (click)="paquete3()">Pagar</button>
             </div>
@@ -38,14 +41,14 @@
     <div class="modal-dialog" [formGroup]="form" (click)="paquete()">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel1">FORMULARIO</h5>
+          <h5 class="modal-title" id="exampleModalLabel1">Método de pago</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body" [ngSwitch]='paq'>
           <h3>Ingresa los datos</h3>
-          <p class="pago" *ngSwitchCase='1'>Su pago del paquete de un mes es de ${{precio1}}</p>
-          <p class="pago" *ngSwitchCase='2'>Su pago del paquete de tres meses es de ${{precio2}}</p>
-          <p class="pago" *ngSwitchCase='3'>Su pago del paquete de un año es de ${{precio3}}</p>
+          <p class="pago" *ngSwitchCase='1'>Su pago del paquete de un mes es de {{precio1 | currency: 'USD'}}</p>
+          <p class="pago" *ngSwitchCase='2'>Su pago del paquete de tres meses es de {{precio2 | currency: 'USD'}}</p>
+          <p class="pago" *ngSwitchCase='3'>Su pago del paquete de un año es de {{precio3 | currency: 'USD'}}</p>
           <div class="formularioModal">
             <div>
               <label for="nombre">Nombre del titular</label><br>
@@ -63,11 +66,13 @@
               <input type="number" class="input" id="documento" formControlName="documento">
             </div>
           </div>
+          <label for="cvv">CVV</label><br>
+          <input type="number" class="input" id="cvv" formControlName="cvv"><br>
           <label for="mesAños">Mes y año de expiración</label><br>
           <input type="month" class="input" id="mesAños" formControlName="mesAño"><br>
         </div>
         <div class="modal-footer" >
-        <button type="submit" class="enviar btn btn-primary" data-bs-dismiss="modal"  (click)="paquete()">Enviar</button> 
+        <button type="submit" class="enviar btn btn-primary" data-bs-dismiss="modal"  (click)="paquete()">Pagar</button> 
       </div>
     </div>
   </div>

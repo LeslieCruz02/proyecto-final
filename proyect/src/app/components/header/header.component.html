@@ -4,7 +4,7 @@
 <section>
   <h2>Hola {{nombres}}</h2>
     <div class="datePublic" *ngFor="let public of mascotas">
-      <h3>{{public.nombre}}</h3>
+      <h3>{{public.nombre | uppercase}}</h3>
       <p>{{public.descripcion}}</p>
       <img src="http://localhost:10101/images?image={{public.foto1}}" alt="publicacion" width="600" class="public1">
     </div>
