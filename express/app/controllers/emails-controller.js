@@ -3,11 +3,11 @@ const createTrans = () =>{
     const transport = nodemailer.createTransport({
         service: 'gmail',
         hostname: 'smtp.gmail.com',
-        port:456,
+        port:465,
         secure:true,
         auth:{
-            user: 'petsworld2508@gmail.com',
-            pass:'esjkkdldizfrkwbu'
+            user: 'abglesliecruz@gmail.com',
+            pass:'hsejamiarsieoprs'
         }
     });
     return transport;
@@ -17,7 +17,7 @@ const sendEmail= async (body) =>{
     console.log(body.nombreC, body.correo);
     const transporter = createTrans()
     const info = await transporter.sendMail({
-        from: "petsworld2508@gmail.com",
+        from: "abglesliecruz@gmail.com",
         to: body.correo, //Se pueden pasar la lista de correos por medio de un array
         subject: "Hemos recibido tú petición",
         html: `

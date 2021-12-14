@@ -40,6 +40,7 @@ const deleteSolicitud = require('./routes/deleteSolicitud');
 const deleteAdopcion = require('./routes/deleteAdopcion');
 const paqPublicidad = require('./routes/paqPublicidad');
 const minilista = require('./routes/minilista');
+const correoAdopciones = require('./routes/correoAdopciones');
 
 const app = express()
   .use(cors({credentials: true, origin: 'http://localhost:4200'}))
@@ -79,11 +80,13 @@ app.use('/dateMascotas', dateMascotas);
 app.use('/dateAdmin', dateAdmin);
 app.use('/publicidades', publicidades);
 app.use('/deleteUser', deleteUser);
-app.use('/deleteMascota ', deleteMascota );
+app.use('/deleteMascota', deleteMascota );
 app.use('/deletePublicidad', deletePublicidad);
 app.use('/deleteSolicitud', deleteSolicitud);
 app.use('/deleteAdopcion', deleteAdopcion);
 app.use('/paqPublicidad', paqPublicidad);
 app.use('/minilista', minilista);
+app.use('/correoAdopciones', correoAdopciones);
+
 module.exports = app;
 

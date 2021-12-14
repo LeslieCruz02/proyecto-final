@@ -45,7 +45,7 @@ export class FormularioComponent implements OnInit {
       let data ={
         nombreC: this.form.value.nombreC,
         correo: this.form.value.correo,
-        apellido: this.form.value.nombreO,  
+        apellido: this.form.value.apellido,  
         telefono: this.form.value.telefono,
         asunto: this.form.value.asunto,
         mensaje: this.form.value.mensaje

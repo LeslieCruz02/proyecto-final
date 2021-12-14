@@ -421,6 +421,7 @@ function dateMascotas(data){
     if(error) reject (error);
     console.log(error);
     mysqlConnection.end();
+    console.log(result);
     resolve(result);
 
   });
@@ -471,7 +472,7 @@ function deleteMascota(id){
       if (err) throw err;
       console.log("Connected to MySQL Server!");
     });
-    let DELETE = 'DELETE FROM mascota WHERE idmascotas =?';
+    let DELETE = 'DELETE FROM mascotas WHERE idmascota =?';
     let query = mysql.format(DELETE,id);
     mysqlConnection.query(query, (error, result) => {
     if(error) reject (error);
@@ -532,7 +533,6 @@ function deleteAdopcion(id){
     console.log(error);
     mysqlConnection.end();
     resolve(result);
-    console.log(data);
     console.log(result);
   });
   });

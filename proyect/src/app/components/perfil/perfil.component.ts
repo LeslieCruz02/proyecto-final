@@ -31,6 +31,7 @@ export class PerfilComponent implements OnInit {
         }
       )
       this.client. getRequestdateMascotas(`${this.BASE_API}/dateMascotas`).subscribe(
+              
         (res:any)=>{
           this.mascotas = res.mascotas;
           console.log(this.mascotas);

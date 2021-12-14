@@ -5,7 +5,7 @@ validatorParams = [
         check('nombreC').isString(),
         check('correo').isEmail(),
         check('telefono').isInt(),
-        check('nombreO').isString(),
+        check('apellido').isString(),
         check('asunto').isString(),
         check('mensaje').isString()
       ];

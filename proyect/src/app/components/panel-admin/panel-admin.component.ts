@@ -118,7 +118,16 @@ export class PanelAdminComponent implements OnInit {
             '',
             'success'
           )
-          this.route.navigate(['/panelAdmin']);
+          this.client.getRequestUsuarios().subscribe(
+            (res:any)=>{
+              this.usuarios = res.usuarios;
+              console.log(this.usuarios);
+            },
+            (error:any)=>{
+              console.log(error.status);
+            }
+          );
+        
         },
         (error: any)=>{
           Swal.fire(
@@ -130,7 +139,7 @@ export class PanelAdminComponent implements OnInit {
         })
       }
   
-  actualizarUsuario(id:number){
+  actualizarUsuario(id:any){
     this.client.update(`${this.BASE_API}/updateUser`, id)
         .subscribe( (response:any)=>{
           console.log(response);
@@ -150,7 +159,7 @@ export class PanelAdminComponent implements OnInit {
           console.log(error.status);          
         })
   }
-  eliminarMascota(id:number){
+  eliminarMascota(id:any){
     this.client.delete(`${this.BASE_API}/deleteMascota?id=${id}`)
         .subscribe( (response:any)=>{
           console.log(response);
@@ -159,7 +168,15 @@ export class PanelAdminComponent implements OnInit {
             '',
             'success'
           )
-          this.route.navigate(['/panelAdmin']);
+          this.client.getRequestdatosMascotas().subscribe(
+            (res:any)=>{
+              this.mascotas = res.mascotas;
+              console.log(this.mascotas);
+            },
+            (error:any)=>{
+              console.log(error.status);
+            }
+          );
         },
         (error: any)=>{
           Swal.fire(
@@ -171,7 +188,7 @@ export class PanelAdminComponent implements OnInit {
         })
       }
   
-  actualizarMascota(id:number){
+  actualizarMascota(id:any){
     this.client.update(`${this.BASE_API}/updateMascota`, id)
         .subscribe( (response:any)=>{
           console.log(response);
@@ -192,7 +209,7 @@ export class PanelAdminComponent implements OnInit {
         })
   }
  
-  eliminarSolicitud(correo:string){
+  eliminarSolicitud(correo:any){
     this.client.delete(`${this.BASE_API}/deleteSolicitud?correo=${correo}`)
         .subscribe( (response:any)=>{
           console.log(response);
@@ -201,7 +218,15 @@ export class PanelAdminComponent implements OnInit {
             '',
             'success'
           )
-          this.route.navigate(['/panelAdmin']);
+          this.client.getRequestsolicitudes().subscribe(
+            (res:any)=>{
+              this.solicitudes = res.solicitudes;
+              console.log(this.solicitudes);
+            },
+            (error:any)=>{
+              console.log(error.status);
+            }
+          )
         },
         (error: any)=>{
           Swal.fire(
@@ -213,7 +238,7 @@ export class PanelAdminComponent implements OnInit {
         })
       }
   
-  actualizarSolicitud(correo:string){
+  actualizarSolicitud(correo:any){
     this.client.update(`${this.BASE_API}/updateSolicitud`, correo)
         .subscribe( (response:any)=>{
           console.log(response);
@@ -234,7 +259,7 @@ export class PanelAdminComponent implements OnInit {
         })
   }
  
-  eliminarPublicidad(id:number){
+  eliminarPublicidad(id:any){
     this.client.delete(`${this.BASE_API}/deletePublicidad?id=${id}`)
         .subscribe( (response:any)=>{
           console.log(response);
@@ -243,7 +268,15 @@ export class PanelAdminComponent implements OnInit {
             '',
             'success'
           )
-          this.route.navigate(['/panelAdmin']);
+          this.client.getRequestPublicidades().subscribe(
+            (res:any)=>{
+              this.publicidades = res.publicidades;
+              console.log(this.publicidades);
+            },
+            (error:any)=>{
+              console.log(error.status);
+            }
+          )
         },
         (error: any)=>{
           Swal.fire(
@@ -255,7 +288,7 @@ export class PanelAdminComponent implements OnInit {
         })
       }
   
-  actualizarPublicidad(id:number){
+  actualizarPublicidad(id:any){
     this.client.update(`${this.BASE_API}/updatePublicidad`, id)
         .subscribe( (response:any)=>{
           console.log(response);
@@ -276,7 +309,7 @@ export class PanelAdminComponent implements OnInit {
         })
   }
  
-  eliminarAdopcion(id:number){
+  eliminarAdopcion(id:any){
     this.client.delete(`${this.BASE_API}/deleteAdopcion?id=${id}`)
         .subscribe( (response:any)=>{
           console.log(response);
@@ -285,7 +318,15 @@ export class PanelAdminComponent implements OnInit {
             '',
             'success'
           )
-          this.route.navigate(['/panelAdmin']);
+          this.client.getRequestAdopciones().subscribe(
+            (res:any)=>{
+              this.adopciones = res.adopciones;
+              console.log(this.adopciones);
+            },
+            (error:any)=>{
+              console.log(error.status);
+            }
+          );
         },
         (error: any)=>{
           Swal.fire(
@@ -297,7 +338,7 @@ export class PanelAdminComponent implements OnInit {
         })
       }
   
-  actualizarAdopcion(id:number){
+  actualizarAdopcion(id:any){
     this.client.update(`${this.BASE_API}/updateAdopcion`, id)
         .subscribe( (response:any)=>{
           console.log(response);

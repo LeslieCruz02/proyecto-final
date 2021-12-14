@@ -17,7 +17,7 @@ let usuarios = async(req, res) => {
     console.log(err);
   });
 };
-let mascota = async(req, res) => {
+let mascotas = async(req, res) => {
   console.log(req.query.id);
   let id= req.query.id
 
@@ -83,7 +83,7 @@ let publicidad = async(req, res) => {
 };
 module.exports = {
   usuarios,
-  mascota,
+  mascotas,
   solicitud,
   publicidad,
   adopcion
