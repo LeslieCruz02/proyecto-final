@@ -71,6 +71,7 @@ export class PaqPublicitarioComponent implements OnInit {
         nombreTitular: this.form.value.nombreTitular,
         tarjeta: this.form.value.tarjeta,
         tipodoc: this.form.value.tipodoc,
+        cvv: this.form.value.cvv,
         mesAño: this.form.value.mesAño,
         documento: this.form.value.documento,
       }

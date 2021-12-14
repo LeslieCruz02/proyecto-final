@@ -111,7 +111,6 @@
                 <th scope="col">Telefono</th>
                 <th scope="col">Correo</th>
                 <th scope="col">Estado de Cuenta</th>
-                <th scope="col">Actualizar</th>
                 <th scope="col">Eliminar</th>
               </tr>
             </thead>
@@ -124,17 +123,7 @@
                 <td>{{usuario.telefono}} </td>
                 <td>{{usuario.correo}} </td>
                 <td>{{usuario.estadoCuenta}} </td>
-                <td> 
-                    <button class="btn" type="button" (click)="actualizarUsuario(usuario.idusuario)">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
-                        <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
-                        <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
-                      </svg>
-                    </button>
-                    <div *ngIf="!load" class="spinner-border text-info" role="status">
-                      <span class="sr-only"></span>
-                  </div>
-                </td> 
+             
                 <td> 
                     <button class="btn" type="button" (click)="eliminarUsuario(usuario.idusuario)">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
@@ -149,8 +138,9 @@
               </tr>
             </tbody>
           </table>
-
         </div>
+
+
         <div  class = "container text-success" *ngSwitchCase ="'mascotas01'" >
           <h2 class="elegantshadow">MASCOTAS</h2>
          <table class="table table-hover">
@@ -164,7 +154,6 @@
                   <th scope="col">Responsable</th>
                   <th scope="col">Estado</th>
                   <th scope="col">Descripcion</th>
-                  <th scope="col">Actualizar</th>
                   <th scope="col">Eliminar</th>
                 </tr>
               </thead>
@@ -179,17 +168,6 @@
                   <td>{{mascota.responsable}}</td>
                   <td>{{mascota.idestado}}</td>
                   <td>{{mascota.descripcion}}</td>
-                  <td> 
-                    <button class="btn" type="button" (click)="actualizarMascota(mascota.idmascota)">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
-                        <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
-                        <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
-                      </svg>
-                    </button>
-                    <div *ngIf="!load" class="spinner-border text-info" role="status">
-                      <span class="sr-only"></span>
-                  </div>
-                </td> 
                 <td> 
                     <button class="btn" type="button" (click)="eliminarMascota(mascota.idmascota)">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
@@ -219,7 +197,6 @@
                   <th scope="col">Asunto</th>
                   <th scope="col">Mensaje</th>
                   <th scope="col">Fecha</th>
-                  <th scope="col">Actualizar</th>
                   <th scope="col">Eliminar</th>
                 </tr>
               </thead>
@@ -232,17 +209,7 @@
                   <td>{{solicitud.asunto}}</td>
                   <td>{{solicitud.mensaje}}</td>
                   <td>{{solicitud.date}}</td>
-                  <td> 
-                    <button class="btn" type="button" (click)="actualizarSolicitud(solicitud.correo)">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
-                        <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
-                        <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
-                      </svg>
-                    </button>
-                    <div *ngIf="!load" class="spinner-border text-info" role="status">
-                      <span class="sr-only"></span>
-                  </div>
-                </td> 
+                  
                 <td> 
                     <button class="btn" type="button" (click)="eliminarSolicitud(solicitud.correo)">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
@@ -268,27 +235,16 @@
                   <th scope="col">Usuario</th>
                   <th scope="col">Titulo</th>
                   <th scope="col">Descripcion</th>
-                  <th scope="col">Actualizar</th>
                   <th scope="col">Eliminar</th>
                 </tr>
               </thead>
-              <tbody *ngFor="let publicidad of publicidades">
+              <tbody *ngFor="let publicidad of publicidades" >
                 <tr>
                   <th  class="tam" scope="row">{{publicidad.idPublicidad}} </th>
                   <td class="tam">{{publicidad.usuario}}</td>
                   <td class="tam">{{publicidad.titulo}}</td>
                   <td class="tam">{{publicidad.descripcion}}</td>
-                  <td> 
-                    <button class="btn" type="button" (click)="actualizarPublicidad(publicidad.idPublicidad)">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
-                        <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
-                        <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
-                      </svg>
-                    </button>
-                    <div *ngIf="!load" class="spinner-border text-info" role="status">
-                      <span class="sr-only"></span>
-                  </div>
-                </td> 
+                 
                 <td> 
                     <button class="btn" type="button" (click)="eliminarPublicidad(publicidad.idPublicidad)">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
@@ -319,7 +275,6 @@
                   <th scope="col">tipo de Documento</th>
                   <th scope="col">Documento</th>
                   <th scope="col">Observaciones</th>
-                  <th scope="col">Actualizar</th>
                   <th scope="col">Eliminar</th>
                 </tr>
               </thead>
@@ -334,17 +289,7 @@
                   <td>{{adopcion.tipodoc}}</td>
                   <td>{{adopcion.documento}}</td>
                   <td>{{adopcion.observaciones}}</td>
-                  <td> 
-                    <button class="btn" type="button" (click)="actualizarAdopcion(adopcion.idAdopcion)">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
-                        <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
-                        <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
-                      </svg>
-                    </button>
-                    <div *ngIf="!load" class="spinner-border text-info" role="status">
-                      <span class="sr-only"></span>
-                  </div>
-                </td> 
+                  
                 <td> 
                     <button class="btn" type="button" (click)="eliminarAdopcion(adopcion.idAdopcion)">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">

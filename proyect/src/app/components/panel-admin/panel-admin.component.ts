@@ -8,6 +8,7 @@ import { Publicidades } from '../../interface/info.interface';
 import { Adopciones } from '../../interface/info.interface';
 import { environment } from 'src/environments/environment';
 import { Admon } from '../../interface/info.interface';
+import {  FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 import Swal from 'sweetalert2';
 
@@ -18,7 +19,7 @@ import Swal from 'sweetalert2';
 })
 export class PanelAdminComponent implements OnInit {
   BASE_API: string=environment.BASE_API;
-
+  form!: FormGroup;
   load: boolean = true;
 
   /*usuarios01: boolean = false;
@@ -158,6 +159,41 @@ export class PanelAdminComponent implements OnInit {
           )
           console.log(error.status);          
         })
+  }
+
+  async onSubmit(){
+    if (this.form.valid) {
+
+      let data = {
+        usuario: this.form.value.usuario,
+        nombres: this.form.value.nombres,
+        apellidos: this.form.value.apellidos,
+        correo: this.form.value.correo,
+        telefono: this.form.value.telefono,
+        password: this.form.value.password
+      }
+       this.load = false;
+       this.client.postRequestSendForm(`${this.BASE_API}/usuarios`, data).subscribe(
+        (response:any)=>{
+          console.log(response);
+          Swal.fire(
+            'Su registro ha sido exitoso!',
+            '',
+            'success'
+          )
+          this.route.navigate(['']);
+        },
+        (error: any)=>{
+          Swal.fire(
+            'Su registro no ha sido exitoso!',
+            'Intentalo nuevamente!',
+            'error'
+          )
+          console.log(error.status);          
+        })
+    }else{
+      console.log("Form error");
+    }
   }
   eliminarMascota(id:any){
     this.client.delete(`${this.BASE_API}/deleteMascota?id=${id}`)
