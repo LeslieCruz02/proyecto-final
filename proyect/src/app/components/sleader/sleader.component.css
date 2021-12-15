@@ -1,6 +1,7 @@
 section{
     display: flex;
     padding: 1.25rem;
+    background-image: url(../../../../../express/images/huellas_fond.jpg);
 
 }
 aside{
@@ -11,7 +12,7 @@ address{
     margin: 0.8rem;
     width: 50%;
     padding: 10px;
-    background: -webkit-linear-gradient(bottom, #c8f4f988, white);;
+    background: -webkit-linear-gradient(bottom, #c8f4f988, white);
     border-radius: 0.5rem;
 }
 

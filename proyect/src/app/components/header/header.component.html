@@ -3,6 +3,7 @@
 </style> -->
 <section>
   <h2>Hola {{nombres}}</h2>
+  <p class="parrafo">Estas son las nuevas mascotas que tenemos para adoptar</p>
     <div class="datePublic" *ngFor="let public of mascotas">
       <h3>{{public.nombre | uppercase}}</h3>
       <p>{{public.descripcion}}</p>

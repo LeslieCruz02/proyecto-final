@@ -25,6 +25,10 @@ font{
     border-style: hidden;
     margin:  10px 20px;
     color: black;
+    border: 2px solid black;
+
+    margin-left: 350px;
+    margin-right: 350px;
 }
 
  h3{
@@ -56,7 +60,7 @@ h2{
     font-weight:100;
     text-align: center;
     font-size:50px;
-    color:#1557f1;
+    color:black;
 }
 
 a{
@@ -104,6 +108,12 @@ label{
     background-color: rgba(139, 135, 135, 0.26);
     color: black;
     text-align: center;   
+}
+
+.parrafo {
+    text-align: center;
+    font-size: 18px;
+    color: black;
 }
 
 @media screen and (max-width:768px) {
